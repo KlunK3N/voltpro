@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>VoltPro – El-installatør</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f0f0f;--bg2:#1a1a1a;--bg3:#242424;--bg4:#2e2e2e;
+  --acc:#f5a623;--acc2:#e8961a;
+  --txt:#f0ede8;--t2:#a09d98;--t3:#6b6865;
+  --bor:#2a2a2a;--bor2:#3a3a3a;
+  --ok:#4caf7d;--err:#e05252;--inf:#5b9bd5;--pur:#a78bfa;
+  --F:'Syne',sans-serif;--M:'DM Mono',monospace;
+  --r:10px;--r2:16px
+}
+html,body{height:100%;overflow:hidden;font-family:var(--F);background:var(--bg);color:var(--txt)}
+.shell{display:flex;flex-direction:column;height:100vh}
+/* SCREENS */
+.screens{flex:1;position:relative;overflow:hidden}
+.screen{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding:18px 16px 80px;
+  opacity:0;pointer-events:none;transform:translateX(48px);
+  transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1)}
+.screen.active{opacity:1;pointer-events:all;transform:translateX(0)}
+.screen.slide-out{opacity:0;transform:translateX(-48px);transition:opacity .18s,transform .18s}
+/* BOTTOM NAV */
+.bnav{height:60px;background:var(--bg2);border-top:1px solid var(--bor);display:flex;align-items:center;justify-content:space-around;flex-shrink:0}
+.bni{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:7px 12px;border-radius:var(--r2);border:none;background:none;color:var(--t3);font-family:var(--F);transition:color .15s}
+.bni:hover{color:var(--t2)}
+.bni.active{color:var(--acc)}
+.bni i{font-size:21px;transition:transform .18s}
+.bni.active i{transform:scale(1.12)}
+.bni span{font-size:9px;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+/* FAB */
+.fab{position:fixed;bottom:72px;right:16px;width:54px;height:54px;border-radius:50%;background:var(--acc);border:none;color:#000;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(245,166,35,.4);transition:all .22s;z-index:50}
+.fab:hover{background:var(--acc2);transform:scale(1.07)}
+.fab:active{transform:scale(.93)}
+.fab.hidden{transform:scale(0);opacity:0;pointer-events:none}
+/* CARDS */
+.card{background:var(--bg2);border:1px solid var(--bor);border-radius:var(--r2);padding:15px;margin-bottom:9px;cursor:pointer;transition:border-color .18s,transform .15s}
+.card:hover{border-color:var(--bor2)}
+.card:active{transform:scale(.985)}
+/* TYPOGRAPHY */
+.ptitle{font-size:25px;font-weight:800;letter-spacing:-1px;margin-bottom:3px;line-height:1.1}
+.psub{font-size:12px;color:var(--t2);margin-bottom:18px}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;margin-top:4px}
+.sh-t{font-size:10px;font-weight:700;color:var(--t3);letter-spacing:1px;text-transform:uppercase}
+/* BACK HEADER */
+.bk{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.bk-btn{background:var(--bg3);border:1px solid var(--bor2);color:var(--txt);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;flex-shrink:0;transition:background .15s}
+.bk-btn:hover{background:var(--bg4)}
+.bk-title{font-size:17px;font-weight:800;letter-spacing:-.5px}
+.bk-sub{font-size:11px;color:var(--t2);margin-top:1px}
+/* INPUTS */
+.ig{margin-bottom:16px}
+.il{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--t3);margin-bottom:6px;display:block}
+.inp{background:var(--bg2);border:1px solid var(--bor2);color:var(--txt);font-family:var(--F);font-size:15px;padding:13px 14px;border-radius:var(--r);outline:none;width:100%;transition:border-color .15s}
+.inp:focus{border-color:var(--acc);background:var(--bg3)}
+.inp::placeholder{color:var(--t3)}
+select.inp option{background:var(--bg2)}
+textarea.inp{resize:none;line-height:1.6}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+/* BIG BUTTON */
+.bb{width:100%;padding:16px;border-radius:var(--r2);font-family:var(--F);font-size:15px;font-weight:700;cursor:pointer;border:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .16s;letter-spacing:.2px}
+.bb.pri{background:var(--acc);color:#000}
+.bb.pri:hover{background:var(--acc2)}
+.bb.pri:active{transform:scale(.97)}
+.bb.sec{background:var(--bg3);color:var(--txt);border:1px solid var(--bor2)}
+.bb.sec:hover{background:var(--bg4)}
+/* ROW */
+.row{display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid var(--bor)}
+.row:last-child{border-bottom:none}
+.ri{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.ri.acc{background:rgba(245,166,35,.12);color:var(--acc)}
+.ri.ok{background:rgba(76,175,125,.12);color:var(--ok)}
+.ri.inf{background:rgba(91,155,213,.12);color:var(--inf)}
+.ri.pur{background:rgba(167,139,250,.12);color:var(--pur)}
+.ri.err{background:rgba(224,82,82,.12);color:var(--err)}
+.rdel{background:none;border:none;color:var(--t3);cursor:pointer;padding:6px;border-radius:8px;font-size:14px;margin-left:auto;flex-shrink:0;transition:all .14s}
+.rdel:hover{color:var(--err);background:rgba(224,82,82,.1)}
+/* TAG */
+.tag{font-size:9px;font-weight:700;padding:2px 7px;border-radius:50px;display:inline-block}
+.tag.a{background:rgba(245,166,35,.15);color:var(--acc)}
+.tag.g{background:rgba(76,175,125,.15);color:var(--ok)}
+.tag.b{background:rgba(91,155,213,.15);color:var(--inf)}
+.tag.p{background:rgba(167,139,250,.15);color:var(--pur)}
+.tag.r{background:rgba(224,82,82,.15);color:var(--err)}
+/* PILLS */
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}
+.pill{background:var(--bg3);border:1px solid var(--bor);border-radius:50px;padding:5px 12px;font-size:11px;display:flex;align-items:center;gap:5px}
+.pill strong{font-family:var(--M);font-size:12px;font-weight:500}
+.pill.acc{border-color:rgba(245,166,35,.3);background:rgba(245,166,35,.07)}
+.pill.ok{border-color:rgba(76,175,125,.3);background:rgba(76,175,125,.07)}
+/* SUMBOX */
+.sumbox{background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.2);border-radius:var(--r2);padding:14px;margin-bottom:14px}
+.sum-lbl{font-size:11px;color:var(--t2);margin-bottom:3px}
+.sum-val{font-size:28px;font-weight:800;font-family:var(--M);color:var(--acc)}
+.sum-val.ok{color:var(--ok)}
+/* PROG */
+.pb{background:var(--bg4);border-radius:4px;height:5px;overflow:hidden;margin:5px 0 2px}
+.pbf{height:100%;border-radius:4px;background:var(--acc);transition:width .5s}
+.pbf.ok{background:var(--ok)}
+.pbf.err{background:var(--err)}
+/* STATUS CHIPS */
+.schips{display:flex;gap:6px;margin-bottom:13px}
+.sch{background:var(--bg3);border:1px solid var(--bor2);color:var(--t2);font-family:var(--F);font-size:11px;font-weight:600;padding:6px 13px;border-radius:50px;cursor:pointer;transition:all .14s;border:none}
+.sch:hover{background:var(--bg4)}
+.sch.sel{background:var(--acc);color:#000}
+.sch.sel-err{background:rgba(224,82,82,.15);color:var(--err)}
+/* MAT SEARCH */
+.msw{position:relative}
+.mdd{position:absolute;top:calc(100% + 5px);left:0;right:0;background:var(--bg3);border:1px solid var(--bor2);border-radius:var(--r2);z-index:60;max-height:230px;overflow-y:auto;display:none;box-shadow:0 8px 28px rgba(0,0,0,.55)}
+.mdd.show{display:block}
+.mo{padding:9px 12px;cursor:pointer;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--bor)}
+.mo:last-child{border-bottom:none}
+.mo:hover{background:var(--bg4)}
+.mo img{width:40px;height:40px;border-radius:7px;object-fit:contain;background:#fff;flex-shrink:0}
+.mo-ph{width:40px;height:40px;border-radius:7px;background:var(--bg4);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--t3);font-size:16px}
+.selbox{background:var(--bg3);border:1px solid var(--bor2);border-radius:var(--r);padding:12px;margin-bottom:14px;display:flex;align-items:center;gap:11px;transition:border-color .2s}
+.selbox.filled{border-color:rgba(245,166,35,.4);background:rgba(245,166,35,.04)}
+.selbox img{width:48px;height:48px;border-radius:8px;object-fit:contain;background:#fff;flex-shrink:0}
+.selbox-ph{width:48px;height:48px;border-radius:8px;background:var(--bg4);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--t3);font-size:22px}
+/* WEATHER */
+.wx{background:var(--bg2);border:1px solid var(--bor);border-radius:var(--r2);padding:12px 15px;display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
+.wx-temp{font-size:26px;font-weight:800;font-family:var(--M);color:var(--acc);line-height:1}
+.wx-desc{font-size:11px;color:var(--t2);margin-top:2px}
+.wx-loc{font-size:10px;color:var(--t3);margin-top:2px}
+/* AI */
+.ai-wrap{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.ai-msg{padding:10px 13px;border-radius:13px;font-size:13px;line-height:1.5;max-width:87%}
+.ai-msg.ai{background:var(--bg3);border:1px solid var(--bor2);align-self:flex-start}
+.ai-msg.user{background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.2);align-self:flex-end}
+.ai-dot span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--t3);animation:db 1.1s infinite;margin:0 2px}
+.ai-dot span:nth-child(2){animation-delay:.18s}
+.ai-dot span:nth-child(3){animation-delay:.36s}
+@keyframes db{0%,100%{opacity:.2}50%{opacity:1}}
+/* CHECKLIST */
+.cl{display:flex;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid var(--bor);cursor:pointer}
+.cl:last-child{border-bottom:none}
+.cl input[type=checkbox]{width:17px;height:17px;accent-color:var(--acc);cursor:pointer;flex-shrink:0}
+.cl.done label{text-decoration:line-through;color:var(--t3)}
+.cl label{font-size:13px;cursor:pointer;flex:1}
+/* EMPTY */
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 16px;color:var(--t3);text-align:center;gap:8px}
+.empty i{font-size:40px;opacity:.3}
+.empty p{font-size:14px;font-weight:600}
+.empty small{font-size:11px;opacity:.7}
+/* TOAST */
+.toast{position:fixed;bottom:70px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--bg3);border:1px solid var(--bor2);border-radius:50px;padding:9px 18px;font-size:12px;font-weight:600;color:var(--txt);z-index:999;opacity:0;transition:all .22s;display:flex;align-items:center;gap:6px;white-space:nowrap;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* MAT TABLE IMG */
+.mti{width:28px;height:28px;border-radius:5px;object-fit:contain;background:#fff;border:1px solid var(--bor);vertical-align:middle;margin-right:5px}
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="screens" id="screens">
+
+<!-- HOME -->
+<div class="screen active" id="s-home">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+    <div><div style="font-size:22px;font-weight:800;letter-spacing:-1px">⚡ VoltPro</div><div id="home-date" style="font-size:11px;color:var(--t2);margin-top:1px"></div></div>
+    <div id="sync-ind" style="display:flex;align-items:center;gap:5px;font-size:10px;color:var(--t3);font-family:var(--M)"><div id="sync-dot" style="width:6px;height:6px;border-radius:50%;background:var(--ok)"></div><span id="sync-lbl">Klar</span></div>
+  </div>
+  <div class="wx"><div><div class="wx-temp" id="wx-t">–°</div><div class="wx-desc" id="wx-d">Henter vejr...</div><div class="wx-loc" id="wx-l">📍 Lokaliserer</div></div><i id="wx-i" class="ti ti-cloud" style="font-size:38px;color:var(--t3)"></i></div>
+  <div class="sh">
+    <span class="sh-t">Projekter</span>
+    <button onclick="go('s-newproj')" style="background:var(--acc);border:none;color:#000;font-family:var(--F);font-size:12px;font-weight:700;padding:7px 14px;border-radius:50px;cursor:pointer;display:flex;align-items:center;gap:5px"><i class="ti ti-plus"></i> Nyt projekt</button>
+  </div>
+  <div id="proj-cards"></div>
+  <div id="home-empty" class="empty" style="display:none">
+    <i class="ti ti-bolt"></i>
+    <p>Ingen projekter endnu</p>
+    <small>Tryk på knappen herunder for at oprette dit første projekt</small>
+    <button onclick="go('s-newproj')" style="margin-top:12px;background:var(--acc);border:none;color:#000;font-family:var(--F);font-size:15px;font-weight:700;padding:15px 30px;border-radius:var(--r2);cursor:pointer;display:flex;align-items:center;gap:8px"><i class="ti ti-bolt"></i> Opret første projekt</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="screen" id="s-dash">
+  <div class="ptitle">Overblik</div>
+  <div class="psub" id="dash-date"></div>
+  <div class="pills" id="dash-pills"></div>
+  <div class="sh"><span class="sh-t">Budget-status</span></div>
+  <div id="dash-budgets"></div>
+  <div class="sh" style="margin-top:4px"><span class="sh-t">Kommende påmindelser</span></div>
+  <div id="dash-rems"></div>
+  <div class="sh" style="margin-top:4px"><span class="sh-t">Seneste aktivitet</span></div>
+  <div id="dash-act"></div>
+</div>
+
+<!-- PROJECT -->
+<div class="screen" id="s-proj">
+  <div class="bk">
+    <button class="bk-btn" onclick="go('s-home')"><i class="ti ti-arrow-left"></i></button>
+    <div style="flex:1"><div class="bk-title" id="ph-name">–</div><div class="bk-sub" id="ph-sub">–</div></div>
+    <button onclick="go('s-editproj')" style="background:var(--bg3);border:1px solid var(--bor2);color:var(--t2);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;flex-shrink:0;transition:all .15s" onmouseover="this.style.background='var(--bg4)'" onmouseout="this.style.background='var(--bg3)'"><i class="ti ti-pencil"></i></button>
+  </div>
+  <div id="proj-sum"></div>
+  <div class="sh"><span class="sh-t">Status</span></div>
+  <div class="schips" id="status-chips"></div>
+  <div class="sh"><span class="sh-t">Hvad vil du gøre?</span></div>
+  <div id="proj-actions"></div>
+  <div class="sh" style="margin-top:4px"><span class="sh-t">Seneste registreringer</span></div>
+  <div id="proj-recent"></div>
+</div>
+
+<!-- HOURS LIST -->
+<div class="screen" id="s-hours">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Timeregistrering</div><div class="bk-sub" id="hours-sub"></div></div></div>
+  <div id="hours-list"></div>
+</div>
+
+<!-- ADD TIME -->
+<div class="screen" id="s-addtime">
+  <div class="bk"><button class="bk-btn" onclick="go('s-hours')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Registrer timer</div><div class="bk-sub" id="at-sub"></div></div></div>
+  <div class="ig"><label class="il">Dato</label><input class="inp" type="date" id="t-date"></div>
+  <div class="ig"><label class="il">Takst</label><select class="inp" id="t-rate"><option value="595">Normal – 595 kr/t</option><option value="750">Overarbejde – 750 kr/t</option><option value="895">Akut / weekend – 895 kr/t</option><option value="custom">Brugerdefineret...</option></select></div>
+  <div class="ig" id="t-cw" style="display:none"><label class="il">Takst (kr/t)</label><input class="inp" type="number" id="t-cr" placeholder="650"></div>
+  <div class="ig"><label class="il">Antal timer</label><input class="inp" type="number" id="t-hours" placeholder="3.5" step="0.5" inputmode="decimal"></div>
+  <div class="ig"><label class="il">Beskrivelse af arbejde</label><input class="inp" id="t-desc" placeholder="Eks. Ny tavle monteret, kabling til køkken"></div>
+  <div class="sumbox"><div class="sum-lbl">Beregnet beløb</div><div class="sum-val" id="t-amt">0 kr</div></div>
+  <button class="bb pri" onclick="saveTime()"><i class="ti ti-check"></i> Gem timer</button>
+</div>
+
+<!-- MATERIALS LIST -->
+<div class="screen" id="s-mats">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Materialer</div><div class="bk-sub" id="mats-sub"></div></div></div>
+  <div id="mats-list"></div>
+</div>
+
+<!-- ADD MATERIAL -->
+<div class="screen" id="s-addmat">
+  <div class="bk"><button class="bk-btn" onclick="go('s-mats')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Tilføj materiale</div><div class="bk-sub" id="am-sub"></div></div></div>
+  <div class="ig"><label class="il">Søg i Greenline-katalog</label>
+    <div class="msw"><input class="inp" id="m-search" placeholder="Fx Fuga, HPFI, automatsikring..." autocomplete="off" oninput="searchMat(this.value)"><div class="mdd" id="mat-dd"></div></div>
+  </div>
+  <div class="selbox" id="selbox"><div class="selbox-ph" id="sel-img"><i class="ti ti-tool"></i></div><div><div id="sel-name" style="font-size:13px;font-weight:700">Intet valgt endnu</div><div id="sel-brand" style="font-size:10px;color:var(--t3);margin-top:1px"></div><div id="sel-price" style="font-size:12px;color:var(--acc);font-family:var(--M);margin-top:3px"></div></div></div>
+  <div class="grid2">
+    <div class="ig"><label class="il">Antal</label><input class="inp" type="number" id="m-qty" value="1" min="1" inputmode="numeric"></div>
+    <div class="ig"><label class="il">Enhedspris (kr)</label><input class="inp" type="number" id="m-price" placeholder="0" inputmode="decimal"></div>
+  </div>
+  <div class="sumbox"><div class="sum-lbl">Total beløb</div><div class="sum-val" id="m-amt">0 kr</div></div>
+  <button class="bb pri" onclick="saveMat()"><i class="ti ti-check"></i> Tilføj materiale</button>
+</div>
+
+<!-- KM LIST -->
+<div class="screen" id="s-km">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Kørsel</div><div class="bk-sub" id="km-sub"></div></div></div>
+  <div id="km-list"></div>
+</div>
+
+<!-- ADD KM -->
+<div class="screen" id="s-addkm">
+  <div class="bk"><button class="bk-btn" onclick="go('s-km')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Registrer kørsel</div><div class="bk-sub" id="ak-sub"></div></div></div>
+  <div class="ig"><label class="il">Dato</label><input class="inp" type="date" id="km-date"></div>
+  <div class="ig"><label class="il">Fra → Til</label><input class="inp" id="km-route" placeholder="Hjemme → Skovvej 14, Allerød"></div>
+  <div class="grid2">
+    <div class="ig"><label class="il">Antal km</label><input class="inp" type="number" id="km-km" placeholder="45" inputmode="numeric"></div>
+    <div class="ig"><label class="il">Takst (kr/km)</label><input class="inp" type="number" id="km-rate" value="3.82" step="0.01" inputmode="decimal"></div>
+  </div>
+  <div class="sumbox"><div class="sum-lbl">Kørselsgodtgørelse</div><div class="sum-val ok" id="km-amt">0 kr</div></div>
+  <button class="bb pri" onclick="saveKm()"><i class="ti ti-check"></i> Gem kørsel</button>
+</div>
+
+<!-- REMINDERS LIST -->
+<div class="screen" id="s-rems">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Påmindelser</div><div class="bk-sub" id="rems-sub"></div></div></div>
+  <div id="rems-list"></div>
+</div>
+
+<!-- ADD REMINDER -->
+<div class="screen" id="s-addrem">
+  <div class="bk"><button class="bk-btn" onclick="go('s-rems')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Ny påmindelse</div></div></div>
+  <div class="ig"><label class="il">Hvad skal huskes?</label><input class="inp" id="r-text" placeholder="Eks. Husk 3-fase måler, tjek kabelkanal kælder" style="font-size:15px"></div>
+  <div class="grid2">
+    <div class="ig"><label class="il">Dato</label><input class="inp" type="date" id="r-date"></div>
+    <div class="ig"><label class="il">Tidspunkt</label><input class="inp" type="time" id="r-time" value="08:00"></div>
+  </div>
+  <div class="ig"><label class="il">Prioritet</label>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px" id="prio-chips">
+      <button class="sch sel" onclick="setPrio('normal',this)">Normal</button>
+      <button class="sch" onclick="setPrio('vigtig',this)">Vigtig</button>
+      <button class="sch" onclick="setPrio('kritisk',this)" style="color:var(--err)">Kritisk</button>
+    </div>
+  </div>
+  <button class="bb pri" style="margin-top:6px" onclick="saveRem()"><i class="ti ti-check"></i> Gem påmindelse</button>
+</div>
+
+<!-- CHECKLIST -->
+<div class="screen" id="s-cl">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Tjekliste</div><div class="bk-sub" id="cl-sub"></div></div></div>
+  <div style="display:flex;gap:7px;margin-bottom:14px"><input class="inp" id="cl-new" placeholder="Nyt punkt..." style="flex:1"><button class="bb pri" style="width:auto;padding:12px 14px;flex-shrink:0" onclick="addCL()"><i class="ti ti-plus"></i></button></div>
+  <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px" id="cl-presets"></div>
+  <div id="cl-list"></div>
+</div>
+
+<!-- DOCS -->
+<div class="screen" id="s-docs">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Dokumentation</div><div class="bk-sub" id="docs-sub"></div></div></div>
+  <div id="docs-list"></div>
+  <div class="sh" style="margin-top:14px"><span class="sh-t">Tilføj dokument</span></div>
+  <div class="ig"><label class="il">Navn</label><input class="inp" id="doc-name" placeholder="Eks. Ledningsdiagram stue"></div>
+  <div class="grid2">
+    <div class="ig"><label class="il">Type</label><select class="inp" id="doc-type"><option>PDF</option><option>Billede</option><option>DWG tegning</option><option>Excel</option><option>Installationsrapport</option><option>Andet</option></select></div>
+    <div class="ig"><label class="il">Dato</label><input class="inp" type="date" id="doc-date"></div>
+  </div>
+  <button class="bb pri" onclick="saveDoc()"><i class="ti ti-check"></i> Tilføj dokument</button>
+</div>
+
+<!-- NOTES -->
+<div class="screen" id="s-notes">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Projektnoter</div><div class="bk-sub" id="notes-sub"></div></div></div>
+  <textarea class="inp" id="notes-ta" placeholder="Fri tekst – kundeønsker, særlige forhold, materialevalg..." style="min-height:240px;font-size:14px;line-height:1.7"></textarea>
+  <button class="bb pri" style="margin-top:11px" onclick="saveNotes()"><i class="ti ti-device-floppy"></i> Gem noter</button>
+</div>
+
+<!-- INVOICE LIST -->
+<div class="screen" id="s-invoice">
+  <div class="ptitle">Faktura</div>
+  <div class="psub">Vælg projekt for at generere faktura</div>
+  <div id="inv-proj-list"></div>
+</div>
+
+<!-- INVOICE DETAIL -->
+<div class="screen" id="s-invdet">
+  <div class="bk"><button class="bk-btn" onclick="go('s-invoice')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Endelig faktura</div><div class="bk-sub" id="inv-sub"></div></div></div>
+  <div style="display:flex;gap:7px;margin-bottom:13px;flex-wrap:wrap">
+    <button class="bb sec" style="width:auto;padding:8px 13px;font-size:11px" onclick="goTab('s-settings','bn-settings')"><i class="ti ti-settings"></i> Firmainfo</button>
+    <button class="bb sec" id="vat-btn" style="width:auto;padding:8px 13px;font-size:11px" onclick="toggleVat()"><i class="ti ti-receipt-tax"></i> Vis ex. moms</button>
+    <button class="bb pri" style="width:auto;padding:8px 13px;font-size:11px" onclick="toast('Klar til print ✓')"><i class="ti ti-printer"></i> Print / PDF</button>
+  </div>
+  <div id="inv-box"></div>
+</div>
+
+<!-- AI -->
+<div class="screen" id="s-ai">
+  <div class="ptitle">AI-assistent</div>
+  <div class="psub">Stillet ind til dansk el-installation</div>
+  <div class="ai-wrap" id="ai-msgs"></div>
+  <div style="display:flex;gap:7px;margin-bottom:9px"><input class="inp" id="ai-inp" placeholder="Stil et spørgsmål..." style="flex:1;font-size:13px" onkeydown="if(event.key==='Enter')sendAI()"><button class="bb pri" style="width:auto;padding:12px 14px;flex-shrink:0" onclick="sendAI()"><i class="ti ti-send"></i></button></div>
+  <div style="display:flex;flex-wrap:wrap;gap:5px" id="ai-chips"></div>
+</div>
+
+<!-- SETTINGS -->
+<div class="screen" id="s-settings">
+  <div class="ptitle">Firma</div>
+  <div class="psub">Oplysninger til faktura</div>
+  <div class="grid2"><div class="ig"><label class="il">Firmanavn</label><input class="inp" id="co-name" placeholder="Dit El-firma A/S"></div><div class="ig"><label class="il">CVR</label><input class="inp" id="co-cvr" placeholder="12345678"></div></div>
+  <div class="ig"><label class="il">Adresse</label><input class="inp" id="co-addr" placeholder="Vejnavn 12, 1234 By"></div>
+  <div class="grid2"><div class="ig"><label class="il">Telefon</label><input class="inp" id="co-phone" placeholder="+45 12 34 56 78"></div><div class="ig"><label class="il">Email</label><input class="inp" id="co-email" placeholder="kontakt@firma.dk"></div></div>
+  <div class="grid2"><div class="ig"><label class="il">Autorisationsnr.</label><input class="inp" id="co-auth" placeholder="E-nr."></div><div class="ig"><label class="il">Betalingsbetingelser</label><select class="inp" id="co-terms"><option>14 dage netto</option><option>30 dage netto</option><option>Straks</option><option>Løbende måned + 14 dage</option></select></div></div>
+  <div class="grid2"><div class="ig"><label class="il">Reg.nr.</label><input class="inp" id="co-reg" placeholder="1234"></div><div class="ig"><label class="il">Kontonr.</label><input class="inp" id="co-account" placeholder="12345678"></div></div>
+  <button class="bb pri" onclick="saveSettings()"><i class="ti ti-check"></i> Gem firmainfo</button>
+</div>
+
+<!-- NEW PROJECT -->
+<div class="screen" id="s-newproj">
+  <div class="bk"><button class="bk-btn" onclick="go('s-home')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Nyt projekt</div></div></div>
+  <div class="ig"><label class="il">Projektnavn</label><input class="inp" id="np-name" placeholder="Villa Skovvej 14" style="font-size:17px;font-weight:700"></div>
+  <div class="ig"><label class="il">Kundenavn</label><input class="inp" id="np-customer" placeholder="Fuldt navn"></div>
+  <div class="ig"><label class="il">Adresse</label><input class="inp" id="np-addr" placeholder="Vejnavn, postnr. by"></div>
+  <div class="grid2"><div class="ig"><label class="il">Email</label><input class="inp" id="np-email" placeholder="email@kunde.dk" type="email"></div><div class="ig"><label class="il">Telefon</label><input class="inp" id="np-phone" placeholder="+45 00 00 00 00" type="tel"></div></div>
+  <div class="ig"><label class="il">Beskrivelse</label><textarea class="inp" id="np-desc" placeholder="Kort beskrivelse af opgaven..." style="min-height:65px"></textarea></div>
+  <div class="ig"><label class="il">Budget (kr ex. moms)</label><input class="inp" type="number" id="np-budget" placeholder="0" inputmode="numeric"></div>
+  <button class="bb pri" onclick="createProject()"><i class="ti ti-bolt"></i> Opret projekt</button>
+</div>
+
+<!-- EDIT PROJECT -->
+<div class="screen" id="s-editproj">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Rediger projekt</div><div class="bk-sub">Ændringer gemmes med det samme</div></div></div>
+  <div class="ig"><label class="il">Projektnavn</label><input class="inp" id="ep-name" placeholder="Villa Skovvej 14" style="font-size:17px;font-weight:700"></div>
+  <div class="ig"><label class="il">Kundenavn</label><input class="inp" id="ep-customer" placeholder="Fuldt navn"></div>
+  <div class="ig"><label class="il">Adresse</label><input class="inp" id="ep-addr" placeholder="Vejnavn, postnr. by"></div>
+  <div class="grid2"><div class="ig"><label class="il">Email</label><input class="inp" id="ep-email" placeholder="email@kunde.dk" type="email"></div><div class="ig"><label class="il">Telefon</label><input class="inp" id="ep-phone" placeholder="+45 00 00 00 00" type="tel"></div></div>
+  <div class="ig"><label class="il">Beskrivelse</label><textarea class="inp" id="ep-desc" placeholder="Kort beskrivelse af opgaven..." style="min-height:65px"></textarea></div>
+  <div class="ig"><label class="il">Budget (kr ex. moms)</label><input class="inp" type="number" id="ep-budget" placeholder="0" inputmode="numeric"></div>
+  <button class="bb pri" onclick="saveEditProject()" style="margin-bottom:12px"><i class="ti ti-check"></i> Gem ændringer</button>
+  <div style="border-top:1px solid var(--bor);padding-top:16px;margin-top:4px">
+    <div style="font-size:11px;color:var(--t3);margin-bottom:10px;text-align:center">Farezone</div>
+    <button class="bb" onclick="confirmDeleteProject()" style="background:rgba(224,82,82,.1);color:var(--err);border:1px solid rgba(224,82,82,.25);border-radius:var(--r2)"><i class="ti ti-trash"></i> Slet dette projekt permanent</button>
+  </div>
+</div>
+
+<!-- DELETE CONFIRM -->
+<div class="screen" id="s-delconfirm">
+  <div class="bk"><button class="bk-btn" onclick="go('s-editproj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title" style="color:var(--err)">Slet projekt</div></div></div>
+  <div style="background:rgba(224,82,82,.08);border:1px solid rgba(224,82,82,.2);border-radius:var(--r2);padding:20px;margin-bottom:20px;text-align:center">
+    <i class="ti ti-alert-triangle" style="font-size:36px;color:var(--err);display:block;margin-bottom:10px"></i>
+    <div style="font-size:16px;font-weight:800;margin-bottom:6px">Er du helt sikker?</div>
+    <div style="font-size:13px;color:var(--t2);line-height:1.6">Du er ved at slette <strong id="del-proj-name" style="color:var(--txt)"></strong>.<br>Alle timer, materialer, kørsel og dokumentation slettes <strong>permanent</strong>.</div>
+  </div>
+  <button class="bb" onclick="deleteProject()" style="background:var(--err);color:#fff;border:none;border-radius:var(--r2);margin-bottom:10px;font-size:15px"><i class="ti ti-trash"></i> Ja, slet projekt for altid</button>
+  <button class="bb sec" onclick="go('s-editproj')"><i class="ti ti-x"></i> Annuller</button>
+</div>
+
+</div><!-- /screens -->
+
+<!-- BOTTOM NAV -->
+<div class="bnav">
+  <button class="bni active" id="bn-home" onclick="goTab('s-home','bn-home')"><i class="ti ti-home"></i><span>Hjem</span></button>
+  <button class="bni" id="bn-dash" onclick="goTab('s-dash','bn-dash')"><i class="ti ti-dashboard"></i><span>Overblik</span></button>
+  <button class="bni" id="bn-invoice" onclick="goTab('s-invoice','bn-invoice')"><i class="ti ti-file-invoice"></i><span>Faktura</span></button>
+  <button class="bni" id="bn-ai" onclick="goTab('s-ai','bn-ai')"><i class="ti ti-robot"></i><span>AI</span></button>
+  <button class="bni" id="bn-settings" onclick="goTab('s-settings','bn-settings')"><i class="ti ti-settings"></i><span>Firma</span></button>
+</div>
+</div><!-- /shell -->
+
+<button class="fab" id="fab"><i class="ti ti-plus"></i></button>
+<div class="toast" id="toast"><i class="ti ti-check-circle" style="color:var(--ok)"></i><span id="toast-msg">Gemt!</span></div>
+
+<script>
+const CDN='https://res.cloudinary.com/evoleska/images/e_trim:0:white/w_275,h_275,q_auto,c_lpad,ar_1,f_auto,b_white/v';
+const CAT=[
+  {name:'LK Fuga stikkontakt m/jord, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:98,img:CDN+'1524363911/product/1589997/lk-fuga-stikkontakt-med-jord.jpg'},
+  {name:'LK Fuga stikkontakt m/jord, 1½ modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:109,img:CDN+'1496508162/product/1043951/lk-fuga-stikkontakt-med-jord.jpg'},
+  {name:'LK Fuga stikkontakt m/jord, 2 modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:169,img:CDN+'1496508356/product/1046120/lk-fuga-stikkontakt-med-jord.jpg'},
+  {name:'LK Fuga stikkontakt m/afbryder & jord, 1½ modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:139,img:CDN+'1496508207/product/1047314/lk-fuga-stikkontakt-med-afbryd.jpg'},
+  {name:'LK Fuga LED skydelysdæmper, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Lysdæmpere',price:550,img:CDN+'1638349795/product/x1107584/lk-fuga-led-skydelysdmper-m.jpg'},
+  {name:'LK Fuga lampeudtag 5-polet, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Lampeudtag',price:89,img:CDN+'1524363562/product/1589816/lk-fuga-lampeudtag-5-polet-1.jpg'},
+  {name:'Schneider Automatsikring C 1P+0, 13A – 1 modul',brand:'Schneider Electric',cat:'Automatsikringer',price:44,img:CDN+'1524329495/product/1574084/schneider-automatsikring-c-1p.jpg'},
+  {name:'Schneider Automatsikring C 1P+0, 16A – 1 modul',brand:'Schneider Electric',cat:'Automatsikringer',price:44,img:CDN+'1524329495/product/1574084/schneider-automatsikring-c-1p.jpg'},
+  {name:'Schneider Automatsikring C 1P+0, 20A – 1 modul',brand:'Schneider Electric',cat:'Automatsikringer',price:44,img:CDN+'1524329495/product/1574084/schneider-automatsikring-c-1p.jpg'},
+  {name:'Schneider Automatsikring C 3P+0, 16A – 3 moduler',brand:'Schneider Electric',cat:'Automatsikringer',price:129,img:CDN+'1524382026/product/1600673/schneider-automatsikring-c-3p.jpg'},
+  {name:'Schneider Automatsikring C 3P+0, 32A – 3 moduler',brand:'Schneider Electric',cat:'Automatsikringer',price:139,img:CDN+'1524382026/product/1600673/schneider-automatsikring-c-3p.jpg'},
+  {name:'Schneider Acti9 HPFI-relæ 30mA kl.A 4P, 40A – 4 moduler',brand:'Schneider Electric',cat:'HPFI-relæer',price:209,img:CDN+'1776236332/product/x3398501/schneider-electric-acti9-hpfi.jpg'},
+  {name:'Schneider Acti9 HPFI kombiafbryder 4P 30mA, 16A – 4 moduler',brand:'Schneider Electric',cat:'HPFI-relæer',price:789,img:CDN+'1776256768/product/x3401964/schneider-acti9-hpfi-kombiafbr.jpg'},
+  {name:'Schneider Acti9 HPFI-relæ B-Si 4P, 40A – 4 moduler',brand:'Schneider Electric',cat:'HPFI-relæer',price:1799,img:CDN+'1673611470/product/x1617300/schneider-acti9-hpfi-rel-b-si.jpg'},
+  {name:'Legrand DX3 HPFI kombiafbryder 4P 30mA, 20A – 4 moduler',brand:'Legrand',cat:'HPFI-relæer',price:929,img:CDN+'1511540317/product/1458676/legrand-dx3-hpfi-kombiafbryder.jpg'},
+  {name:'NYM-J 3×1,5mm² kabel pr. meter',brand:'',cat:'Kabler',price:12,img:''},
+  {name:'NYM-J 3×2,5mm² kabel pr. meter',brand:'',cat:'Kabler',price:18,img:''},
+  {name:'NYM-J 5×2,5mm² kabel pr. meter',brand:'',cat:'Kabler',price:28,img:''},
+  {name:'NYM-J 5×6mm² kabel pr. meter',brand:'',cat:'Kabler',price:58,img:''},
+  {name:'CYKY 3×2,5mm² kabel pr. meter',brand:'',cat:'Kabler',price:15,img:''},
+  {name:'H07V-K fleksibel ledning 1,5mm² pr. meter',brand:'',cat:'Kabler',price:7,img:''},
+  {name:'LK Fuga 1-modul indmuringsdåse',brand:'Lauritz Knudsen',cat:'Dåser',price:22,img:''},
+  {name:'LK Fuga 2-modul indmuringsdåse',brand:'Lauritz Knudsen',cat:'Dåser',price:32,img:''},
+  {name:'LK Fuga 1-modul ramme, hvid',brand:'Lauritz Knudsen',cat:'Rammer',price:35,img:''},
+  {name:'LK Fuga 2-modul ramme, hvid',brand:'Lauritz Knudsen',cat:'Rammer',price:48,img:''},
+  {name:'LK Fuga afbryder veksel 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:55,img:''},
+  {name:'LK Fuga dataudtag RJ45 Cat.6, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Data',price:118,img:''},
+  {name:'Kabelkanal 40×25mm pr. meter',brand:'',cat:'Kabelkanal',price:22,img:''},
+  {name:'Kabelrørføring M20 pr. meter',brand:'',cat:'Kabelrør',price:12,img:''},
+  {name:'Wago 5-leder klemme 0,5–6mm² (10 stk)',brand:'Wago',cat:'Klemmer',price:38,img:''},
+  {name:'Endehylse 1,5mm² (100 stk)',brand:'',cat:'Klemmer',price:42,img:''},
+  {name:'Jordelektrode 2m',brand:'',cat:'Jordforbindelse',price:185,img:''},
+  {name:'LED-downlight 7W 3000K',brand:'',cat:'Belysning',price:145,img:''},
+  {name:'Røgdetektor optisk 230V',brand:'',cat:'Brandvarsling',price:185,img:''},
+];
+const CL_PRE=['Mål jordforbindelsesmodstand','Test HPFI-relæ','Kontroller isolationsmodstand','Fotografér tavle','Mål spænding alle grupper','Udfyld installationsattest','Aflevér nøgle til kunde','Ryd op på arbejdsstedet','Test alle stikkontakter','Tjek grupper er mærket korrekt'];
+
+// STATE
+let S={projects:[],nextId:1,company:{name:'',cvr:'',addr:'',phone:'',email:'',reg:'',account:'',auth:'',terms:'14 dage netto'},activity:[]};
+let curId=null,selImgUrl='',curPrio='normal',showExVat=false,aiH=[],syncT=null;
+const fmt=n=>Math.round(n).toLocaleString('da-DK');
+const fmtD=n=>parseFloat(n).toLocaleString('da-DK',{minimumFractionDigits:2,maximumFractionDigits:2});
+const gP=id=>S.projects.find(p=>p.id===id);
+function addAct(t){if(!S.activity)S.activity=[];S.activity.unshift({t,ts:new Date().toLocaleTimeString('da-DK',{hour:'2-digit',minute:'2-digit'})});if(S.activity.length>20)S.activity.pop();}
+
+// STORAGE (localStorage fallback since no storage API in standalone file)
+function persist(){clearTimeout(syncT);setSyncing(true);syncT=setTimeout(()=>{try{localStorage.setItem('voltpro-v5',JSON.stringify(S));}catch(e){}setSyncing(false);},400);}
+function boot(){try{const d=localStorage.getItem('voltpro-v5');if(d){S=JSON.parse(d);if(!S.company)S.company={name:'',cvr:'',addr:'',phone:'',email:'',reg:'',account:'',auth:'',terms:'14 dage netto'};if(!S.activity)S.activity=[];}}catch(e){}renderHome();loadWeather();}
+function setSyncing(on){const d=document.getElementById('sync-dot'),l=document.getElementById('sync-lbl');if(on){d.style.background='var(--acc)';l.textContent='Gemmer...';}else{d.style.background='var(--ok)';l.textContent='Gemt';}}
+
+// NAV
+const FAB_SCREENS={
+  's-home':()=>go('s-newproj'),
+  's-proj':()=>go('s-hours'),
+  's-hours':()=>go('s-addtime'),
+  's-mats':()=>go('s-addmat'),
+  's-km':()=>go('s-addkm'),
+  's-rems':()=>go('s-addrem'),
+};
+const fab=document.getElementById('fab');
+fab.onclick=()=>{const cur=document.querySelector('.screen.active')?.id;if(FAB_SCREENS[cur])FAB_SCREENS[cur]();};
+
+function go(id){
+  const cur=document.querySelector('.screen.active');
+  if(cur?.id===id)return;
+  if(cur){cur.classList.add('slide-out');setTimeout(()=>cur.classList.remove('active','slide-out'),200);}
+  setTimeout(()=>{
+    const next=document.getElementById(id);
+    if(next)next.classList.add('active');
+    fab.classList.toggle('hidden',!FAB_SCREENS[id]);
+    renderScreen(id);
+  },cur?30:0);
+}
+const tabMap=['s-home','s-dash','s-invoice','s-ai','s-settings'];
+const bnMap=['bn-home','bn-dash','bn-invoice','bn-ai','bn-settings'];
+function goTab(sid,bid){
+  document.querySelectorAll('.bni').forEach(b=>b.classList.remove('active'));
+  document.getElementById(bid).classList.add('active');
+  go(sid);
+}
+
+function renderScreen(id){
+  const p=gP(curId);
+  const today=new Date().toISOString().split('T')[0];
+  if(id==='s-home')renderHome();
+  else if(id==='s-dash')renderDash();
+  else if(id==='s-proj')renderProj();
+  else if(id==='s-hours')renderHours();
+  else if(id==='s-addtime'){document.getElementById('at-sub').textContent=p?.name||'';document.getElementById('t-date').value=today;document.getElementById('t-hours').value='';document.getElementById('t-desc').value='';document.getElementById('t-amt').textContent='0 kr';}
+  else if(id==='s-mats')renderMats();
+  else if(id==='s-addmat'){document.getElementById('am-sub').textContent=p?.name||'';document.getElementById('m-search').value='';document.getElementById('m-qty').value='1';document.getElementById('m-price').value='';document.getElementById('m-amt').textContent='0 kr';document.getElementById('sel-name').textContent='Intet valgt endnu';document.getElementById('sel-brand').textContent='';document.getElementById('sel-price').textContent='';const iw=document.getElementById('sel-img');iw.innerHTML='<i class="ti ti-tool"></i>';iw.className='selbox-ph';document.getElementById('selbox').classList.remove('filled');selImgUrl='';}
+  else if(id==='s-km')renderKm();
+  else if(id==='s-addkm'){document.getElementById('ak-sub').textContent=p?.name||'';document.getElementById('km-date').value=today;document.getElementById('km-km').value='';document.getElementById('km-route').value='';document.getElementById('km-amt').textContent='0 kr';}
+  else if(id==='s-rems')renderRems();
+  else if(id==='s-addrem'){document.getElementById('r-date').value=today;document.getElementById('r-text').value='';curPrio='normal';document.querySelectorAll('#prio-chips .sch').forEach((c,i)=>c.classList.toggle('sel',i===0));}
+  else if(id==='s-cl')renderCL();
+  else if(id==='s-docs'){renderDocs();document.getElementById('doc-date').value=today;}
+  else if(id==='s-notes'){document.getElementById('notes-sub').textContent=p?.name||'';document.getElementById('notes-ta').value=p?.notes||'';}
+  else if(id==='s-editproj')openEditProject();
+  else if(id==='s-delconfirm'){const p=gP(curId);if(p)document.getElementById('del-proj-name').textContent=p.name;}
+  else if(id==='s-invoice')renderInvList();
+  else if(id==='s-invdet')renderInvDet();
+  else if(id==='s-ai')initAI();
+  else if(id==='s-settings')loadSettings();
+}
+
+// RENDERS
+function renderHome(){
+  document.getElementById('home-date').textContent=new Date().toLocaleDateString('da-DK',{weekday:'long',day:'numeric',month:'long'});
+  const el=document.getElementById('proj-cards'),empty=document.getElementById('home-empty');
+  if(!S.projects.length){el.innerHTML='';empty.style.display='flex';return;}
+  empty.style.display='none';
+  el.innerHTML=S.projects.map(p=>{
+    const tv=(p.times||[]).reduce((a,t)=>a+t.amount,0);
+    const mv=(p.materials||[]).reduce((a,m)=>a+m.total,0);
+    const kv=(p.kms||[]).reduce((a,k)=>a+k.amount,0);
+    const tot=tv+mv+kv;const th=(p.times||[]).reduce((a,t)=>a+t.hours,0);
+    const cl=p.checklist||[];const cd=cl.filter(c=>c.done).length;
+    const sc={active:'g',paused:'a',done:'p'}[p.status||'active'];
+    const st={active:'Aktiv',paused:'Pause',done:'Afsluttet'}[p.status||'active'];
+    const bpct=p.budget?Math.min(Math.round(tot/p.budget*100),100):0;
+    const bc=bpct>90?'err':bpct>70?'a':'ok';
+    return`<div class="card" onclick="openProj(${p.id})">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:9px">
+        <div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${p.name}</div><div style="font-size:11px;color:var(--t2);margin-top:2px">${p.customer||''}${p.addr?' · '+p.addr:''}</div></div>
+        <span class="tag ${sc}" style="margin-left:9px;flex-shrink:0">${st}</span>
+      </div>
+      ${p.budget?`<div style="margin-bottom:9px"><div class="pb"><div class="pbf ${bc}" style="width:${bpct}%"></div></div><div style="font-size:9px;color:var(--t3)">${fmt(tot)} / ${fmt(p.budget)} kr — ${bpct}%</div></div>`:''}
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <div style="font-size:10px;color:var(--t3)"><span style="font-family:var(--M);font-size:13px;font-weight:500;color:var(--txt)">${th.toFixed(1)}t</span> timer</div>
+        <div style="font-size:10px;color:var(--t3)"><span style="font-family:var(--M);font-size:13px;font-weight:500;color:var(--txt)">${(p.materials||[]).length}</span> mat.</div>
+        ${cl.length?`<div style="font-size:10px;color:var(--t3)"><span style="font-family:var(--M);font-size:13px;font-weight:500;color:var(--acc)">${cd}/${cl.length}</span> tjekl.</div>`:''}
+        <div style="margin-left:auto;text-align:right"><div style="font-family:var(--M);font-size:15px;font-weight:700;color:var(--acc)">${fmt(tot*1.25)} kr</div><div style="font-size:9px;color:var(--t3)">inkl. moms</div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function openProj(id){curId=id;go('s-proj');}
+
+function renderProj(){
+  const p=gP(curId);if(!p)return;
+  document.getElementById('ph-name').textContent=p.name;
+  document.getElementById('ph-sub').textContent=p.customer||(p.addr||'');
+  const tv=(p.times||[]).reduce((a,t)=>a+t.amount,0);
+  const mv=(p.materials||[]).reduce((a,m)=>a+m.total,0);
+  const kv=(p.kms||[]).reduce((a,k)=>a+k.amount,0);
+  const tot=tv+mv+kv;
+  document.getElementById('proj-sum').innerHTML=`
+    <div class="sumbox" style="margin-bottom:15px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px">
+        <div><div class="sum-lbl">Total inkl. moms</div><div class="sum-val">${fmt(tot*1.25)} kr</div></div>
+        <div style="text-align:right;font-size:11px;color:var(--t3);line-height:1.9">
+          <div>${fmt(tv)} kr arbejde</div><div>${fmt(mv)} kr materialer</div><div>${fmt(kv)} kr kørsel</div>
+        </div>
+      </div>
+      ${p.budget?`<div class="pb" style="margin-top:10px"><div class="pbf ${tot/p.budget>0.9?'err':''}" style="width:${Math.min(Math.round(tot/p.budget*100),100)}%"></div></div><div style="font-size:9px;color:var(--t3);margin-top:2px">${Math.min(Math.round(tot/p.budget*100),100)}% af budget brugt</div>`:''}
+    </div>`;
+  document.getElementById('status-chips').innerHTML=['active','paused','done'].map(s=>`<button class="sch${(p.status||'active')===s?' sel':''}" onclick="setStatus('${s}',this)">${{active:'Aktiv',paused:'Pause',done:'Afsluttet'}[s]}</button>`).join('');
+  const acts=[
+    {i:'ti-clock',l:'Timeregistrering',s:(p.times||[]).length+' poster',c:'acc',sc:'s-hours'},
+    {i:'ti-tool',l:'Materialer',s:(p.materials||[]).length+' varer',c:'inf',sc:'s-mats'},
+    {i:'ti-car',l:'Kørsel',s:fmt((p.kms||[]).reduce((a,k)=>a+k.km,0))+' km',c:'ok',sc:'s-km'},
+    {i:'ti-bell',l:'Påmindelser',s:(p.reminders||[]).length+' aktive',c:'pur',sc:'s-rems'},
+    {i:'ti-checklist',l:'Tjekliste',s:((p.checklist||[]).filter(c=>c.done).length)+'/'+(p.checklist||[]).length+' færdige',c:'acc',sc:'s-cl'},
+    {i:'ti-files',l:'Dokumentation',s:(p.docs||[]).length+' filer',c:'inf',sc:'s-docs'},
+    {i:'ti-notes',l:'Projektnoter',s:p.notes?'Har noter':'Tom',c:'pur',sc:'s-notes'},
+    {i:'ti-file-invoice',l:'Generér faktura',s:'',c:'acc',sc:'s-invdet'},
+  ];
+  document.getElementById('proj-actions').innerHTML=acts.map(a=>`<div class="card" style="display:flex;align-items:center;gap:12px;padding:12px 14px;margin-bottom:6px" onclick="go('${a.sc}')"><div class="ri ${a.c}"><i class="ti ${a.i}"></i></div><div style="flex:1"><div style="font-size:13px;font-weight:700">${a.l}</div>${a.s?`<div style="font-size:10px;color:var(--t2);margin-top:1px">${a.s}</div>`:''}</div><i class="ti ti-chevron-right" style="color:var(--t3);font-size:15px"></i></div>`).join('');
+  const rec=[];
+  (p.times||[]).slice(-2).forEach(t=>rec.push({i:'ti-clock',c:'acc',n:`${t.hours}t – ${t.desc}`,s:t.date}));
+  (p.materials||[]).slice(-2).forEach(m=>rec.push({i:'ti-tool',c:'inf',n:m.name,s:`${m.qty} stk · ${fmt(m.total)} kr`}));
+  document.getElementById('proj-recent').innerHTML=rec.length?rec.map(r=>`<div class="row"><div class="ri ${r.c}"><i class="ti ${r.i}"></i></div><div><div style="font-size:12px;font-weight:600">${r.n}</div><div style="font-size:10px;color:var(--t3);margin-top:1px">${r.s}</div></div></div>`).join(''):'<div style="color:var(--t3);font-size:12px;padding:8px 0">Ingen aktivitet endnu</div>';
+}
+
+function setStatus(s,el){const p=gP(curId);if(!p)return;p.status=s;document.querySelectorAll('#status-chips .sch').forEach(c=>c.classList.remove('sel'));el.classList.add('sel');persist();renderHome();toast('Status opdateret');}
+
+function renderHours(){const p=gP(curId);if(!p)return;document.getElementById('hours-sub').textContent=p.name+' · '+(p.times||[]).reduce((a,t)=>a+t.hours,0).toFixed(1)+'t';document.getElementById('hours-list').innerHTML=(p.times||[]).length?(p.times||[]).map((t,i)=>`<div class="row"><div class="ri acc"><i class="ti ti-clock"></i></div><div style="flex:1"><div style="font-size:12px;font-weight:700">${t.desc}</div><div style="font-size:10px;color:var(--t3);margin-top:1px;font-family:var(--M)">${t.date} · ${t.hours}t · ${fmt(t.amount)} kr</div><span class="tag a" style="margin-top:3px;display:inline-block">${t.rateName}</span></div><button class="rdel" onclick="delHour(${i})"><i class="ti ti-trash"></i></button></div>`).join(''):'<div class="empty"><i class="ti ti-clock"></i><p>Ingen timer endnu</p><small>Tryk + for at registrere</small></div>';}
+
+function renderMats(){const p=gP(curId);if(!p)return;document.getElementById('mats-sub').textContent=p.name+' · '+fmt((p.materials||[]).reduce((a,m)=>a+m.total,0))+' kr';document.getElementById('mats-list').innerHTML=(p.materials||[]).length?(p.materials||[]).map((m,i)=>`<div class="row"><div class="ri" style="background:#fff;padding:0;overflow:hidden;border:1px solid var(--bor)">${m.img?`<img src="${m.img}" style="width:36px;height:36px;object-fit:contain" onerror="this.parentElement.innerHTML='<i class=ti ti-tool style=color:var(--t3);font-size:15px;margin:auto></i>';this.parentElement.style.background='var(--bg3)'">`:`<i class="ti ti-tool" style="color:var(--t3);font-size:15px;margin:auto"></i>`}</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${m.name}</div><div style="font-size:10px;color:var(--t3);margin-top:1px;font-family:var(--M)">${m.qty} stk · ${fmt(m.price)} kr/stk · <strong>${fmt(m.total)} kr</strong></div></div><button class="rdel" onclick="delMat(${i})"><i class="ti ti-trash"></i></button></div>`).join(''):'<div class="empty"><i class="ti ti-tool"></i><p>Ingen materialer endnu</p><small>Tryk + for at tilføje</small></div>';}
+
+function renderKm(){const p=gP(curId);if(!p)return;document.getElementById('km-sub').textContent=p.name+' · '+fmt((p.kms||[]).reduce((a,k)=>a+k.km,0))+' km';document.getElementById('km-list').innerHTML=(p.kms||[]).length?(p.kms||[]).map((k,i)=>`<div class="row"><div class="ri ok"><i class="ti ti-car"></i></div><div style="flex:1"><div style="font-size:12px;font-weight:700">${k.route||'Kørsel'}</div><div style="font-size:10px;color:var(--t3);margin-top:1px;font-family:var(--M)">${k.date} · ${fmt(k.km)} km · ${fmt(k.amount)} kr</div></div><button class="rdel" onclick="delKm(${i})"><i class="ti ti-trash"></i></button></div>`).join(''):'<div class="empty"><i class="ti ti-car"></i><p>Ingen kørsel endnu</p><small>Tryk + for at registrere</small></div>';}
+
+function renderRems(){const p=gP(curId);if(!p)return;document.getElementById('rems-sub').textContent=p.name;const pc={normal:'b',vigtig:'a',kritisk:'r'};document.getElementById('rems-list').innerHTML=(p.reminders||[]).length?(p.reminders||[]).map((r,i)=>`<div class="row"><div class="ri pur"><i class="ti ti-bell"></i></div><div style="flex:1"><div style="font-size:12px;font-weight:700">${r.text}</div><div style="font-size:10px;color:var(--t3);margin-top:1px">${r.date} kl. ${r.time} <span class="tag ${pc[r.prio]}">${r.prio}</span></div></div><button class="rdel" onclick="delRem(${i})"><i class="ti ti-trash"></i></button></div>`).join(''):'<div class="empty"><i class="ti ti-bell"></i><p>Ingen påmindelser</p><small>Tryk + for at tilføje</small></div>';}
+
+function renderCL(){const p=gP(curId);if(!p)return;document.getElementById('cl-sub').textContent=p.name;document.getElementById('cl-presets').innerHTML=CL_PRE.map(t=>`<button class="sch" style="font-size:9px;padding:4px 9px" onclick="addPreset('${t.replace(/'/g,"\\'")}')"><i class="ti ti-plus" style="font-size:9px"></i> ${t}</button>`).join('');document.getElementById('cl-list').innerHTML=(p.checklist||[]).length?(p.checklist||[]).map((c,i)=>`<div class="cl${c.done?' done':''}"><input type="checkbox" id="ci${i}"${c.done?' checked':''} onchange="toggleCL(${i},this.checked)"><label for="ci${i}">${c.text}</label><button class="rdel" onclick="delCL(${i})"><i class="ti ti-x"></i></button></div>`).join(''):'<div class="empty" style="padding:18px 0"><i class="ti ti-checklist"></i><p>Tom tjekliste</p></div>';}
+
+function renderDocs(){const p=gP(curId);if(!p)return;document.getElementById('docs-sub').textContent=p.name;document.getElementById('docs-list').innerHTML=(p.docs||[]).length?(p.docs||[]).map((d,i)=>`<div class="row"><div class="ri inf"><i class="ti ti-file-description"></i></div><div style="flex:1"><div style="font-size:12px;font-weight:700">${d.name}</div><div style="font-size:10px;color:var(--t3);margin-top:1px">${d.type} · ${d.date}</div></div><button class="rdel" onclick="delDoc(${i})"><i class="ti ti-trash"></i></button></div>`).join('')+`<div style="margin-top:12px;padding-top:1px;border-top:1px solid var(--bor)"></div>`:'';}
+
+function renderDash(){
+  document.getElementById('dash-date').textContent=new Date().toLocaleDateString('da-DK',{weekday:'long',day:'numeric',month:'long'});
+  let th=0,tv=0,km=0,rev=0,active=0;
+  S.projects.forEach(p=>{if((p.status||'active')==='active')active++;(p.times||[]).forEach(t=>{th+=t.hours;tv+=t.amount;rev+=t.amount;});(p.materials||[]).forEach(m=>rev+=m.total);(p.kms||[]).forEach(k=>{km+=k.km;rev+=k.amount;});});
+  document.getElementById('dash-pills').innerHTML=`<div class="pill acc"><strong>${active}</strong> aktive projekter</div><div class="pill"><strong>${th.toFixed(1)}t</strong> registreret</div><div class="pill ok"><strong>${fmt(km)} km</strong> kørsel</div><div class="pill acc"><strong>${fmt(rev)} kr</strong> ex. moms</div>`;
+  const bp=S.projects.filter(p=>p.budget);
+  document.getElementById('dash-budgets').innerHTML=bp.length?bp.map(p=>{const u=(p.times||[]).reduce((a,t)=>a+t.amount,0)+(p.materials||[]).reduce((a,m)=>a+m.total,0)+(p.kms||[]).reduce((a,k)=>a+k.amount,0);const pc=Math.min(Math.round(u/p.budget*100),100);const bc=pc>90?'err':pc>70?'a':'ok';return`<div class="card" style="padding:11px 13px;margin-bottom:6px" onclick="openProj(${p.id});goTab('s-home','bn-home')"><div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:5px"><span>${p.name}</span><span style="color:var(--acc);font-family:var(--M)">${pc}%</span></div><div class="pb"><div class="pbf ${bc}" style="width:${pc}%"></div></div><div style="font-size:9px;color:var(--t3);margin-top:2px">${fmt(u)} / ${fmt(p.budget)} kr</div></div>`;}).join(''):'<div style="color:var(--t3);font-size:11px;padding:6px 0">Ingen budgetter sat endnu</div>';
+  const ar=[];S.projects.forEach(p=>(p.reminders||[]).forEach(r=>ar.push({...r,pn:p.name})));ar.sort((a,b)=>a.date.localeCompare(b.date));
+  const pc2={normal:'b',vigtig:'a',kritisk:'r'};
+  document.getElementById('dash-rems').innerHTML=ar.slice(0,5).map(r=>`<div class="row"><div class="ri pur"><i class="ti ti-bell"></i></div><div><div style="font-size:12px;font-weight:700">${r.text}</div><div style="font-size:10px;color:var(--t3);margin-top:1px">${r.date} · ${r.pn} <span class="tag ${pc2[r.prio]}">${r.prio}</span></div></div></div>`).join('')||'<div style="color:var(--t3);font-size:11px;padding:6px 0">Ingen påmindelser</div>';
+  document.getElementById('dash-act').innerHTML=(S.activity||[]).slice(0,8).map(a=>`<div style="display:flex;gap:9px;padding:6px 0;border-bottom:1px solid var(--bor);font-size:11px"><span style="color:var(--t3);font-family:var(--M);flex-shrink:0">${a.ts}</span><span style="color:var(--t2)">${a.t}</span></div>`).join('')||'<div style="color:var(--t3);font-size:11px;padding:6px 0">Ingen aktivitet endnu</div>';
+}
+
+function renderInvList(){document.getElementById('inv-proj-list').innerHTML=S.projects.map(p=>{const tot=((p.times||[]).reduce((a,t)=>a+t.amount,0)+(p.materials||[]).reduce((a,m)=>a+m.total,0)+(p.kms||[]).reduce((a,k)=>a+k.amount,0));return`<div class="card" style="display:flex;align-items:center;gap:11px;padding:12px 14px" onclick="openInv(${p.id})"><div style="flex:1"><div style="font-size:13px;font-weight:700">${p.name}</div><div style="font-size:10px;color:var(--t2);margin-top:1px">${p.customer||''}</div></div><div style="text-align:right"><div style="font-family:var(--M);font-size:14px;font-weight:700;color:var(--acc)">${fmt(tot*1.25)} kr</div><div style="font-size:9px;color:var(--t3)">inkl. moms</div></div><i class="ti ti-chevron-right" style="color:var(--t3)"></i></div>`;}).join('')||'<div class="empty"><i class="ti ti-file-invoice"></i><p>Ingen projekter</p></div>';}
+function openInv(id){curId=id;go('s-invdet');}
+function toggleVat(){showExVat=!showExVat;document.getElementById('vat-btn').innerHTML=`<i class="ti ti-receipt-tax"></i> ${showExVat?'Vis inkl. moms':'Vis ex. moms'}`;renderInvDet();}
+function renderInvDet(){
+  const p=gP(curId);if(!p)return;
+  document.getElementById('inv-sub').textContent=p.name+' · '+(p.customer||'');
+  let th=0;(p.times||[]).forEach(t=>th+=t.amount);
+  let tm=0;(p.materials||[]).forEach(m=>tm+=m.total);
+  let tk=0;(p.kms||[]).forEach(k=>tk+=k.amount);
+  const sub=th+tm+tk,vat=sub*.25,total=sub+vat;
+  const co=S.company,now=new Date(),due=new Date(now.getTime()+14*864e5),df=d=>d.toLocaleDateString('da-DK');
+  document.getElementById('inv-box').innerHTML=`<div style="background:var(--bg2);border:1px solid var(--bor);border-radius:var(--r2);padding:16px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+      <div><div style="font-size:16px;font-weight:800;color:var(--acc)">⚡ ${co.name||'Dit El-firma'}</div><div style="font-size:10px;color:var(--t2);margin-top:3px;line-height:1.6">${co.addr||''}<br>${co.phone||''} · ${co.email||''}${co.cvr?'<br>CVR: '+co.cvr:''}${co.auth?'<br>Aut.: '+co.auth:''}</div></div>
+      <div style="text-align:right;font-size:10px;color:var(--t2);line-height:1.7"><div style="font-size:16px;font-weight:800;color:var(--acc)">FAKTURA</div><div>Nr. ${Date.now()%100000}</div><div>Dato: ${df(now)}</div><div>Forfald: ${df(due)}</div><span class="tag g">${co.terms||'14 dage netto'}</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:13px;padding-bottom:13px;border-bottom:1px solid var(--bor)">
+      <div><div style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--t3);margin-bottom:3px">Faktureres til</div><div style="font-size:12px;font-weight:700">${p.customer||''}</div><div style="font-size:10px;color:var(--t2);line-height:1.5;margin-top:1px">${p.addr||''}<br>${p.email||''}<br>${p.phone||''}</div></div>
+      <div><div style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--t3);margin-bottom:3px">Projekt</div><div style="font-size:12px;font-weight:700">${p.name}</div><div style="font-size:10px;color:var(--t2);margin-top:1px">${p.desc||''}</div></div>
+    </div>
+    <table style="width:100%;border-collapse:collapse;font-size:10px;margin-bottom:11px">
+      <thead><tr>${['Beskrivelse','Type','Antal','Beløb'].map(h=>`<th style="text-align:left;padding:0 0 6px;border-bottom:1px solid var(--bor);font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--t3)">${h}</th>`).join('')}</tr></thead>
+      <tbody>
+        ${(p.times||[]).map(t=>`<tr><td style="padding:6px 0;border-bottom:1px solid var(--bor)">${t.desc}<br><span style="font-size:9px;color:var(--t3)">${t.date} · ${t.hours}t</span></td><td style="padding:6px 0;border-bottom:1px solid var(--bor)"><span class="tag a">Arbejde</span></td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M)">${t.hours}t</td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M);font-weight:700">${fmt(t.amount)} kr</td></tr>`).join('')}
+        ${(p.materials||[]).map(m=>`<tr><td style="padding:6px 0;border-bottom:1px solid var(--bor)">${m.name}</td><td style="padding:6px 0;border-bottom:1px solid var(--bor)"><span class="tag b">Vare</span></td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M)">${m.qty} stk</td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M);font-weight:700">${fmt(m.total)} kr</td></tr>`).join('')}
+        ${(p.kms||[]).map(k=>`<tr><td style="padding:6px 0;border-bottom:1px solid var(--bor)">${k.route||'Kørsel'}<br><span style="font-size:9px;color:var(--t3)">${k.date}</span></td><td style="padding:6px 0;border-bottom:1px solid var(--bor)"><span class="tag g">Kørsel</span></td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M)">${fmt(k.km)} km</td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M);font-weight:700">${fmt(k.amount)} kr</td></tr>`).join('')}
+      </tbody>
+    </table>
+    <div style="max-width:220px;margin-left:auto">
+      <div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid var(--bor);font-size:10px"><span style="color:var(--t2)">Arbejde</span><span style="font-family:var(--M)">${fmt(th)} kr</span></div>
+      <div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid var(--bor);font-size:10px"><span style="color:var(--t2)">Materialer</span><span style="font-family:var(--M)">${fmt(tm)} kr</span></div>
+      <div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid var(--bor);font-size:10px"><span style="color:var(--t2)">Kørsel</span><span style="font-family:var(--M)">${fmt(tk)} kr</span></div>
+      <div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid var(--bor);font-size:10px"><span style="color:var(--t2)">Subtotal ex. moms</span><span style="font-family:var(--M)">${fmt(sub)} kr</span></div>
+      ${showExVat
+        ?`<div style="display:flex;justify-content:space-between;padding:10px 0;border-top:2px solid var(--acc);margin-top:2px;font-size:13px;font-weight:800"><span>Total ex. moms</span><span style="font-family:var(--M);color:var(--acc)">${fmt(sub)} kr</span></div>`
+        :`<div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid var(--bor);font-size:10px"><span style="color:var(--t2)">Moms 25%</span><span style="font-family:var(--M)">${fmt(vat)} kr</span></div><div style="display:flex;justify-content:space-between;padding:10px 0;border-top:2px solid var(--acc);margin-top:2px;font-size:13px;font-weight:800"><span>Total inkl. moms</span><span style="font-family:var(--M);color:var(--acc)">${fmt(total)} kr</span></div>`}
+    </div>
+    ${co.reg?`<div style="margin-top:11px;padding-top:9px;border-top:1px solid var(--bor);font-size:9px;color:var(--t3)">Betal til: Reg. ${co.reg} · Konto ${co.account||''}</div>`:''}
+  </div>`;}
+
+// INPUTS
+document.getElementById('t-rate').addEventListener('change',function(){document.getElementById('t-cw').style.display=this.value==='custom'?'block':'none';updT();});
+['t-hours','t-cr'].forEach(id=>document.getElementById(id).addEventListener('input',updT));
+function updT(){const s=document.getElementById('t-rate');const r=s.value==='custom'?parseFloat(document.getElementById('t-cr').value)||0:parseInt(s.value);const h=parseFloat(document.getElementById('t-hours').value)||0;document.getElementById('t-amt').textContent=fmt(r*h)+' kr';}
+['m-qty','m-price'].forEach(id=>document.getElementById(id).addEventListener('input',updM));
+function updM(){const q=parseInt(document.getElementById('m-qty').value)||0;const p=parseFloat(document.getElementById('m-price').value)||0;document.getElementById('m-amt').textContent=fmt(q*p)+' kr';}
+['km-km','km-rate'].forEach(id=>document.getElementById(id).addEventListener('input',updK));
+function updK(){const k=parseFloat(document.getElementById('km-km').value)||0;const r=parseFloat(document.getElementById('km-rate').value)||3.82;document.getElementById('km-amt').textContent=fmtD(k*r)+' kr';}
+
+function searchMat(q){
+  const dd=document.getElementById('mat-dd');
+  if(!q||q.length<2){dd.classList.remove('show');return;}
+  const res=CAT.filter(c=>c.name.toLowerCase().includes(q.toLowerCase())||c.cat.toLowerCase().includes(q.toLowerCase())||(c.brand||'').toLowerCase().includes(q.toLowerCase())).slice(0,10);
+  if(!res.length){dd.classList.remove('show');return;}
+  dd.innerHTML=res.map((r,i)=>`<div class="mo" onclick="selMat(${i})">${r.img?`<img src="${r.img}" alt="" onerror="this.outerHTML='<div class=mo-ph><i class=ti ti-tool></i></div>'">`:'<div class="mo-ph"><i class="ti ti-tool"></i></div>'}<div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.name}</div><div style="font-size:9px;color:var(--t3)">${r.brand?r.brand+' · ':''} ${r.cat}</div></div><span style="font-family:var(--M);font-size:10px;color:var(--acc);flex-shrink:0;padding-left:6px">${fmt(r.price)} kr</span></div>`).join('');
+  dd.dataset.r=JSON.stringify(res);dd.classList.add('show');
+}
+function selMat(i){const res=JSON.parse(document.getElementById('mat-dd').dataset.r||'[]');const r=res[i];if(!r)return;document.getElementById('m-search').value=r.name;document.getElementById('m-price').value=r.price;selImgUrl=r.img||'';document.getElementById('sel-name').textContent=r.name;document.getElementById('sel-brand').textContent=r.brand?r.brand+' · '+r.cat:r.cat;document.getElementById('sel-price').textContent=fmt(r.price)+' kr/enhed';const iw=document.getElementById('sel-img');if(r.img){iw.innerHTML=`<img src="${r.img}" style="width:48px;height:48px;object-fit:contain;border-radius:7px;background:#fff" onerror="this.outerHTML='<i class=ti ti-tool style=font-size:20px;color:var(--t3)></i>'">`; iw.className='';}else{iw.innerHTML='<i class="ti ti-tool"></i>';iw.className='selbox-ph';}document.getElementById('selbox').classList.add('filled');document.getElementById('mat-dd').classList.remove('show');updM();}
+document.addEventListener('click',e=>{if(!e.target.closest('.msw'))document.getElementById('mat-dd').classList.remove('show');});
+function setPrio(p,el){curPrio=p;document.querySelectorAll('#prio-chips .sch').forEach(c=>c.classList.remove('sel'));el.classList.add('sel');}
+
+// SAVES
+function createProject(){const name=document.getElementById('np-name').value.trim();if(!name){alert('Angiv projektnavn');return;}const p={id:S.nextId++,name,customer:document.getElementById('np-customer').value.trim(),addr:document.getElementById('np-addr').value.trim(),email:document.getElementById('np-email').value.trim(),phone:document.getElementById('np-phone').value.trim(),desc:document.getElementById('np-desc').value.trim(),budget:parseFloat(document.getElementById('np-budget').value)||0,status:'active',times:[],materials:[],kms:[],reminders:[],docs:[],checklist:[],notes:''};S.projects.unshift(p);addAct('Nyt projekt: '+p.name);persist();['np-name','np-customer','np-addr','np-email','np-phone','np-desc','np-budget'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});renderHome();curId=p.id;go('s-proj');toast('Projekt oprettet ✓');}
+function saveTime(){const p=gP(curId);if(!p)return;const s=document.getElementById('t-rate');const r=s.value==='custom'?parseFloat(document.getElementById('t-cr').value)||0:parseInt(s.value);const rn=s.value==='custom'?`${r} kr/t`:s.options[s.selectedIndex].text;const h=parseFloat(document.getElementById('t-hours').value)||0;if(!h){alert('Angiv timer');return;}if(!p.times)p.times=[];const desc=document.getElementById('t-desc').value.trim()||'Arbejde';p.times.push({date:document.getElementById('t-date').value,hours:h,rate:r,rateName:rn,amount:r*h,desc});addAct(p.name+': '+h+'t registreret');persist();renderHours();go('s-hours');toast('Timer gemt ✓');}
+function saveMat(){const p=gP(curId);if(!p)return;const name=document.getElementById('m-search').value.trim();if(!name){alert('Vælg et materiale');return;}const qty=parseInt(document.getElementById('m-qty').value)||1;const price=parseFloat(document.getElementById('m-price').value)||0;if(!p.materials)p.materials=[];p.materials.push({name,qty,price,total:qty*price,img:selImgUrl});addAct(p.name+': '+qty+'× '+name);persist();renderMats();go('s-mats');toast('Materiale tilføjet ✓');}
+function saveKm(){const p=gP(curId);if(!p)return;const km=parseFloat(document.getElementById('km-km').value)||0;if(!km){alert('Angiv km');return;}const r=parseFloat(document.getElementById('km-rate').value)||3.82;if(!p.kms)p.kms=[];p.kms.push({date:document.getElementById('km-date').value,km,rate:r,amount:parseFloat((km*r).toFixed(2)),route:document.getElementById('km-route').value.trim()});addAct(p.name+': '+fmt(km)+' km');persist();renderKm();go('s-km');toast('Kørsel gemt ✓');}
+function saveRem(){const p=gP(curId);if(!p)return;const text=document.getElementById('r-text').value.trim();if(!text){alert('Skriv hvad der skal huskes');return;}if(!p.reminders)p.reminders=[];p.reminders.push({text,date:document.getElementById('r-date').value,time:document.getElementById('r-time').value,prio:curPrio});persist();renderRems();go('s-rems');toast('Påmindelse gemt ✓');}
+function saveDoc(){const p=gP(curId);if(!p)return;const name=document.getElementById('doc-name').value.trim();if(!name){alert('Angiv dokumentnavn');return;}if(!p.docs)p.docs=[];p.docs.push({name,type:document.getElementById('doc-type').value,date:document.getElementById('doc-date').value});document.getElementById('doc-name').value='';persist();renderDocs();toast('Dokument tilføjet ✓');}
+function saveNotes(){const p=gP(curId);if(!p)return;p.notes=document.getElementById('notes-ta').value;persist();toast('Notat gemt ✓');}
+function addCL(){const p=gP(curId);if(!p)return;const t=document.getElementById('cl-new').value.trim();if(!t)return;if(!p.checklist)p.checklist=[];p.checklist.push({text:t,done:false});document.getElementById('cl-new').value='';persist();renderCL();}
+function addPreset(t){const p=gP(curId);if(!p)return;if(!p.checklist)p.checklist=[];if(!p.checklist.find(c=>c.text===t)){p.checklist.push({text:t,done:false});persist();renderCL();}}
+function toggleCL(i,v){const p=gP(curId);if(!p)return;p.checklist[i].done=v;persist();renderCL();}
+function delCL(i){const p=gP(curId);if(!p)return;p.checklist.splice(i,1);persist();renderCL();}
+function delHour(i){const p=gP(curId);if(!p)return;p.times.splice(i,1);persist();renderHours();}
+function delMat(i){const p=gP(curId);if(!p)return;p.materials.splice(i,1);persist();renderMats();}
+function delKm(i){const p=gP(curId);if(!p)return;p.kms.splice(i,1);persist();renderKm();}
+function delRem(i){const p=gP(curId);if(!p)return;p.reminders.splice(i,1);persist();renderRems();}
+function delDoc(i){const p=gP(curId);if(!p)return;p.docs.splice(i,1);persist();renderDocs();}
+function loadSettings(){const co=S.company;['name','cvr','addr','phone','email','reg','account','auth'].forEach(k=>{const e=document.getElementById('co-'+k);if(e)e.value=co[k]||'';});const ts=document.getElementById('co-terms');if(ts)ts.value=co.terms||'14 dage netto';}
+function saveSettings(){['name','cvr','addr','phone','email','reg','account','auth'].forEach(k=>{const e=document.getElementById('co-'+k);if(e)S.company[k]=e.value.trim();});const ts=document.getElementById('co-terms');if(ts)S.company.terms=ts.value;persist();toast('Firmainfo gemt ✓');}
+
+// WEATHER
+function loadWeather(){if(!navigator.geolocation)return;navigator.geolocation.getCurrentPosition(pos=>{fetch(`https://api.open-meteo.com/v1/forecast?latitude=${pos.coords.latitude}&longitude=${pos.coords.longitude}&current=temperature_2m,weather_code`).then(r=>r.json()).then(d=>{const t=d.current.temperature_2m;const wc=d.current.weather_code;const icons={0:'ti-sun',1:'ti-sun',2:'ti-cloud',3:'ti-cloud',45:'ti-mist',51:'ti-drizzle',61:'ti-cloud-rain',80:'ti-cloud-rain',95:'ti-cloud-storm'};const descs={0:'Solskin',1:'Næsten klart',2:'Delvis skyet',3:'Overskyet',45:'Tåge',51:'Let regn',61:'Regn',80:'Byger',95:'Tordenvejr'};document.getElementById('wx-t').textContent=t+'°C';document.getElementById('wx-d').textContent=descs[wc]||'Variabelt';document.getElementById('wx-i').className='ti '+(icons[wc]||'ti-cloud');document.getElementById('wx-l').textContent=`📍 ${pos.coords.latitude.toFixed(1)}°N, ${pos.coords.longitude.toFixed(1)}°E`;}).catch(()=>{});},()=>{document.getElementById('wx-l').textContent='📍 Tillad placering for vejr';});}
+
+// AI
+function initAI(){if(!aiH.length)aiH.push({role:'assistant',content:'Hej! Jeg er din el-assistent. Jeg kender stærkstrømsbekendtgørelsen, LK Fuga, Schneider og dansk installationspraksis. Hvad kan jeg hjælpe med?'});renderAI();const p=gP(curId);const tips=p?[`Mangler der noget på ${p.name}?`,'HPFI-krav i badeværelse?','Jordforbindelseskrav?']:['Hvad koster en ny eltavle?','HPFI-krav badeværelse?','Jordforbindelseskrav?','AFDD – hvornår påbudt?'];document.getElementById('ai-chips').innerHTML=tips.map(t=>`<button class="sch" style="font-size:9px;padding:4px 9px" onclick="qAI('${t.replace(/'/g,"\\'")}')"><i class="ti ti-bolt" style="font-size:9px"></i> ${t}</button>`).join('');}
+function renderAI(){const c=document.getElementById('ai-msgs');c.innerHTML=aiH.map(m=>`<div class="ai-msg ${m.role==='user'?'user':'ai'}">${m.content}</div>`).join('');c.scrollTop=c.scrollHeight;}
+function qAI(t){document.getElementById('ai-inp').value=t;sendAI();}
+async function sendAI(){const inp=document.getElementById('ai-inp');const q=inp.value.trim();if(!q)return;inp.value='';aiH.push({role:'user',content:q});renderAI();const dot=document.createElement('div');dot.className='ai-msg ai';dot.innerHTML='<div class="ai-dot"><span></span><span></span><span></span></div>';document.getElementById('ai-msgs').appendChild(dot);document.getElementById('ai-msgs').scrollTop=9999;const p=gP(curId);const ctx=p?`Projekt: ${p.name}, kunde: ${p.customer||'?'}.`:'';try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:350,system:`Du er autoriseret el-installatør og ekspert i dansk el-installation. Svar kort og præcist på dansk. ${ctx}`,messages:aiH})});const d=await r.json();const ans=d.content?.find(x=>x.type==='text')?.text||'Fejl – prøv igen.';dot.remove();aiH.push({role:'assistant',content:ans});renderAI();}catch(e){dot.remove();aiH.push({role:'assistant',content:'Netværksfejl.'});renderAI();}}
+
+function toast(msg){const el=document.getElementById('toast');document.getElementById('toast-msg').textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2000);}
+
+// EDIT & DELETE PROJECT
+function openEditProject(){
+  const p=gP(curId);if(!p)return;
+  document.getElementById('ep-name').value=p.name||'';
+  document.getElementById('ep-customer').value=p.customer||'';
+  document.getElementById('ep-addr').value=p.addr||'';
+  document.getElementById('ep-email').value=p.email||'';
+  document.getElementById('ep-phone').value=p.phone||'';
+  document.getElementById('ep-desc').value=p.desc||'';
+  document.getElementById('ep-budget').value=p.budget||'';
+}
+function saveEditProject(){
+  const p=gP(curId);if(!p)return;
+  const name=document.getElementById('ep-name').value.trim();
+  if(!name){alert('Projektnavn må ikke være tomt');return;}
+  p.name=name;
+  p.customer=document.getElementById('ep-customer').value.trim();
+  p.addr=document.getElementById('ep-addr').value.trim();
+  p.email=document.getElementById('ep-email').value.trim();
+  p.phone=document.getElementById('ep-phone').value.trim();
+  p.desc=document.getElementById('ep-desc').value.trim();
+  p.budget=parseFloat(document.getElementById('ep-budget').value)||0;
+  addAct('Projekt redigeret: '+p.name);
+  persist();renderHome();renderProj();go('s-proj');toast('Projekt gemt ✓');
+}
+function confirmDeleteProject(){
+  const p=gP(curId);if(!p)return;
+  document.getElementById('del-proj-name').textContent=p.name;
+  go('s-delconfirm');
+}
+function deleteProject(){
+  const p=gP(curId);if(!p)return;
+  const name=p.name;
+  S.projects=S.projects.filter(x=>x.id!==curId);
+  curId=null;
+  addAct('Projekt slettet: '+name);
+  persist();renderHome();go('s-home');toast('Projekt slettet');
+}
+
+boot();
+</script>
+</body>
+</html>
