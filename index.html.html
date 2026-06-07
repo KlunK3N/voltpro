@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>VoltPro – El-installatør</title>
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIlZvbHRQcm8gXHUyMDEzIEVsLWluc3RhbGxhdFx1MDBmOHIiLCAic2hvcnRfbmFtZSI6ICJWb2x0UHJvIiwgImRlc2NyaXB0aW9uIjogIlByb2pla3RzdHlyaW5nIGZvciBlbC1pbnN0YWxsYXRcdTAwZjhyZXIiLCAic3RhcnRfdXJsIjogIi4iLCAic2NvcGUiOiAiLiIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAib3JpZW50YXRpb24iOiAicG9ydHJhaXQiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMGYwZjBmIiwgInRoZW1lX2NvbG9yIjogIiMwZjBmMGYiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFNQUFBQURBQ0FZQUFBQlMzR3dIQUFBRCswbEVRVlI0bk8zY3kzRVRVUlJGMFdjUzZBa2pNaVFpTW1SRURtYmdzc3VBaGZWNXY5dG5yUWcwdVB1b1cxWDIwM0VjencxQ2ZWbjlBV0FsQVJCTkFFUVRBTkVFUURRQkVFMEFSQk1BMFFSQU5BRVFUUUJFRXdEUkJFQTBBUkJOQUVRVEFORUVRRFFCRUUwQVJCTUEwUVJBTkFFUVRRQ0YvZnp4ZGZWSEtFOEFSVG4rUGdSQU5BRVU5THIrMzc3L1d2eEo2aE5BTVI1OStoSUEwUVJRaVBYdlR3QkZPUDR4QkZDVUYrQStCRkNBOVI5SEFKdHovR01KZ0dnQzJOaWw5ZmY4MzQ4QU51WFJadzRCRUUwQUc3TCs4d2hnTTQ1L0xnRVU0d1c0THdGc3hQclBKNEJOT1A0MUJFQTBBV3pBK3E4amdFSzhBUGNuZ01Xcy8xb0NXTWp4cnljQW9nbGdFZXUvQndFc2NNL3hld0VlUXdCRUU4QmtIbjMySW9DSkhQOStCRkNBNS85eEJEQ0o5ZCtUQUNady9Qc1NBTkVFTUpqMTM1c0FCdXB4L0Y2QXh4SUEwUVF3aUVlZkdnUXdnT092UXdCRUUwQm5QZGZmQy9CNEF1aklvMDg5QWlDYUFEcXgvalVKb0FQSFg1Y0FOdVVGZUE0QlBNajYxeWFBQnpqKytnUkFOQUhjYWVUNmUvNmZSd0IzOE9oekhnSWdtZ0J1WlAzUFJRQTNjUHpuSTRETmVBR2VTd0JYc3Y3bjlIUWN4L1BxRDdFN3gvL2lqTjlPdmdHNHlobVB2elVCZk1yNm41c0Evc1B4dnpqcityY21BRDV4NXVOdlRRQVhXZjhNQXVDaXM2OS9hd0w0a1BYUE9QN1dCUEFQeDU5RkFQd2paZjFiRThBZnJIL1c4YmNtZ0RlT1A1TUFlSk8yL3EwSm9MVm0vVnZMUFA3V0JPRDR3OFVIUU83NnR4WWVnUFhQUHY3V2dnTncvTFFXSEFEV3Y3WFFBS3kvNDM4VkY0RGo1NzI0QUxEKzcwVUZZUDBkLzk5aUFuRDhmQ1FtQUt6L1J5SUNzUDVjNGovRFRiWXFSdXYvc1lodmdIU08veklCVE9SUmJEOENPRG5yLzM4Q09ESEgvemtCRUUwQUoyWDlyeU9BU1dhK0FEdis2d21BYUFJNEdldC9Hd0djaU9PL25RQ0lKb0NUc1A3M0VjQUVvMzhCY3Z6M0V3RFJCRkNjOVgrTUFBcHovSThUQU5FRU1OaW9GMkRyMzRjQUNuTDgvUWlBYUFJb3h2cjNKWUJDSEg5L0FoaklIOEh2VHdCRldQOHhCRkNBNHg5SEFFUVR3T2FzLzFnQ0dLVEhDN0RqSDA4QVJCUEFwcXovSEFMWWtPT2ZSd0JFRThCbXJQOWNBaGpnM2wrQUhQOThBaUNhQURaaC9kY1F3QVljL3pvQ0lKb0FPcnYxQmRqNnJ5V0FoUnovZWdJZ21nQVdzZjU3RUFEUkJORFJ0Uy9BMW44ZkFwak04ZTlGQUVRVHdFVFdmejhDbU1UeDcwa0FuZmd2Y0RVSllBTHJ2eThCRE9iNDl5WUFvZ2xnSU91L1B3RU00dmhyRUVBSGZnR3FTd0FEV1A4NkJOQ1o0NjlGQUVRVFFFZld2eDRCUE9qMUJkangxeVFBb2dtZ0ErdGYxOU54SE0rclB3U3M0aHVBYUFJZ21nQ0lKZ0NpQ1lCb0FpQ2FBSWdtQUtJSmdHZ0NJSm9BaUNZQW9nbUFhQUlnbWdDSUpnQ2lDWUJvQWlDYUFJZ21BS0lKZ0dnQ0lOcHZDUWpXZWlINkVIMEFBQUFBU1VWT1JLNUNZSUk9IiwgInNpemVzIjogIjE5MngxOTIiLCAidHlwZSI6ICJpbWFnZS9wbmciLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifSwgeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFnQUFBQUlBQ0FZQUFBRDBlTlQ2QUFBTkJVbEVRVlI0bk8zZHZZRmN4eEdGMFlFU0dFZVdNbFJFeWxDV2NvQU1DU1FCN0FMejg3cTdxdTQ1RWF4WDN4MzBJNy9jNy9ldk53QWd5dDlPL3dFQXdINENBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUF5dnIzdi81KytrK0FzUVFBVUpMakQyc0pBQUFJSkFDQWNyNnQvMy84OHorSC94S1lTd0FBcGZqcEgvWVFBQUFRU0FBQVpWai9zSThBQUVwdy9HRXZBUUNVNUFFZ3JDVUFnT09zZjloUEFBQkFJQUVBSEdYOXd4a0NBRGpHOFlkekJBQlFqZ2VBc0o0QUFJNncvdUVzQVFCczUvakRlUUlBQUFJSkFHQXI2eDlxRUFEQU5vOGNmdzhBWVE4QkFBQ0JCQUN3aFovK29SWUJBQ3puK0VNOUFnQUFBZ2tBWUNuckgyb1NBTUF5eng1L1h3REFQZ0lBQUFJSkFHQUpQLzFEYlFJQXVKempEL1VKQUFBSUpBQ0FTNzI2L2owQWhMMEVBQUFFRWdEQVpmemJQL1FoQUlCTE9QN1Fpd0FBZ0VBQ0FIamJ1K3ZmQTBEWVR3QUFiL0hUUC9Ra0FBQWdrQUFBWG1iOVExOENBSGlKNHcrOUNRRGdLQThBNFF3QkFEek4rb2YrQkFEd0ZNY2ZaaEFBQUJCSUFBQVBzLzVoRGdFQVBHVEY4ZmNBRU00UkFBQVFTQUFBditXbmY1aEhBQUMvNVBqRFRBSUFBQUlKQU9CVEs5ZS9CNEJ3bGdBQWdFQUNBUGlRZi91SDJRUUE4QlBISCtZVEFBQVFTQUFBMzlteC9qMEFoUE1FQVBBSFAvMUREZ0VBQUlFRUFIQzczYXgvU0NNQUFNY2ZBZ2tBQUFna0FDRGM3dlh2Q3dDb1FRQkFNRC85UXk0QkFBQ0JCQUNFc3Y0aG13Q0FRSTQvSUFDQWJUd0FoRG9FQUlTeC9vSGJUUUJBRk1jZitFWUFBRUFnQVFBaHJIL2dyd1FBc0lVSGdGQ0xBSUFBMWovd0l3RUF3em4rd0VjRUFBQUVFZ0F3bVBVUGZFWUF3RkNWanI4SGdGQ1BBQUNBUUFJQUJxcTAvb0dhQkFBTTQvZ0RqeEFBQUJCSUFNQWdGZGUvQjRCUWt3Q0FJU29lZjZBdUFRQUFnUVFBREdEOUE4OFNBTkNjNHcrOFFnQUF5M2dBQ0hVSkFHak0rZ2RlSlFDZ0tjY2ZlSWNBQUlCQUFnQWFzdjZCZHdrQVlBa1BBS0UyQVFETldQL0FGUVFBTk9MNEExY1JBQUFRU0FCQUU5WS9jQ1VCQUExME8vNGVBRUo5QWdBQUFna0FLSzdiK2dkNkVBQlFtT01QckNJQUFDQ1FBSUNpckg5Z0pRRUFCWFUrL3I0QWdCNEVBQUFFRWdCUVRPZjFEL1FoQUtBUXh4L1lSUUFBUUNBQkFFVk1XUDhlQUVJZkFnQUttSEQ4Z1Y0RUFBQUVFZ0J3bVBVUG5DQUFBQ0NRQUlDREpxMS9Ed0NoRndFQWgwdzYva0EvQWdBQUFna0FPTUQ2QjA0VEFMQ1o0dzlVSUFDQXQza0FDUDBJQU5qSStnZXFFQUN3aWVNUFZDSUFBQ0NRQUlBTnJIK2dHZ0VBaTAwLy9oNEFRazhDQUFBQ0NRQllhUHI2Qi9vU0FMQ0k0dzlVSmdBQUlKQUFnQVZTMXI4SGdOQ1hBSUNMcFJ4L29EY0JBQUNCQkFCY3lQb0h1aEFBQUJCSUFNQkYwdGEvQjREUW13Q0FDNlFkZjZBL0FRQUFnUVFBdk1uNkJ6b1NBUEFHeHgvb1NnQUFRQ0FCQUM5S1h2KytBSUQrQkFDOElQbjRBek1JQUFBSUpBRGdTZFkvTUlFQWdDYzQvc0FVQWdCNGlnZUFNSU1BZ0FkWi84QWtBZ0FlNFBnRDB3Z0FBQWdrQU9BM3JIOWdJZ0VBditENGY4OERRSmhEQUFCQUlBRUFuN0QrZ2NrRUFBQUVFZ0R3QWVzZm1FNEF3QThjLzQ5NUFBaXpDQUFBQ1BUbGZyOS9QZjFIUUJYV1A5MzRaWVpYK1FVQS9zL3hweHZIbjNjSUFBQUlKQURnWnYzVGovWFB1d1FBOFJ4L3VuSDh1WUlBQUlCQUFvQm8xai9kV1A5Y1JRQVF5L0duRzhlZkt3a0FBQWdrQUloay9kT045Yy9WQkFCeEhIKzZjZnhaUVFBQVFDQUJRQlRybjI2c2YxWVJBTVJ3L0FIK0pBQUFpckwrV1VrQUVNSDZweHZIbjlVRUFBQUVFZ0NNWi8zVGpmWFBEZ0tBMFJ4L3VuSDgyVVVBQUVBZ0FjQlkxai9kV1Avc0pBQVl5ZkduRzhlZjNRUUFBQVFTQUl4ai9kT045YzhKQW9CUkhIKzZjZnc1UlFBQVFDQUJ3QmpXUDkxWS81d2tBQmpCOGFjYng1L1RCQUFBQkJJQXRHZjkwNDMxVHdVQ2dOWWNmN3B4L0tsQ0FBQkFJQUZBVzlZLzNWai9WQ0lBYU1ueEIzaVBBQURZd1BxbkdnRkFPOVkvM1RqK1ZDUUFBQ0NRQUtBVjY1OXVySCtxRWdDMDRmalRqZU5QWlFJQUFBSUpBRnF3L3VuRytxYzZBVUI1amovZE9QNTBJQUFBSUpBQW9EVHJuMjZzZjdvUUFKVGwrTk9ONDA4bkFnQUFBZ2tBU3JMKzZjYjZweHNCUURtT1A5MDQvblFrQUFBZ2tBQ2dGT3VmYnF4L3VoSUFsT0g0MDQzalQyY0NBQUFDQ1FCS3NQN3B4dnFuT3dIQWNZNC8zVGorVENBQUFDQ1FBT0FvNjU5dXJIK21FQUFBRUVnQWNJejFUemZXUDVNSUFJNXcvT25HOFdjYUFRQUFnUVFBMjFuL2RHUDlNNUVBWUN2SG4yNGNmNllTQUFBUVNBQ3dqZlZQTjlZL2t3a0F0bkQ4NmNieFp6b0JBQUNCQkFETFdmOTBZLzJUNE12OWZ2OTYrbzhBcmlPNDN1UDRrOEl2QUFBUVNBREFJTmIvZTZ4L2tnZ0FnSnZqVHg0QkFBQ0JCQUFRei9vbmtRQUFvam4rcEJJQUFCQklBTUFRdmdCNG52VlBNZ0VBQUlFRUFCREoraWVkQUFEaU9QNGdBQUFna2dBQW9sai84RDhDQUFid0JjQmpISC80a3dBQWdFQUNBSWhnL2NQM0JBQXdudU1QUHhNQUFCQklBRUJ6SGdEK212VVBIeE1Bd0ZpT1AzeE9BQUJBSUFFQWpHVDl3NjhKQUdBY3h4OStUd0FBUUNBQkFJMzVBdUJuMWo4OFJnQUFZemorOERnQkFBQ0JCQUF3Z3ZVUHp4RUFRSHVPUHp4UEFFQlRIZ0FDN3hBQVFHdldQN3hHQUFCQUlBRUF0R1g5dytzRUFOQ1M0dy92RVFBQUVFZ0FRRVBwWHdCWS8vQStBUUMwNHZqRE5RUUFBQVFTQUVBYjFqOWNSd0FBTFRqK2NDMEJBQUNCQkFBMGsvZ0ZnUFVQMXhNQVFHbU9QNndoQUFBZ2tBQUF5ckwrWVIwQkFKVGsrTU5hQWdBYVNYd0FDS3doQUlCeXJIOVlUd0FBcFRqK3NJY0FBSUJBQWdBb3cvcUhmUVFBQUFRU0FOREU5QzhBckgvWVN3QUF4em4rc0o4QUFJQkFBZ0E0eXZxSE13UUFjSXpqRCtjSUFBQUlKQUNnZ1lsZkFGai9jSllBQUxaei9PRThBUUFBZ1FRQXNKWDFEelVJQUdBYnh4L3FFQUJRM01RSGdNQjVBZ0RZd3ZxSFdnUUFzSnpqRC9VSUFBQUlKQUNBcGF4L3FFa0FBTXM0L2xDWEFJRENmQUVBckNJQWdDV3NmNmhOQUFCQUlBRUFYTTc2aC9vRUFIQXB4eDk2RUFBQUVFZ0FRRkVkdndDdy9xRVBBUUJjd3ZHSFhnUUFBQVFTQU1EYnJIL29Sd0FBYjNIOG9TY0JBQVYxZkFBSTlDSUFnSmRaLzlDWEFBQmU0dmhEYndJQUFBSUpBT0JwMWovMEp3Q0FwemorTUlNQWdHSjhBUURzSUFDQWgxbi9NSWNBQUI3aStNTXNBZ0FBQWdrQTRMZXNmNWhIQUVBaEZSOEFPdjR3a3dBQWdFQUNBUGlVOVE5ekNRQUFDQ1FBZ0E5Wi96Q2JBQUIrNHZqRGZBSUFpcWo0QlFBd2x3QUF2bVA5UXdZQkFQekI4WWNjQWdBQUFna0E0SGE3V2YrUVJnQUFqajhFRWdCUWdDOEFnTjBFQUlTei9pR1RBSUJnamova0VnQUFFRWdBUUNqckg3SUpBRGpzeEFOQXh4OFFBQUFRU0FCQUdPc2Z1TjBFQUVSeC9JRnZCQUFBQkJJQUVNTDZCLzVLQU1CQi9oUEF3Q2tDQUFKWS84Q1BCQUFNNS9nREh4RUFBQkJJQU1CZzFqL3dHUUVBUXpuK3dLOElBRGpFRndEQVNRSUFCckwrZ2Q4UkFEQ000dzg4UWdBQVFDQUJBSU5ZLzhDakJBQWNzT0lCb09NUFBFTUFBRUFnQVFBRFdQL0Fzd1FBTk9mNEE2OFFBQUFRU0FCQVk5WS84Q29CQUp0ZDlRV0E0dys4UXdBQVFDQUJBQTFaLzhDN0JBQTA0L2dEVnhBQUFCQklBRUFqMWo5d0ZRRUFHNjM0ZndBQXZFSUFRQlBXUDNBbEFRQU5PUDdBMVFRQUFBUVNBRkNjOVErc0lBQmdrMWNlQURyK3dDb0NBQUFDQ1FBb3l2b0hWaElBVUpEakQ2d21BQUFna0FDQVlxeC9ZQWNCQUJzOCtnV0E0dy9zSWdBQUlKQUFnQ0tzZjJBbkFRQUZPUDdBYmdJQUFBSUpBRmpzZHc4QXJYL2dCQUVBQnpuK3dDa0NBQUFDQ1FBNHhQb0hUaElBQUJCSUFNQUIxajl3bWdDQWhUNzZBc0R4QnlvUUFBQVFTQURBUnRZL1VJVUFnRTBjZjZBU0FRQUFnUVFBYkdEOUE5VUlBRmprMnhjQWpqOVFrUUFBZ0VBQ0FCYXkvb0dxdnR6djk2K24vd2dBWUMrL0FBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCRG92eEl6SXJJQ2hWbHFBQUFBQUVsRlRrU3VRbUNDIiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9wbmciLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifV19">
+<meta name="theme-color" content="#0f0f0f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VoltPro">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAD+0lEQVR4nO3cy3ETURRF0WcS6AkjMiQiMmREDmbgssuAhfV5v9tnrQg0uPuoW1X203Eczw1CfVn9AWAlARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQCF/fzxdfVHKE8ARTn+PgRANAEU9Lr+377/WvxJ6hNAMR59+hIA0QRQiPXvTwBFOP4xBFCUF+A+BFCA9R9HAJtz/GMJgGgC2Nil9ff8348ANuXRZw4BEE0AG7L+8whgM45/LgEU4wW4LwFsxPrPJ4BNOP41BEA0AWzA+q8jgEK8APcngMWs/1oCWMjxrycAoglgEeu/BwEscM/xewEeQwBEE8BkHn32IoCJHP9+BFCA5/9xBDCJ9d+TACZw/PsSANEEMJj135sABupx/F6AxxIA0QQwiEefGgQwgOOvQwBEE0BnPdffC/B4AujIo089AiCaADqx/jUJoAPHX5cANuUFeA4BPMj61yaABzj++gRANAHcaeT6e/6fRwB38OhzHgIgmgBuZP3PRQA3cPznI4DNeAGeSwBXsv7n9HQcx/PqD7E7x//ijN9OvgG4yhmPvzUBfMr6n5sA/sPxvzjr+rcmAD5x5uNvTQAXWf8MAuCis69/awL4kPXPOP7WBPAPx59FAPwjZf1bE8AfrH/W8bcmgDeOP5MAeJO2/q0JoLVm/VvLPP7WBOD4w8UHQO76txYegPXPPv7WggNw/LQWHADWv7XQAKy/438VF4Dj5724ALD+70UFYP0d/99iAnD8fCQmAKz/RyICsP5c4j/DTbYqRuv/sYhvgHSO/zIBTORRbD8CODnr/38CODHH/zkBEE0AJ2X9ryOASWa+ADv+6wmAaAI4Get/GwGciOO/nQCIJoCTsP73EcAEo38Bcvz3EwDRBFCc9X+MAApz/I8TANEEMNioF2Dr34cACnL8/QiAaAIoxvr3JYBCHH9/AhjIH8HvTwBFWP8xBFCA4x9HAEQTwOas/1gCGKTHC7DjH08ARBPApqz/HALYkOOfRwBEE8BmrP9cAhjg3l+AHP98AiCaADZh/dcQwAYc/zoCIJoAOrv1Bdj6ryWAhRz/egIgmgAWsf57EADRBNDRtS/A1n8fApjM8e9FAEQTwETWfz8CmMTx70kAnfgvcDUJYALrvy8BDOb49yYAoglgIOu/PwEM4vhrEEAHfgGqSwADWP86BNCZ469FAEQTQEfWvx4BPOj1Bdjx1yQAogmgA+tf19NxHM+rPwSs4huAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCINpvCQjWeiH6EH0AAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAD+0lEQVR4nO3cy3ETURRF0WcS6AkjMiQiMmREDmbgssuAhfV5v9tnrQg0uPuoW1X203Eczw1CfVn9AWAlARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQCF/fzxdfVHKE8ARTn+PgRANAEU9Lr+377/WvxJ6hNAMR59+hIA0QRQiPXvTwBFOP4xBFCUF+A+BFCA9R9HAJtz/GMJgGgC2Nil9ff8348ANuXRZw4BEE0AG7L+8whgM45/LgEU4wW4LwFsxPrPJ4BNOP41BEA0AWzA+q8jgEK8APcngMWs/1oCWMjxrycAoglgEeu/BwEscM/xewEeQwBEE8BkHn32IoCJHP9+BFCA5/9xBDCJ9d+TACZw/PsSANEEMJj135sABupx/F6AxxIA0QQwiEefGgQwgOOvQwBEE0BnPdffC/B4AujIo089AiCaADqx/jUJoAPHX5cANuUFeA4BPMj61yaABzj++gRANAHcaeT6e/6fRwB38OhzHgIgmgBuZP3PRQA3cPznI4DNeAGeSwBXsv7n9HQcx/PqD7E7x//ijN9OvgG4yhmPvzUBfMr6n5sA/sPxvzjr+rcmAD5x5uNvTQAXWf8MAuCis69/awL4kPXPOP7WBPAPx59FAPwjZf1bE8AfrH/W8bcmgDeOP5MAeJO2/q0JoLVm/VvLPP7WBOD4w8UHQO76txYegPXPPv7WggNw/LQWHADWv7XQAKy/438VF4Dj5724ALD+70UFYP0d/99iAnD8fCQmAKz/RyICsP5c4j/DTbYqRuv/sYhvgHSO/zIBTORRbD8CODnr/38CODHH/zkBEE0AJ2X9ryOASWa+ADv+6wmAaAI4Get/GwGciOO/nQCIJoCTsP73EcAEo38Bcvz3EwDRBFCc9X+MAApz/I8TANEEMNioF2Dr34cACnL8/QiAaAIoxvr3JYBCHH9/AhjIH8HvTwBFWP8xBFCA4x9HAEQTwOas/1gCGKTHC7DjH08ARBPApqz/HALYkOOfRwBEE8BmrP9cAhjg3l+AHP98AiCaADZh/dcQwAYc/zoCIJoAOrv1Bdj6ryWAhRz/egIgmgAWsf57EADRBNDRtS/A1n8fApjM8e9FAEQTwETWfz8CmMTx70kAnfgvcDUJYALrvy8BDOb49yYAoglgIOu/PwEM4vhrEEAHfgGqSwADWP86BNCZ469FAEQTQEfWvx4BPOj1Bdjx1yQAogmgA+tf19NxHM+rPwSs4huAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCINpvCQjWeiH6EH0AAAAASUVORK5CYII=">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+  import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+  import { getFirestore, doc, getDoc, setDoc, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+  window.fb={initializeApp,getAuth,signInWithEmailAndPassword,createUserWithEmailAndPassword,onAuthStateChanged,signOut,getFirestore,doc,getDoc,setDoc,onSnapshot};
+  window.dispatchEvent(new Event('fb-ready'));
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f0f0f;--bg2:#1a1a1a;--bg3:#242424;--bg4:#2e2e2e;
+  --acc:#f5a623;--acc2:#e8961a;
+  --txt:#f0ede8;--t2:#a09d98;--t3:#6b6865;
+  --bor:#2a2a2a;--bor2:#3a3a3a;
+  --ok:#4caf7d;--err:#e05252;--inf:#5b9bd5;--pur:#a78bfa;
+  --F:'Syne',sans-serif;--M:'DM Mono',monospace;
+  --r:10px;--r2:16px
+}
+html,body{height:100%;overflow:hidden;font-family:var(--F);background:var(--bg);color:var(--txt)}
+.shell{display:flex;flex-direction:column;height:100vh}
+/* SCREENS */
+.screens{flex:1;position:relative;overflow:hidden}
+.screen{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding:18px 16px 80px;
+  opacity:0;pointer-events:none;transform:translateX(48px);
+  transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1)}
+.screen.active{opacity:1;pointer-events:all;transform:translateX(0)}
+.screen.slide-out{opacity:0;transform:translateX(-48px);transition:opacity .18s,transform .18s}
+/* BOTTOM NAV */
+.bnav{height:60px;background:var(--bg2);border-top:1px solid var(--bor);display:flex;align-items:center;justify-content:space-around;flex-shrink:0}
+.bni{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:7px 12px;border-radius:var(--r2);border:none;background:none;color:var(--t3);font-family:var(--F);transition:color .15s}
+.bni:hover{color:var(--t2)}
+.bni.active{color:var(--acc)}
+.bni i{font-size:21px;transition:transform .18s}
+.bni.active i{transform:scale(1.12)}
+.bni span{font-size:9px;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+/* FAB */
+.fab{position:fixed;bottom:72px;right:16px;width:54px;height:54px;border-radius:50%;background:var(--acc);border:none;color:#000;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(245,166,35,.4);transition:all .22s;z-index:50}
+.fab:hover{background:var(--acc2);transform:scale(1.07)}
+.fab:active{transform:scale(.93)}
+.fab.hidden{transform:scale(0);opacity:0;pointer-events:none}
+/* CARDS */
+.card{background:var(--bg2);border:1px solid var(--bor);border-radius:var(--r2);padding:15px;margin-bottom:9px;cursor:pointer;transition:border-color .18s,transform .15s}
+.card:hover{border-color:var(--bor2)}
+.card:active{transform:scale(.985)}
+/* TYPOGRAPHY */
+.ptitle{font-size:25px;font-weight:800;letter-spacing:-1px;margin-bottom:3px;line-height:1.1}
+.psub{font-size:12px;color:var(--t2);margin-bottom:18px}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;margin-top:4px}
+.sh-t{font-size:10px;font-weight:700;color:var(--t3);letter-spacing:1px;text-transform:uppercase}
+/* BACK HEADER */
+.bk{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.bk-btn{background:var(--bg3);border:1px solid var(--bor2);color:var(--txt);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;flex-shrink:0;transition:background .15s}
+.bk-btn:hover{background:var(--bg4)}
+.bk-title{font-size:17px;font-weight:800;letter-spacing:-.5px}
+.bk-sub{font-size:11px;color:var(--t2);margin-top:1px}
+/* INPUTS */
+.ig{margin-bottom:16px}
+.il{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--t3);margin-bottom:6px;display:block}
+.inp{background:var(--bg2);border:1px solid var(--bor2);color:var(--txt);font-family:var(--F);font-size:15px;padding:13px 14px;border-radius:var(--r);outline:none;width:100%;transition:border-color .15s}
+.inp:focus{border-color:var(--acc);background:var(--bg3)}
+.inp::placeholder{color:var(--t3)}
+select.inp option{background:var(--bg2)}
+textarea.inp{resize:none;line-height:1.6}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+/* BIG BUTTON */
+.bb{width:100%;padding:16px;border-radius:var(--r2);font-family:var(--F);font-size:15px;font-weight:700;cursor:pointer;border:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .16s;letter-spacing:.2px}
+.bb.pri{background:var(--acc);color:#000}
+.bb.pri:hover{background:var(--acc2)}
+.bb.pri:active{transform:scale(.97)}
+.bb.sec{background:var(--bg3);color:var(--txt);border:1px solid var(--bor2)}
+.bb.sec:hover{background:var(--bg4)}
+/* ROW */
+.row{display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid var(--bor)}
+.row:last-child{border-bottom:none}
+.ri{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.ri.acc{background:rgba(245,166,35,.12);color:var(--acc)}
+.ri.ok{background:rgba(76,175,125,.12);color:var(--ok)}
+.ri.inf{background:rgba(91,155,213,.12);color:var(--inf)}
+.ri.pur{background:rgba(167,139,250,.12);color:var(--pur)}
+.ri.err{background:rgba(224,82,82,.12);color:var(--err)}
+.rdel{background:none;border:none;color:var(--t3);cursor:pointer;padding:6px;border-radius:8px;font-size:14px;margin-left:auto;flex-shrink:0;transition:all .14s}
+.rdel:hover{color:var(--err);background:rgba(224,82,82,.1)}
+/* TAG */
+.tag{font-size:9px;font-weight:700;padding:2px 7px;border-radius:50px;display:inline-block}
+.tag.a{background:rgba(245,166,35,.15);color:var(--acc)}
+.tag.g{background:rgba(76,175,125,.15);color:var(--ok)}
+.tag.b{background:rgba(91,155,213,.15);color:var(--inf)}
+.tag.p{background:rgba(167,139,250,.15);color:var(--pur)}
+.tag.r{background:rgba(224,82,82,.15);color:var(--err)}
+/* PILLS */
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}
+.pill{background:var(--bg3);border:1px solid var(--bor);border-radius:50px;padding:5px 12px;font-size:11px;display:flex;align-items:center;gap:5px}
+.pill strong{font-family:var(--M);font-size:12px;font-weight:500}
+.pill.acc{border-color:rgba(245,166,35,.3);background:rgba(245,166,35,.07)}
+.pill.ok{border-color:rgba(76,175,125,.3);background:rgba(76,175,125,.07)}
+/* SUMBOX */
+.sumbox{background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.2);border-radius:var(--r2);padding:14px;margin-bottom:14px}
+.sum-lbl{font-size:11px;color:var(--t2);margin-bottom:3px}
+.sum-val{font-size:28px;font-weight:800;font-family:var(--M);color:var(--acc)}
+.sum-val.ok{color:var(--ok)}
+/* PROG */
+.pb{background:var(--bg4);border-radius:4px;height:5px;overflow:hidden;margin:5px 0 2px}
+.pbf{height:100%;border-radius:4px;background:var(--acc);transition:width .5s}
+.pbf.ok{background:var(--ok)}
+.pbf.err{background:var(--err)}
+/* STATUS CHIPS */
+.schips{display:flex;gap:6px;margin-bottom:13px}
+.sch{background:var(--bg3);border:1px solid var(--bor2);color:var(--t2);font-family:var(--F);font-size:11px;font-weight:600;padding:6px 13px;border-radius:50px;cursor:pointer;transition:all .14s;border:none}
+.sch:hover{background:var(--bg4)}
+.sch.sel{background:var(--acc);color:#000}
+.sch.sel-err{background:rgba(224,82,82,.15);color:var(--err)}
+/* MAT SEARCH */
+.msw{position:relative}
+.mdd{position:absolute;top:calc(100% + 5px);left:0;right:0;background:var(--bg3);border:1px solid var(--bor2);border-radius:var(--r2);z-index:60;max-height:230px;overflow-y:auto;display:none;box-shadow:0 8px 28px rgba(0,0,0,.55)}
+.mdd.show{display:block}
+.mo{padding:9px 12px;cursor:pointer;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--bor)}
+.mo:last-child{border-bottom:none}
+.mo:hover{background:var(--bg4)}
+.mo img{width:40px;height:40px;border-radius:7px;object-fit:contain;background:#fff;flex-shrink:0}
+.mo-ph{width:40px;height:40px;border-radius:7px;background:var(--bg4);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--t3);font-size:16px}
+.selbox{background:var(--bg3);border:1px solid var(--bor2);border-radius:var(--r);padding:12px;margin-bottom:14px;display:flex;align-items:center;gap:11px;transition:border-color .2s}
+.selbox.filled{border-color:rgba(245,166,35,.4);background:rgba(245,166,35,.04)}
+.selbox img{width:48px;height:48px;border-radius:8px;object-fit:contain;background:#fff;flex-shrink:0}
+.selbox-ph{width:48px;height:48px;border-radius:8px;background:var(--bg4);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--t3);font-size:22px}
+/* WEATHER */
+.wx{background:var(--bg2);border:1px solid var(--bor);border-radius:var(--r2);padding:12px 15px;display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
+.wx-temp{font-size:26px;font-weight:800;font-family:var(--M);color:var(--acc);line-height:1}
+.wx-desc{font-size:11px;color:var(--t2);margin-top:2px}
+.wx-loc{font-size:10px;color:var(--t3);margin-top:2px}
+/* AI */
+.ai-wrap{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.ai-msg{padding:10px 13px;border-radius:13px;font-size:13px;line-height:1.5;max-width:87%}
+.ai-msg.ai{background:var(--bg3);border:1px solid var(--bor2);align-self:flex-start}
+.ai-msg.user{background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.2);align-self:flex-end}
+.ai-dot span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--t3);animation:db 1.1s infinite;margin:0 2px}
+.ai-dot span:nth-child(2){animation-delay:.18s}
+.ai-dot span:nth-child(3){animation-delay:.36s}
+@keyframes db{0%,100%{opacity:.2}50%{opacity:1}}
+/* CHECKLIST */
+.cl{display:flex;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid var(--bor);cursor:pointer}
+.cl:last-child{border-bottom:none}
+.cl input[type=checkbox]{width:17px;height:17px;accent-color:var(--acc);cursor:pointer;flex-shrink:0}
+.cl.done label{text-decoration:line-through;color:var(--t3)}
+.cl label{font-size:13px;cursor:pointer;flex:1}
+/* EMPTY */
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 16px;color:var(--t3);text-align:center;gap:8px}
+.empty i{font-size:40px;opacity:.3}
+.empty p{font-size:14px;font-weight:600}
+.empty small{font-size:11px;opacity:.7}
+/* TOAST */
+.toast{position:fixed;bottom:70px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--bg3);border:1px solid var(--bor2);border-radius:50px;padding:9px 18px;font-size:12px;font-weight:600;color:var(--txt);z-index:999;opacity:0;transition:all .22s;display:flex;align-items:center;gap:6px;white-space:nowrap;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* MAT TABLE IMG */
+.mti{width:28px;height:28px;border-radius:5px;object-fit:contain;background:#fff;border:1px solid var(--bor);vertical-align:middle;margin-right:5px}
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="screens" id="screens">
+
+<!-- HOME -->
+<div class="screen active" id="s-home">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+    <div><div style="font-size:22px;font-weight:800;letter-spacing:-1px">⚡ VoltPro</div><div id="home-date" style="font-size:11px;color:var(--t2);margin-top:1px"></div></div>
+    <div id="sync-ind" onclick="go('s-sync')" style="display:flex;align-items:center;gap:5px;font-size:10px;color:var(--t3);font-family:var(--M);cursor:pointer;padding:4px 8px;border-radius:50px;border:1px solid var(--bor)"><div id="sync-dot" style="width:6px;height:6px;border-radius:50%;background:var(--ok)"></div><span id="sync-lbl">Klar</span></div>
+  </div>
+  <div class="wx"><div><div class="wx-temp" id="wx-t">–°</div><div class="wx-desc" id="wx-d">Henter vejr...</div><div class="wx-loc" id="wx-l">📍 Lokaliserer</div></div><i id="wx-i" class="ti ti-cloud" style="font-size:38px;color:var(--t3)"></i></div>
+  <div class="sh">
+    <span class="sh-t">Projekter</span>
+    <button onclick="go('s-newproj')" style="background:var(--acc);border:none;color:#000;font-family:var(--F);font-size:12px;font-weight:700;padding:7px 14px;border-radius:50px;cursor:pointer;display:flex;align-items:center;gap:5px"><i class="ti ti-plus"></i> Nyt projekt</button>
+  </div>
+  <input class="inp" id="home-search" placeholder="🔍 Søg projekt eller kunde..." oninput="renderHome()" style="margin-bottom:12px;display:none">
+  <div id="proj-cards"></div>
+  <div id="home-empty" class="empty" style="display:none">
+    <i class="ti ti-bolt"></i>
+    <p>Ingen projekter endnu</p>
+    <small>Tryk på knappen herunder for at oprette dit første projekt</small>
+    <button onclick="go('s-newproj')" style="margin-top:12px;background:var(--acc);border:none;color:#000;font-family:var(--F);font-size:15px;font-weight:700;padding:15px 30px;border-radius:var(--r2);cursor:pointer;display:flex;align-items:center;gap:8px"><i class="ti ti-bolt"></i> Opret første projekt</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="screen" id="s-dash">
+  <div class="ptitle">Overblik</div>
+  <div class="psub" id="dash-date"></div>
+  <div class="pills" id="dash-pills"></div>
+  <div class="sh"><span class="sh-t">Budget-status</span></div>
+  <div id="dash-budgets"></div>
+  <div class="sh" style="margin-top:4px"><span class="sh-t">Kommende påmindelser</span></div>
+  <div id="dash-rems"></div>
+  <div class="sh" style="margin-top:4px"><span class="sh-t">Seneste aktivitet</span></div>
+  <div id="dash-act"></div>
+</div>
+
+<!-- PROJECT -->
+<div class="screen" id="s-proj">
+  <div class="bk">
+    <button class="bk-btn" onclick="go('s-home')"><i class="ti ti-arrow-left"></i></button>
+    <div style="flex:1"><div class="bk-title" id="ph-name">–</div><div class="bk-sub" id="ph-sub">–</div></div>
+    <button onclick="go('s-editproj')" style="background:var(--bg3);border:1px solid var(--bor2);color:var(--t2);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;flex-shrink:0;transition:all .15s" onmouseover="this.style.background='var(--bg4)'" onmouseout="this.style.background='var(--bg3)'"><i class="ti ti-pencil"></i></button>
+  </div>
+  <div id="proj-sum"></div>
+  <div class="sh"><span class="sh-t">Status</span></div>
+  <div class="schips" id="status-chips"></div>
+  <div class="sh"><span class="sh-t">Hvad vil du gøre?</span></div>
+  <div id="proj-actions"></div>
+  <div class="sh" style="margin-top:4px"><span class="sh-t">Seneste registreringer</span></div>
+  <div id="proj-recent"></div>
+</div>
+
+<!-- HOURS LIST -->
+<div class="screen" id="s-hours">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Timeregistrering</div><div class="bk-sub" id="hours-sub"></div></div></div>
+  <div id="hours-list"></div>
+</div>
+
+<!-- ADD TIME -->
+<div class="screen" id="s-addtime">
+  <div class="bk"><button class="bk-btn" onclick="go('s-hours')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Registrer timer</div><div class="bk-sub" id="at-sub"></div></div></div>
+
+  <!-- Metode-vælger -->
+  <div style="display:flex;gap:6px;margin-bottom:16px">
+    <button class="sch sel" id="tm-clock" onclick="setTimeMode('clock')" style="flex:1"><i class="ti ti-clock-hour-4"></i> Fra–til</button>
+    <button class="sch" id="tm-watch" onclick="setTimeMode('watch')" style="flex:1"><i class="ti ti-stopwatch"></i> Stopur</button>
+    <button class="sch" id="tm-manual" onclick="setTimeMode('manual')" style="flex:1"><i class="ti ti-keyboard"></i> Manuel</button>
+  </div>
+
+  <div class="ig"><label class="il">Dato</label><input class="inp" type="date" id="t-date"></div>
+
+  <!-- FRA-TIL -->
+  <div id="mode-clock">
+    <div class="grid2">
+      <div class="ig"><label class="il">Fra kl.</label><input class="inp" type="time" id="t-from" value="07:00" oninput="updT()"></div>
+      <div class="ig"><label class="il">Til kl.</label><input class="inp" type="time" id="t-to" value="15:00" oninput="updT()"></div>
+    </div>
+    <div class="ig"><label class="il">Pause (minutter)</label><input class="inp" type="number" id="t-break" value="0" min="0" step="15" inputmode="numeric" oninput="updT()" placeholder="fx 30"></div>
+  </div>
+
+  <!-- STOPUR -->
+  <div id="mode-watch" style="display:none">
+    <div class="sumbox" style="text-align:center;background:rgba(91,155,213,.06);border-color:rgba(91,155,213,.2)">
+      <div class="sum-lbl">Forløbet tid</div>
+      <div class="sum-val" id="watch-display" style="color:var(--inf);font-size:38px">00:00:00</div>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:16px">
+      <button class="bb pri" id="watch-btn" onclick="toggleWatch()" style="flex:1;background:var(--inf);color:#fff"><i class="ti ti-player-play"></i> Start</button>
+      <button class="bb sec" onclick="resetWatch()" style="flex:1"><i class="ti ti-refresh"></i> Nulstil</button>
+    </div>
+  </div>
+
+  <!-- MANUEL -->
+  <div id="mode-manual" style="display:none">
+    <div class="ig"><label class="il">Antal timer</label><input class="inp" type="number" id="t-hours" placeholder="3.5" step="0.25" inputmode="decimal" oninput="updT()"></div>
+  </div>
+
+  <div class="ig"><label class="il">Takst</label><select class="inp" id="t-rate" onchange="document.getElementById('t-cw').style.display=this.value==='custom'?'block':'none';updT()"><option value="595">Normal – 595 kr/t</option><option value="750">Overarbejde – 750 kr/t</option><option value="895">Akut / weekend – 895 kr/t</option><option value="custom">Brugerdefineret...</option></select></div>
+  <div class="ig" id="t-cw" style="display:none"><label class="il">Takst (kr/t)</label><input class="inp" type="number" id="t-cr" placeholder="650" oninput="updT()"></div>
+  <div class="ig"><label class="il">Beskrivelse af arbejde</label><input class="inp" id="t-desc" placeholder="Eks. Ny tavle monteret, kabling til køkken"></div>
+  <div class="sumbox">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end">
+      <div><div class="sum-lbl">Beregnet beløb</div><div class="sum-val" id="t-amt">0 kr</div></div>
+      <div style="text-align:right"><div class="sum-lbl">Tid</div><div style="font-family:var(--M);font-size:18px;font-weight:700;color:var(--t2)" id="t-hours-lbl">0 t</div></div>
+    </div>
+  </div>
+  <button class="bb pri" onclick="saveTime()"><i class="ti ti-check"></i> Gem timer</button>
+</div>
+
+<!-- MATERIALS LIST -->
+<div class="screen" id="s-mats">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Materialer</div><div class="bk-sub" id="mats-sub"></div></div></div>
+  <div style="display:flex;gap:8px;margin-bottom:14px">
+    <button class="bb pri" style="flex:1" onclick="go('s-addmat')"><i class="ti ti-search"></i> Søg i katalog</button>
+    <button class="bb" style="flex:1;background:rgba(167,139,250,.12);color:var(--pur);border:1px solid rgba(167,139,250,.3)" onclick="go('s-photoai')"><i class="ti ti-camera"></i> Foto-AI</button>
+  </div>
+  <div id="mats-list"></div>
+</div>
+
+<!-- PHOTO AI -->
+<div class="screen" id="s-photoai">
+  <div class="bk"><button class="bk-btn" onclick="go('s-mats')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Foto-AI</div><div class="bk-sub" id="pai-sub">Tag billede af dit arbejde</div></div></div>
+  <div style="background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.2);border-radius:var(--r2);padding:14px;margin-bottom:14px;font-size:12px;color:var(--t2);line-height:1.6">
+    <i class="ti ti-bulb" style="color:var(--pur)"></i> Tag eller vælg et billede af fx en tavle, væg eller installation. AI'en genkender komponenterne og foreslår materialer du kan tilføje med ét tryk.
+  </div>
+  <label for="pai-file" class="bb pri" style="cursor:pointer;margin-bottom:12px;background:var(--pur);color:#fff"><i class="ti ti-camera"></i> Tag / vælg billede</label>
+  <input id="pai-file" type="file" accept="image/*" capture="environment" style="display:none" onchange="handlePhoto(event)">
+  <div id="pai-preview"></div>
+  <div id="pai-status"></div>
+  <div id="pai-results"></div>
+</div>
+
+<!-- ADD MATERIAL -->
+<div class="screen" id="s-addmat">
+  <div class="bk"><button class="bk-btn" onclick="go('s-mats')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Tilføj materiale</div><div class="bk-sub" id="am-sub"></div></div></div>
+  <input class="inp" id="m-search" placeholder="🔍 Søg – fx 1,5 / fuga / hpfi / 16a..." autocomplete="off" oninput="filterCat()" style="margin-bottom:10px">
+  <button class="bb sec" onclick="newCustomMat()" style="margin-bottom:10px;font-size:12px;padding:10px"><i class="ti ti-plus"></i> Tilføj egen vare (ikke i katalog)</button>
+  <div id="cat-chips" style="display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px;-webkit-overflow-scrolling:touch"></div>
+  <div id="cat-list"></div>
+</div>
+
+<!-- MATERIAL QTY (efter valg) -->
+<div class="screen" id="s-matqty">
+  <div class="bk"><button class="bk-btn" onclick="go('s-addmat')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Antal & pris</div><div class="bk-sub">Justér inden du tilføjer</div></div></div>
+  <div class="selbox filled" id="selbox"><div class="selbox-ph" id="sel-img"><i class="ti ti-tool"></i></div><div style="flex:1"><div id="sel-name" style="font-size:14px;font-weight:700">–</div><div id="sel-brand" style="font-size:11px;color:var(--t3);margin-top:1px"></div><div id="sel-price" style="font-size:12px;color:var(--acc);font-family:var(--M);margin-top:3px"></div></div></div>
+  <label for="mq-photo" style="display:flex;align-items:center;justify-content:center;gap:7px;padding:10px;border:1px dashed var(--bor2);border-radius:var(--r);color:var(--t2);font-size:12px;cursor:pointer;margin-bottom:14px"><i class="ti ti-camera"></i> <span id="mq-photo-lbl">Tilføj/skift billede af varen</span></label>
+  <input id="mq-photo" type="file" accept="image/*" capture="environment" style="display:none" onchange="attachMatPhoto(event)">
+  <div class="grid2">
+    <div class="ig"><label class="il">Antal</label><input class="inp" type="number" id="m-qty" value="1" min="1" inputmode="numeric"></div>
+    <div class="ig"><label class="il">Enhedspris (kr)</label><input class="inp" type="number" id="m-price" placeholder="0" inputmode="decimal"></div>
+  </div>
+  <div class="sumbox"><div class="sum-lbl">Total beløb</div><div class="sum-val" id="m-amt">0 kr</div></div>
+  <button class="bb pri" onclick="saveMat()"><i class="ti ti-check"></i> Tilføj til projekt</button>
+</div>
+
+<!-- ORDERS LIST (skal bestilles) -->
+<div class="screen" id="s-orders">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Skal bestilles</div><div class="bk-sub" id="orders-sub"></div></div></div>
+  <div style="display:flex;gap:8px;margin-bottom:14px">
+    <button class="bb pri" style="flex:1" onclick="go('s-addorder')"><i class="ti ti-plus"></i> Tilføj vare</button>
+    <button class="bb sec" style="flex:1" onclick="copyOrderList()"><i class="ti ti-copy"></i> Kopiér liste</button>
+  </div>
+  <div id="orders-list"></div>
+</div>
+
+<!-- ADD ORDER (browse katalog) -->
+<div class="screen" id="s-addorder">
+  <div class="bk"><button class="bk-btn" onclick="go('s-orders')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Tilføj til bestilling</div><div class="bk-sub" id="ao-sub"></div></div></div>
+  <input class="inp" id="o-search" placeholder="🔍 Søg – fx 1,5 / fuga / hpfi / 16a..." autocomplete="off" oninput="filterOrderCat()" style="margin-bottom:10px">
+  <button class="bb sec" onclick="newCustomOrder()" style="margin-bottom:10px;font-size:12px;padding:10px"><i class="ti ti-plus"></i> Tilføj egen vare (ikke i katalog)</button>
+  <div id="ocat-chips" style="display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px;-webkit-overflow-scrolling:touch"></div>
+  <div id="ocat-list"></div>
+</div>
+
+<!-- ORDER QTY -->
+<div class="screen" id="s-orderqty">
+  <div class="bk"><button class="bk-btn" onclick="go('s-addorder')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Antal til bestilling</div><div class="bk-sub">Hvor mange skal bestilles?</div></div></div>
+  <div class="selbox filled"><div class="selbox-ph" id="osel-img"><i class="ti ti-tool"></i></div><div style="flex:1"><div id="osel-name" style="font-size:14px;font-weight:700">–</div><div id="osel-brand" style="font-size:11px;color:var(--t3);margin-top:1px"></div></div></div>
+  <div class="ig"><label class="il">Antal der skal bestilles</label><input class="inp" type="number" id="o-qty" value="1" min="1" inputmode="numeric"></div>
+  <div class="ig"><label class="il">Note (valgfri)</label><input class="inp" id="o-note" placeholder="Fx leverandør, hastesag, til kælder..."></div>
+  <button class="bb pri" onclick="saveOrder()"><i class="ti ti-shopping-cart-plus"></i> Føj til bestillingsliste</button>
+</div>
+
+<!-- KM LIST -->
+<div class="screen" id="s-km">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Kørsel</div><div class="bk-sub" id="km-sub"></div></div></div>
+  <div id="km-list"></div>
+</div>
+
+<!-- ADD KM -->
+<div class="screen" id="s-addkm">
+  <div class="bk"><button class="bk-btn" onclick="go('s-km')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Registrer kørsel</div><div class="bk-sub" id="ak-sub"></div></div></div>
+  <div class="ig"><label class="il">Dato</label><input class="inp" type="date" id="km-date"></div>
+  <div class="ig"><label class="il">Fra → Til</label><input class="inp" id="km-route" placeholder="Hjemme → Skovvej 14, Allerød"></div>
+  <div class="grid2">
+    <div class="ig"><label class="il">Antal km</label><input class="inp" type="number" id="km-km" placeholder="45" inputmode="numeric"></div>
+    <div class="ig"><label class="il">Takst (kr/km)</label><input class="inp" type="number" id="km-rate" value="3.82" step="0.01" inputmode="decimal"></div>
+  </div>
+  <div class="sumbox"><div class="sum-lbl">Kørselsgodtgørelse</div><div class="sum-val ok" id="km-amt">0 kr</div></div>
+  <button class="bb pri" onclick="saveKm()"><i class="ti ti-check"></i> Gem kørsel</button>
+</div>
+
+<!-- REMINDERS LIST -->
+<div class="screen" id="s-rems">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Påmindelser</div><div class="bk-sub" id="rems-sub"></div></div></div>
+  <div id="rems-list"></div>
+</div>
+
+<!-- ADD REMINDER -->
+<div class="screen" id="s-addrem">
+  <div class="bk"><button class="bk-btn" onclick="go('s-rems')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Ny påmindelse</div></div></div>
+  <div class="ig"><label class="il">Hvad skal huskes?</label><input class="inp" id="r-text" placeholder="Eks. Husk 3-fase måler, tjek kabelkanal kælder" style="font-size:15px"></div>
+  <div class="grid2">
+    <div class="ig"><label class="il">Dato</label><input class="inp" type="date" id="r-date"></div>
+    <div class="ig"><label class="il">Tidspunkt</label><input class="inp" type="time" id="r-time" value="08:00"></div>
+  </div>
+  <div class="ig"><label class="il">Prioritet</label>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px" id="prio-chips">
+      <button class="sch sel" onclick="setPrio('normal',this)">Normal</button>
+      <button class="sch" onclick="setPrio('vigtig',this)">Vigtig</button>
+      <button class="sch" onclick="setPrio('kritisk',this)" style="color:var(--err)">Kritisk</button>
+    </div>
+  </div>
+  <button class="bb pri" style="margin-top:6px" onclick="saveRem()"><i class="ti ti-check"></i> Gem påmindelse</button>
+</div>
+
+<!-- CHECKLIST -->
+<div class="screen" id="s-cl">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Tjekliste</div><div class="bk-sub" id="cl-sub"></div></div></div>
+  <div style="display:flex;gap:7px;margin-bottom:14px"><input class="inp" id="cl-new" placeholder="Nyt punkt..." style="flex:1"><button class="bb pri" style="width:auto;padding:12px 14px;flex-shrink:0" onclick="addCL()"><i class="ti ti-plus"></i></button></div>
+  <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px" id="cl-presets"></div>
+  <div id="cl-list"></div>
+</div>
+
+<!-- DOCS -->
+<div class="screen" id="s-docs">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Dokumentation</div><div class="bk-sub" id="docs-sub"></div></div></div>
+  <div id="docs-list"></div>
+  <div class="sh" style="margin-top:14px"><span class="sh-t">Tilføj dokument</span></div>
+  <div class="ig"><label class="il">Navn</label><input class="inp" id="doc-name" placeholder="Eks. Ledningsdiagram stue"></div>
+  <div class="grid2">
+    <div class="ig"><label class="il">Type</label><select class="inp" id="doc-type"><option>PDF</option><option>Billede</option><option>DWG tegning</option><option>Excel</option><option>Installationsrapport</option><option>Andet</option></select></div>
+    <div class="ig"><label class="il">Dato</label><input class="inp" type="date" id="doc-date"></div>
+  </div>
+  <button class="bb pri" onclick="saveDoc()"><i class="ti ti-check"></i> Tilføj dokument</button>
+</div>
+
+<!-- NOTES -->
+<div class="screen" id="s-notes">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Projektnoter</div><div class="bk-sub" id="notes-sub"></div></div></div>
+  <textarea class="inp" id="notes-ta" placeholder="Fri tekst – kundeønsker, særlige forhold, materialevalg..." style="min-height:240px;font-size:14px;line-height:1.7"></textarea>
+  <button class="bb pri" style="margin-top:11px" onclick="saveNotes()"><i class="ti ti-device-floppy"></i> Gem noter</button>
+</div>
+
+<!-- INVOICE LIST -->
+<div class="screen" id="s-invoice">
+  <div class="ptitle">Faktura</div>
+  <div class="psub">Vælg projekt for at generere faktura</div>
+  <div id="inv-proj-list"></div>
+</div>
+
+<!-- INVOICE DETAIL -->
+<div class="screen" id="s-invdet">
+  <div class="bk"><button class="bk-btn" onclick="go('s-invoice')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Endelig faktura</div><div class="bk-sub" id="inv-sub"></div></div></div>
+  <div style="display:flex;gap:7px;margin-bottom:13px;flex-wrap:wrap">
+    <button class="bb sec" style="width:auto;padding:8px 13px;font-size:11px" onclick="goTab('s-settings','bn-settings')"><i class="ti ti-settings"></i> Firmainfo</button>
+    <button class="bb sec" id="vat-btn" style="width:auto;padding:8px 13px;font-size:11px" onclick="toggleVat()"><i class="ti ti-receipt-tax"></i> Vis ex. moms</button>
+    <button class="bb pri" style="width:auto;padding:8px 13px;font-size:11px" onclick="printInvoice()"><i class="ti ti-printer"></i> Print / PDF</button>
+  </div>
+  <div id="inv-box"></div>
+</div>
+
+<!-- AI -->
+<div class="screen" id="s-ai">
+  <div class="ptitle">AI-assistent</div>
+  <div class="psub">Stillet ind til dansk el-installation</div>
+  <div class="ai-wrap" id="ai-msgs"></div>
+  <div style="display:flex;gap:7px;margin-bottom:9px"><input class="inp" id="ai-inp" placeholder="Stil et spørgsmål..." style="flex:1;font-size:13px" onkeydown="if(event.key==='Enter')sendAI()"><button class="bb pri" style="width:auto;padding:12px 14px;flex-shrink:0" onclick="sendAI()"><i class="ti ti-send"></i></button></div>
+  <div style="display:flex;flex-wrap:wrap;gap:5px" id="ai-chips"></div>
+</div>
+
+<!-- SETTINGS -->
+<div class="screen" id="s-settings">
+  <div class="ptitle">Firma</div>
+  <div class="psub">Oplysninger til faktura</div>
+  <div class="grid2"><div class="ig"><label class="il">Firmanavn</label><input class="inp" id="co-name" placeholder="Dit El-firma A/S"></div><div class="ig"><label class="il">CVR</label><input class="inp" id="co-cvr" placeholder="12345678"></div></div>
+  <div class="ig"><label class="il">Adresse</label><input class="inp" id="co-addr" placeholder="Vejnavn 12, 1234 By"></div>
+  <div class="grid2"><div class="ig"><label class="il">Telefon</label><input class="inp" id="co-phone" placeholder="+45 12 34 56 78"></div><div class="ig"><label class="il">Email</label><input class="inp" id="co-email" placeholder="kontakt@firma.dk"></div></div>
+  <div class="grid2"><div class="ig"><label class="il">Autorisationsnr.</label><input class="inp" id="co-auth" placeholder="E-nr."></div><div class="ig"><label class="il">Betalingsbetingelser</label><select class="inp" id="co-terms"><option>14 dage netto</option><option>30 dage netto</option><option>Straks</option><option>Løbende måned + 14 dage</option></select></div></div>
+  <div class="grid2"><div class="ig"><label class="il">Reg.nr.</label><input class="inp" id="co-reg" placeholder="1234"></div><div class="ig"><label class="il">Kontonr.</label><input class="inp" id="co-account" placeholder="12345678"></div></div>
+  <button class="bb pri" onclick="saveSettings()"><i class="ti ti-check"></i> Gem firmainfo</button>
+
+  <div class="sh" style="margin-top:24px"><span class="sh-t">Sikkerhedskopi</span></div>
+  <div style="background:rgba(91,155,213,.06);border:1px solid rgba(91,155,213,.2);border-radius:var(--r2);padding:13px;margin-bottom:12px;font-size:12px;color:var(--t2);line-height:1.6">
+    <i class="ti ti-shield-check" style="color:var(--inf)"></i> Dine data ligger kun på denne enhed. Tag jævnligt en sikkerhedskopi, så du ikke mister projekter hvis du rydder browseren eller skifter telefon.
+  </div>
+  <button class="bb sec" onclick="exportData()" style="margin-bottom:8px"><i class="ti ti-download"></i> Gem sikkerhedskopi (fil)</button>
+  <label for="import-file" class="bb sec" style="cursor:pointer;margin-bottom:8px"><i class="ti ti-upload"></i> Gendan fra sikkerhedskopi</label>
+  <input id="import-file" type="file" accept="application/json,.json" style="display:none" onchange="importData(event)">
+</div>
+
+<!-- NEW PROJECT -->
+<div class="screen" id="s-newproj">
+  <div class="bk"><button class="bk-btn" onclick="go('s-home')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Nyt projekt</div></div></div>
+  <div class="ig"><label class="il">Projektnavn</label><input class="inp" id="np-name" placeholder="Villa Skovvej 14" style="font-size:17px;font-weight:700"></div>
+  <div id="np-cust-picker" style="margin-bottom:14px;display:none"><label class="il">Tidligere kunde (valgfri)</label><div id="np-cust-chips" style="display:flex;gap:6px;flex-wrap:wrap"></div></div>
+  <div class="ig"><label class="il">Kundenavn</label><input class="inp" id="np-customer" placeholder="Fuldt navn"></div>
+  <div class="ig"><label class="il">Adresse</label><input class="inp" id="np-addr" placeholder="Vejnavn, postnr. by"></div>
+  <div class="grid2"><div class="ig"><label class="il">Email</label><input class="inp" id="np-email" placeholder="email@kunde.dk" type="email"></div><div class="ig"><label class="il">Telefon</label><input class="inp" id="np-phone" placeholder="+45 00 00 00 00" type="tel"></div></div>
+  <div class="ig"><label class="il">Beskrivelse</label><textarea class="inp" id="np-desc" placeholder="Kort beskrivelse af opgaven..." style="min-height:65px"></textarea></div>
+  <div class="ig"><label class="il">Budget (kr ex. moms)</label><input class="inp" type="number" id="np-budget" placeholder="0" inputmode="numeric"></div>
+  <button class="bb pri" onclick="createProject()"><i class="ti ti-bolt"></i> Opret projekt</button>
+</div>
+
+<!-- EDIT PROJECT -->
+<div class="screen" id="s-editproj">
+  <div class="bk"><button class="bk-btn" onclick="go('s-proj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Rediger projekt</div><div class="bk-sub">Ændringer gemmes med det samme</div></div></div>
+  <div class="ig"><label class="il">Projektnavn</label><input class="inp" id="ep-name" placeholder="Villa Skovvej 14" style="font-size:17px;font-weight:700"></div>
+  <div class="ig"><label class="il">Kundenavn</label><input class="inp" id="ep-customer" placeholder="Fuldt navn"></div>
+  <div class="ig"><label class="il">Adresse</label><input class="inp" id="ep-addr" placeholder="Vejnavn, postnr. by"></div>
+  <div class="grid2"><div class="ig"><label class="il">Email</label><input class="inp" id="ep-email" placeholder="email@kunde.dk" type="email"></div><div class="ig"><label class="il">Telefon</label><input class="inp" id="ep-phone" placeholder="+45 00 00 00 00" type="tel"></div></div>
+  <div class="ig"><label class="il">Beskrivelse</label><textarea class="inp" id="ep-desc" placeholder="Kort beskrivelse af opgaven..." style="min-height:65px"></textarea></div>
+  <div class="ig"><label class="il">Budget (kr ex. moms)</label><input class="inp" type="number" id="ep-budget" placeholder="0" inputmode="numeric"></div>
+  <button class="bb pri" onclick="saveEditProject()" style="margin-bottom:12px"><i class="ti ti-check"></i> Gem ændringer</button>
+  <div style="border-top:1px solid var(--bor);padding-top:16px;margin-top:4px">
+    <div style="font-size:11px;color:var(--t3);margin-bottom:10px;text-align:center">Farezone</div>
+    <button class="bb" onclick="confirmDeleteProject()" style="background:rgba(224,82,82,.1);color:var(--err);border:1px solid rgba(224,82,82,.25);border-radius:var(--r2)"><i class="ti ti-trash"></i> Slet dette projekt permanent</button>
+  </div>
+</div>
+
+<!-- DELETE CONFIRM -->
+<div class="screen" id="s-delconfirm">
+  <div class="bk"><button class="bk-btn" onclick="go('s-editproj')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title" style="color:var(--err)">Slet projekt</div></div></div>
+  <div style="background:rgba(224,82,82,.08);border:1px solid rgba(224,82,82,.2);border-radius:var(--r2);padding:20px;margin-bottom:20px;text-align:center">
+    <i class="ti ti-alert-triangle" style="font-size:36px;color:var(--err);display:block;margin-bottom:10px"></i>
+    <div style="font-size:16px;font-weight:800;margin-bottom:6px">Er du helt sikker?</div>
+    <div style="font-size:13px;color:var(--t2);line-height:1.6">Du er ved at slette <strong id="del-proj-name" style="color:var(--txt)"></strong>.<br>Alle timer, materialer, kørsel og dokumentation slettes <strong>permanent</strong>.</div>
+  </div>
+  <button class="bb" onclick="deleteProject()" style="background:var(--err);color:#fff;border:none;border-radius:var(--r2);margin-bottom:10px;font-size:15px"><i class="ti ti-trash"></i> Ja, slet projekt for altid</button>
+  <button class="bb sec" onclick="go('s-editproj')"><i class="ti ti-x"></i> Annuller</button>
+</div>
+
+<!-- SYNK / LOGIN -->
+<div class="screen" id="s-sync">
+  <div class="bk"><button class="bk-btn" onclick="go('s-home')"><i class="ti ti-arrow-left"></i></button><div><div class="bk-title">Sky-synkronisering</div><div class="bk-sub">Synk mellem dine enheder</div></div></div>
+
+  <!-- Status når IKKE logget ind / ikke konfigureret -->
+  <div id="sync-setup">
+    <div style="background:rgba(91,155,213,.06);border:1px solid rgba(91,155,213,.2);border-radius:var(--r2);padding:14px;margin-bottom:16px;font-size:12px;color:var(--t2);line-height:1.6">
+      <i class="ti ti-cloud" style="color:var(--inf)"></i> Når du logger ind, gemmes alle dine projekter sikkert i skyen og synkroniserer automatisk til alle enheder hvor du er logget ind. Kun du har adgang via dit login.
+    </div>
+    <div id="sync-noconfig" style="display:none;background:rgba(245,166,35,.07);border:1px solid rgba(245,166,35,.25);border-radius:var(--r2);padding:14px;margin-bottom:16px;font-size:12px;color:var(--t2);line-height:1.6">
+      <i class="ti ti-alert-triangle" style="color:var(--acc)"></i> Sky-synk er ikke sat op endnu. Følg guiden du fik, og indsæt din Firebase-nøgle i bunden af filen (linjen <code>FIREBASE_CONFIG</code>).
+    </div>
+    <div class="ig"><label class="il">Email</label><input class="inp" id="sync-email" type="email" placeholder="dig@email.dk" autocomplete="username"></div>
+    <div class="ig"><label class="il">Adgangskode</label><input class="inp" id="sync-pass" type="password" placeholder="mindst 6 tegn" autocomplete="current-password"></div>
+    <button class="bb pri" onclick="syncLogin()" style="margin-bottom:8px"><i class="ti ti-login"></i> Log ind</button>
+    <button class="bb sec" onclick="syncSignup()"><i class="ti ti-user-plus"></i> Opret ny konto</button>
+  </div>
+
+  <!-- Status når logget ind -->
+  <div id="sync-active" style="display:none">
+    <div style="background:rgba(76,175,125,.08);border:1px solid rgba(76,175,125,.25);border-radius:var(--r2);padding:16px;margin-bottom:16px;text-align:center">
+      <i class="ti ti-cloud-check" style="font-size:34px;color:var(--ok);display:block;margin-bottom:8px"></i>
+      <div style="font-size:15px;font-weight:800;margin-bottom:3px">Synkronisering aktiv</div>
+      <div style="font-size:12px;color:var(--t2)" id="sync-user">–</div>
+    </div>
+    <div style="font-size:11px;color:var(--t3);text-align:center;margin-bottom:16px" id="sync-last">Sidst synkroniseret: –</div>
+    <button class="bb sec" onclick="syncLogout()"><i class="ti ti-logout"></i> Log ud på denne enhed</button>
+  </div>
+</div>
+
+</div><!-- /screens -->
+
+<!-- BOTTOM NAV -->
+<div class="bnav">
+  <button class="bni active" id="bn-home" onclick="goTab('s-home','bn-home')"><i class="ti ti-home"></i><span>Hjem</span></button>
+  <button class="bni" id="bn-dash" onclick="goTab('s-dash','bn-dash')"><i class="ti ti-dashboard"></i><span>Overblik</span></button>
+  <button class="bni" id="bn-invoice" onclick="goTab('s-invoice','bn-invoice')"><i class="ti ti-file-invoice"></i><span>Faktura</span></button>
+  <button class="bni" id="bn-ai" onclick="goTab('s-ai','bn-ai')"><i class="ti ti-robot"></i><span>AI</span></button>
+  <button class="bni" id="bn-settings" onclick="goTab('s-settings','bn-settings')"><i class="ti ti-settings"></i><span>Firma</span></button>
+</div>
+</div><!-- /shell -->
+
+<button class="fab" id="fab"><i class="ti ti-plus"></i></button>
+<div class="toast" id="toast"><i class="ti ti-check-circle" style="color:var(--ok)"></i><span id="toast-msg">Gemt!</span></div>
+
+<script>
+const CDN='https://res.cloudinary.com/evoleska/images/e_trim:0:white/w_275,h_275,q_auto,c_lpad,ar_1,f_auto,b_white/v';
+const CAT=[
+  {name:'LK Fuga stikkontakt m/jord, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:98,img:CDN+'1524363911/product/1589997/lk-fuga-stikkontakt-med-jord.jpg',tags:'fuga stik 1 modul hvid jord'},
+  {name:'LK Fuga stikkontakt m/jord, 1½ modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:109,img:CDN+'1496508162/product/1043951/lk-fuga-stikkontakt-med-jord.jpg',tags:'fuga stik 1.5 modul hvid jord'},
+  {name:'LK Fuga stikkontakt m/jord, 2 modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:169,img:CDN+'1496508356/product/1046120/lk-fuga-stikkontakt-med-jord.jpg',tags:'fuga stik 2 modul hvid jord'},
+  {name:'LK Fuga stikkontakt m/afbryder & jord, 1½ modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:139,img:CDN+'1496508207/product/1047314/lk-fuga-stikkontakt-med-afbryd.jpg',tags:'fuga stik afbryder 1.5 modul hvid'},
+  {name:'LK Fuga dobbelt stikkontakt m/jord, 2 modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:178,img:CDN+'1496508356/product/1046120/lk-fuga-stikkontakt-med-jord.jpg',tags:'fuga dobbelt stik 2 modul hvid'},
+  {name:'LK Fuga stikkontakt m/USB A+C, 1½ modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:295,img:CDN+'1496508162/product/1043951/lk-fuga-stikkontakt-med-jord.jpg',tags:'fuga usb stik opladning 1.5 modul'},
+  {name:'LK Fuga stikkontakt m/jord, antracitgrå',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:115,img:CDN+'1524363911/product/1589997/lk-fuga-stikkontakt-med-jord.jpg',tags:'fuga stik antracit grå jord'},
+  {name:'LK Fuga kraftstik 3-faset 16A, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:245,img:'',tags:'fuga kraft 3 faset 16a stik'},
+  {name:'Stikkontakt CEE 16A 5-polet 400V',brand:'',cat:'Stikkontakter',price:165,img:'',tags:'cee kraft 16a 400v industri stik'},
+  {name:'Stikkontakt CEE 32A 5-polet 400V',brand:'',cat:'Stikkontakter',price:245,img:'',tags:'cee kraft 32a 400v industri stik'},
+  {name:'Udendørs stikkontakt IP44 m/klap',brand:'',cat:'Stikkontakter',price:135,img:'',tags:'udendørs ip44 stik klap have'},
+  {name:'Gulvdåse 2-fags m/stik rustfri',brand:'',cat:'Stikkontakter',price:445,img:'',tags:'gulv dåse stik rustfri kontor'},
+  {name:'LK Fuga afbryder 1-polet, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:45,img:'',tags:'fuga afbryder 1 polet modul hvid kontakt'},
+  {name:'LK Fuga afbryder veksel, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:55,img:'',tags:'fuga afbryder veksel modul hvid kontakt'},
+  {name:'LK Fuga afbryder kryds, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:78,img:'',tags:'fuga afbryder kryds modul hvid kontakt'},
+  {name:'LK Fuga tryk veksel LED, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:88,img:'',tags:'fuga tryk veksel led modul hvid'},
+  {name:'LK Fuga dobbelt afbryder, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:95,img:'',tags:'fuga dobbelt afbryder modul hvid'},
+  {name:'LK Fuga IR bevægelsessensor, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:425,img:'',tags:'fuga ir bevægelse sensor pir modul'},
+  {name:'LK Fuga termostat gulvvarme m/føler',brand:'Lauritz Knudsen',cat:'Afbrydere',price:685,img:'',tags:'fuga termostat gulvvarme føler'},
+  {name:'Trådløs afbryder batteriløs, hvid',brand:'',cat:'Afbrydere',price:345,img:'',tags:'trådløs afbryder smart batteriløs'},
+  {name:'LK Fuga LED skydelysdæmper, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Lysdæmpere',price:550,img:CDN+'1638349795/product/x1107584/lk-fuga-led-skydelysdmper-m.jpg',tags:'fuga led dimmer skyde lysdæmper modul'},
+  {name:'LK Fuga universaldæmper 250W LED, hvid',brand:'Lauritz Knudsen',cat:'Lysdæmpere',price:495,img:CDN+'1638349795/product/x1107584/lk-fuga-led-skydelysdmper-m.jpg',tags:'fuga universal dæmper 250w led'},
+  {name:'LK Fuga drejedæmper 400W, hvid',brand:'Lauritz Knudsen',cat:'Lysdæmpere',price:425,img:CDN+'1638349795/product/x1107584/lk-fuga-led-skydelysdmper-m.jpg',tags:'fuga dreje dæmper 400w'},
+  {name:'LK Fuga lampeudtag 5-polet, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Lampeudtag',price:89,img:CDN+'1524363562/product/1589816/lk-fuga-lampeudtag-5-polet-1.jpg',tags:'fuga lampeudtag 5 polet modul loft'},
+  {name:'LK Fuga lampeudtag DCL, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Lampeudtag',price:95,img:CDN+'1524363562/product/1589816/lk-fuga-lampeudtag-5-polet-1.jpg',tags:'fuga lampeudtag dcl modul loft'},
+  {name:'Loftudtag m/klemme, hvid',brand:'',cat:'Lampeudtag',price:38,img:'',tags:'loft udtag klemme lampe'},
+  {name:'Schneider automatsikring C 1P+N, 6A – 1 modul',brand:'Schneider Electric',cat:'Automatsikringer',price:40,img:CDN+'1524329495/product/1574084/schneider-automatsikring-c-1p.jpg',tags:'schneider automatsikring c 6a 1 polet 1p modul gruppe'},
+  {name:'Schneider automatsikring C 1P+N, 10A – 1 modul',brand:'Schneider Electric',cat:'Automatsikringer',price:42,img:CDN+'1524329495/product/1574084/schneider-automatsikring-c-1p.jpg',tags:'schneider automatsikring c 10a 1 polet 1p modul gruppe'},
+  {name:'Schneider automatsikring C 1P+N, 13A – 1 modul',brand:'Schneider Electric',cat:'Automatsikringer',price:44,img:CDN+'1524329495/product/1574084/schneider-automatsikring-c-1p.jpg',tags:'schneider automatsikring c 13a 1 polet 1p modul gruppe'},
+  {name:'Schneider automatsikring C 1P+N, 16A – 1 modul',brand:'Schneider Electric',cat:'Automatsikringer',price:44,img:CDN+'1524329495/product/1574084/schneider-automatsikring-c-1p.jpg',tags:'schneider automatsikring c 16a 1 polet 1p modul gruppe'},
+  {name:'Schneider automatsikring C 1P+N, 20A – 1 modul',brand:'Schneider Electric',cat:'Automatsikringer',price:44,img:CDN+'1524329495/product/1574084/schneider-automatsikring-c-1p.jpg',tags:'schneider automatsikring c 20a 1 polet 1p modul gruppe'},
+  {name:'Schneider automatsikring C 1P+N, 25A – 1 modul',brand:'Schneider Electric',cat:'Automatsikringer',price:48,img:CDN+'1524329495/product/1574084/schneider-automatsikring-c-1p.jpg',tags:'schneider automatsikring c 25a 1 polet 1p modul gruppe'},
+  {name:'Schneider automatsikring C 1P+N, 32A – 1 modul',brand:'Schneider Electric',cat:'Automatsikringer',price:52,img:CDN+'1524329495/product/1574084/schneider-automatsikring-c-1p.jpg',tags:'schneider automatsikring c 32a 1 polet 1p modul gruppe'},
+  {name:'Schneider automatsikring C 1P+N, 40A – 1 modul',brand:'Schneider Electric',cat:'Automatsikringer',price:58,img:CDN+'1524329495/product/1574084/schneider-automatsikring-c-1p.jpg',tags:'schneider automatsikring c 40a 1 polet 1p modul gruppe'},
+  {name:'Schneider automatsikring C 3P, 16A – 3 moduler',brand:'Schneider Electric',cat:'Automatsikringer',price:129,img:CDN+'1524382026/product/1600673/schneider-automatsikring-c-3p.jpg',tags:'schneider automatsikring c 16a 3 polet 3p moduler kraft gruppe'},
+  {name:'Schneider automatsikring C 3P, 20A – 3 moduler',brand:'Schneider Electric',cat:'Automatsikringer',price:135,img:CDN+'1524382026/product/1600673/schneider-automatsikring-c-3p.jpg',tags:'schneider automatsikring c 20a 3 polet 3p moduler kraft gruppe'},
+  {name:'Schneider automatsikring C 3P, 25A – 3 moduler',brand:'Schneider Electric',cat:'Automatsikringer',price:138,img:CDN+'1524382026/product/1600673/schneider-automatsikring-c-3p.jpg',tags:'schneider automatsikring c 25a 3 polet 3p moduler kraft gruppe'},
+  {name:'Schneider automatsikring C 3P, 32A – 3 moduler',brand:'Schneider Electric',cat:'Automatsikringer',price:139,img:CDN+'1524382026/product/1600673/schneider-automatsikring-c-3p.jpg',tags:'schneider automatsikring c 32a 3 polet 3p moduler kraft gruppe'},
+  {name:'Schneider automatsikring C 3P, 40A – 3 moduler',brand:'Schneider Electric',cat:'Automatsikringer',price:165,img:CDN+'1524382026/product/1600673/schneider-automatsikring-c-3p.jpg',tags:'schneider automatsikring c 40a 3 polet 3p moduler kraft gruppe'},
+  {name:'Schneider automatsikring C 3P, 50A – 3 moduler',brand:'Schneider Electric',cat:'Automatsikringer',price:195,img:CDN+'1524382026/product/1600673/schneider-automatsikring-c-3p.jpg',tags:'schneider automatsikring c 50a 3 polet 3p moduler kraft gruppe'},
+  {name:'Schneider automatsikring C 3P, 63A – 3 moduler',brand:'Schneider Electric',cat:'Automatsikringer',price:245,img:CDN+'1524382026/product/1600673/schneider-automatsikring-c-3p.jpg',tags:'schneider automatsikring c 63a 3 polet 3p moduler kraft gruppe'},
+  {name:'Hager automatsikring C 1P 16A',brand:'Hager',cat:'Automatsikringer',price:39,img:'',tags:'hager automatsikring c 16a 1 polet'},
+  {name:'Hager automatsikring C 3P 25A',brand:'Hager',cat:'Automatsikringer',price:125,img:'',tags:'hager automatsikring c 25a 3 polet'},
+  {name:'Schneider Acti9 HPFI-relæ 30mA type A 2P, 40A',brand:'Schneider Electric',cat:'HPFI/AFDD',price:165,img:CDN+'1776236332/product/x3398501/schneider-electric-acti9-hpfi.jpg',tags:'schneider hpfi relæ 30ma 2 polet 40a fejlstrøm'},
+  {name:'Schneider Acti9 HPFI-relæ 30mA type A 4P, 40A',brand:'Schneider Electric',cat:'HPFI/AFDD',price:209,img:CDN+'1776236332/product/x3398501/schneider-electric-acti9-hpfi.jpg',tags:'schneider hpfi relæ 30ma 4 polet 40a fejlstrøm'},
+  {name:'Schneider Acti9 HPFI-relæ 30mA type A 4P, 63A',brand:'Schneider Electric',cat:'HPFI/AFDD',price:285,img:CDN+'1776236332/product/x3398501/schneider-electric-acti9-hpfi.jpg',tags:'schneider hpfi relæ 30ma 4 polet 63a fejlstrøm'},
+  {name:'Schneider Acti9 HPFI kombiafbryder 4P 30mA, 16A',brand:'Schneider Electric',cat:'HPFI/AFDD',price:789,img:CDN+'1776256768/product/x3401964/schneider-acti9-hpfi-kombiafbr.jpg',tags:'schneider hpfi kombiafbryder 16a 30ma kombi'},
+  {name:'Schneider Acti9 HPFI kombiafbryder 4P 30mA, 25A',brand:'Schneider Electric',cat:'HPFI/AFDD',price:849,img:CDN+'1776256768/product/x3401964/schneider-acti9-hpfi-kombiafbr.jpg',tags:'schneider hpfi kombiafbryder 25a 30ma kombi'},
+  {name:'Schneider Acti9 HPFI-relæ B-Si 4P, 40A',brand:'Schneider Electric',cat:'HPFI/AFDD',price:1799,img:CDN+'1673611470/product/x1617300/schneider-acti9-hpfi-rel-b-si.jpg',tags:'schneider hpfi relæ bsi 40a brandsikker'},
+  {name:'Schneider Acti9 AFDD gnistdetektor 1P+N 16A',brand:'Schneider Electric',cat:'HPFI/AFDD',price:895,img:'',tags:'schneider afdd gnist detektor 16a brand'},
+  {name:'Legrand DX3 HPFI kombiafbryder 4P 30mA, 20A',brand:'Legrand',cat:'HPFI/AFDD',price:929,img:CDN+'1511540317/product/1458676/legrand-dx3-hpfi-kombiafbryder.jpg',tags:'legrand dx3 hpfi kombiafbryder 20a 30ma'},
+  {name:'Hager HPFI-relæ 4P 40A 30mA type A',brand:'Hager',cat:'HPFI/AFDD',price:245,img:'',tags:'hager hpfi relæ 40a 30ma 4 polet'},
+  {name:'Indbygningstavle 1 række 12 moduler',brand:'',cat:'Tavler',price:285,img:'',tags:'tavle indbygning 1 række 12 moduler gruppetavle'},
+  {name:'Indbygningstavle 2 række 24 moduler',brand:'',cat:'Tavler',price:445,img:'',tags:'tavle indbygning 2 række 24 moduler gruppetavle'},
+  {name:'Indbygningstavle 3 række 36 moduler',brand:'',cat:'Tavler',price:625,img:'',tags:'tavle indbygning 3 række 36 moduler gruppetavle'},
+  {name:'Indbygningstavle 4 række 48 moduler',brand:'',cat:'Tavler',price:795,img:'',tags:'tavle indbygning 4 række 48 moduler gruppetavle'},
+  {name:'Udvendig tavle 2 rækker 24 moduler IP65',brand:'',cat:'Tavler',price:545,img:'',tags:'tavle udvendig ip65 24 moduler'},
+  {name:'DIN-skinne 35mm perforeret pr. meter',brand:'',cat:'Tavler',price:45,img:'',tags:'din skinne 35mm tavle montage'},
+  {name:'Samleskinne 3-faset 12 moduler',brand:'',cat:'Tavler',price:125,img:'',tags:'samleskinne 3 faset kam tavle'},
+  {name:'Nulskinne 15 klemmer m/holder',brand:'',cat:'Tavler',price:68,img:'',tags:'nulskinne 15 klemmer tavle'},
+  {name:'Jordskinne 15 klemmer m/holder',brand:'',cat:'Tavler',price:68,img:'',tags:'jordskinne 15 klemmer tavle'},
+  {name:'Blindafdækning 1 modul (10 stk)',brand:'',cat:'Tavler',price:35,img:'',tags:'blind afdækning modul tavle'},
+  {name:'Hovedafbryder 4P 63A',brand:'',cat:'Tavler',price:285,img:'',tags:'hovedafbryder 63a 4 polet tavle'},
+  {name:'Hovedafbryder 4P 80A',brand:'',cat:'Tavler',price:345,img:'',tags:'hovedafbryder 80a 4 polet tavle'},
+  {name:'Overspændingsbeskyttelse T2 4P',brand:'',cat:'Tavler',price:685,img:'',tags:'overspænding t2 transient beskyttelse'},
+  {name:'Kontaktor 4P 25A 230V spole',brand:'',cat:'Tavler',price:285,img:'',tags:'kontaktor 25a relæ tavle'},
+  {name:'Trappeautomat 230V 1 modul',brand:'',cat:'Tavler',price:345,img:'',tags:'trappeautomat tidsforsinkelse trappe'},
+  {name:'Digitalt tidsur 1 kanal DIN',brand:'',cat:'Tavler',price:425,img:'',tags:'tidsur ur timer din kanal'},
+  {name:'Skumringsrelæ m/føler DIN',brand:'',cat:'Tavler',price:385,img:'',tags:'skumringsrelæ dæmring føler udendørs lys'},
+  {name:'NYM-J 3×1,5mm² kabel pr. meter',brand:'',cat:'Kabler',price:12,img:'',tags:'nymj nym 3x1,5 1,5 kabel installation 3 leder'},
+  {name:'NYM-J 3×2,5mm² kabel pr. meter',brand:'',cat:'Kabler',price:18,img:'',tags:'nymj nym 3x2,5 2,5 kabel installation 3 leder'},
+  {name:'NYM-J 5×1,5mm² kabel pr. meter',brand:'',cat:'Kabler',price:19,img:'',tags:'nymj nym 5x1,5 1,5 kabel installation 5 leder kraft'},
+  {name:'NYM-J 5×2,5mm² kabel pr. meter',brand:'',cat:'Kabler',price:28,img:'',tags:'nymj nym 5x2,5 2,5 kabel installation 5 leder kraft'},
+  {name:'NYM-J 5×4mm² kabel pr. meter',brand:'',cat:'Kabler',price:42,img:'',tags:'nymj nym 5x4 4 kabel installation 5 leder kraft'},
+  {name:'NYM-J 5×6mm² kabel pr. meter',brand:'',cat:'Kabler',price:58,img:'',tags:'nymj nym 5x6 6 kabel installation 5 leder kraft'},
+  {name:'NYM-J 5×10mm² kabel pr. meter',brand:'',cat:'Kabler',price:95,img:'',tags:'nymj nym 5x10 10 kabel installation 5 leder kraft'},
+  {name:'NYM-J 5×16mm² kabel pr. meter',brand:'',cat:'Kabler',price:145,img:'',tags:'nymj nym 5x16 16 kabel installation 5 leder kraft'},
+  {name:'CYKY 3×2,5mm² kabel pr. meter',brand:'',cat:'Kabler',price:15,img:'',tags:'cyky 3x2,5 2,5 kabel'},
+  {name:'H07V-K fleksibel ledning 1,5mm² pr. meter',brand:'',cat:'Kabler',price:7,img:'',tags:'h07vk fleks fleksibel ledning 1,5 montage tavle'},
+  {name:'H07V-K fleksibel ledning 2,5mm² pr. meter',brand:'',cat:'Kabler',price:9,img:'',tags:'h07vk fleks fleksibel ledning 2,5 montage tavle'},
+  {name:'H07V-K fleksibel ledning 4mm² pr. meter',brand:'',cat:'Kabler',price:13,img:'',tags:'h07vk fleks fleksibel ledning 4 montage tavle'},
+  {name:'H07V-K fleksibel ledning 6mm² pr. meter',brand:'',cat:'Kabler',price:18,img:'',tags:'h07vk fleks fleksibel ledning 6 montage tavle'},
+  {name:'H07V-K fleksibel ledning 10mm² pr. meter',brand:'',cat:'Kabler',price:28,img:'',tags:'h07vk fleks fleksibel ledning 10 montage tavle'},
+  {name:'H07V-K fleksibel ledning 16mm² pr. meter',brand:'',cat:'Kabler',price:42,img:'',tags:'h07vk fleks fleksibel ledning 16 montage tavle'},
+  {name:'Jordkabel PFXP 4×6mm² pr. meter',brand:'',cat:'Kabler',price:68,img:'',tags:'pfxp jord kabel 6 udendørs nedgravning'},
+  {name:'Jordkabel PFXP 4×10mm² pr. meter',brand:'',cat:'Kabler',price:105,img:'',tags:'pfxp jord kabel 10 udendørs nedgravning'},
+  {name:'Jordkabel PFXP 4×16mm² pr. meter',brand:'',cat:'Kabler',price:165,img:'',tags:'pfxp jord kabel 16 udendørs nedgravning'},
+  {name:'Højtalerkabel 2×1,5mm² pr. meter',brand:'',cat:'Kabler',price:9,img:'',tags:'højtaler kabel 1,5 2 leder audio'},
+  {name:'Koaksialkabel TV pr. meter',brand:'',cat:'Kabler',price:11,img:'',tags:'koaksial coax tv antenne kabel'},
+  {name:'LK Fuga dataudtag RJ45 Cat.6, 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Data/Netværk',price:118,img:'',tags:'fuga data rj45 cat6 netværk modul'},
+  {name:'LK Fuga dataudtag 2×RJ45 Cat.6, 1½ modul',brand:'Lauritz Knudsen',cat:'Data/Netværk',price:189,img:'',tags:'fuga dobbelt data rj45 cat6 netværk'},
+  {name:'Netværkskabel Cat.6 U/UTP pr. meter',brand:'',cat:'Data/Netværk',price:8,img:'',tags:'netværk kabel cat6 utp data'},
+  {name:'Netværkskabel Cat.6a S/FTP pr. meter',brand:'',cat:'Data/Netværk',price:14,img:'',tags:'netværk kabel cat6a sftp skærmet data'},
+  {name:'Patchpanel 24 port Cat.6 19"',brand:'',cat:'Data/Netværk',price:485,img:'',tags:'patchpanel 24 port netværk rack'},
+  {name:'Netværksswitch 8 port gigabit',brand:'',cat:'Data/Netværk',price:345,img:'',tags:'switch 8 port gigabit netværk'},
+  {name:'RJ45 stik Cat.6 (10 stk)',brand:'',cat:'Data/Netværk',price:65,img:'',tags:'rj45 stik connector cat6'},
+  {name:'Antenneudtag TV/radio LK Fuga, hvid',brand:'Lauritz Knudsen',cat:'Data/Netværk',price:125,img:'',tags:'fuga antenne tv radio udtag'},
+  {name:'LK Fuga 1-modul indmuringsdåse',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:22,img:'',tags:'fuga indmuring dåse 1 modul mur'},
+  {name:'LK Fuga 2-modul indmuringsdåse',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:32,img:'',tags:'fuga indmuring dåse 2 modul mur'},
+  {name:'LK Fuga 3-modul indmuringsdåse',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:42,img:'',tags:'fuga indmuring dåse 3 modul mur'},
+  {name:'LK Fuga forfradåse 1 modul',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:28,img:'',tags:'fuga forfra dåse modul'},
+  {name:'LK Fuga 1-modul ramme, hvid',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:35,img:'',tags:'fuga ramme 1 modul hvid afdækning'},
+  {name:'LK Fuga 2-modul ramme, hvid',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:48,img:'',tags:'fuga ramme 2 modul hvid afdækning'},
+  {name:'LK Fuga 3-modul ramme, hvid',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:62,img:'',tags:'fuga ramme 3 modul hvid afdækning'},
+  {name:'LK Fuga 4-modul ramme, hvid',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:78,img:'',tags:'fuga ramme 4 modul hvid afdækning'},
+  {name:'Apparatdåse gips/hulvæg 1 modul',brand:'',cat:'Dåser & Rammer',price:18,img:'',tags:'apparat dåse gips hulvæg gipsplade'},
+  {name:'Forsamledåse IP54 udvendig',brand:'',cat:'Dåser & Rammer',price:45,img:'',tags:'forsamle dåse ip54 udvendig samle'},
+  {name:'Kabelkanal 40×25mm pr. meter',brand:'',cat:'Kabelføring',price:22,img:'',tags:'kabel kanal 40×25 bordkanal føring'},
+  {name:'Kabelkanal 60×40mm pr. meter',brand:'',cat:'Kabelføring',price:34,img:'',tags:'kabel kanal 60×40 bordkanal føring'},
+  {name:'Kabelkanal 100×60mm pr. meter',brand:'',cat:'Kabelføring',price:68,img:'',tags:'kabel kanal 100×60 bordkanal føring'},
+  {name:'Installationsrør M16 pr. meter',brand:'',cat:'Kabelføring',price:9,img:'',tags:'rør M16 installation kabelrør pvc'},
+  {name:'Installationsrør M20 pr. meter',brand:'',cat:'Kabelføring',price:12,img:'',tags:'rør M20 installation kabelrør pvc'},
+  {name:'Installationsrør M25 pr. meter',brand:'',cat:'Kabelføring',price:16,img:'',tags:'rør M25 installation kabelrør pvc'},
+  {name:'Installationsrør M32 pr. meter',brand:'',cat:'Kabelføring',price:24,img:'',tags:'rør M32 installation kabelrør pvc'},
+  {name:'Fleksrør M20 pr. meter',brand:'',cat:'Kabelføring',price:7,img:'',tags:'fleks rør m20 bøjeligt'},
+  {name:'Kabelbakke gitter 100mm pr. meter',brand:'',cat:'Kabelføring',price:85,img:'',tags:'kabelbakke gitter bakke føring'},
+  {name:'Kabelbinder 200mm sort (100 stk)',brand:'',cat:'Kabelføring',price:45,img:'',tags:'kabelbinder strips binder 200mm'},
+  {name:'Kabelclips 1,5mm² (100 stk)',brand:'',cat:'Kabelføring',price:38,img:'',tags:'kabelclips 1,5 clips søm'},
+  {name:'Kabelstrømpe / aftrækshjælp',brand:'',cat:'Kabelføring',price:185,img:'',tags:'strømpe aftræk trækstrømpe'},
+  {name:'Wago 2-leder klemme 221 (100 stk)',brand:'Wago',cat:'Klemmer',price:185,img:'',tags:'wago 2 leder klemme 221 samle'},
+  {name:'Wago 3-leder klemme 221 (50 stk)',brand:'Wago',cat:'Klemmer',price:165,img:'',tags:'wago 3 leder klemme 221 samle'},
+  {name:'Wago 5-leder klemme 221 (50 stk)',brand:'Wago',cat:'Klemmer',price:285,img:'',tags:'wago 5 leder klemme 221 samle'},
+  {name:'Wago sortimentsboks 221',brand:'Wago',cat:'Klemmer',price:345,img:'',tags:'wago sortiment box assortment klemmer'},
+  {name:'Endehylse 1,5mm² (100 stk)',brand:'',cat:'Klemmer',price:42,img:'',tags:'endehylse 1,5 terminalrør crimp'},
+  {name:'Endehylse 2,5mm² (100 stk)',brand:'',cat:'Klemmer',price:48,img:'',tags:'endehylse 2,5 terminalrør crimp'},
+  {name:'Endehylse 6mm² (100 stk)',brand:'',cat:'Klemmer',price:65,img:'',tags:'endehylse 6 terminalrør crimp'},
+  {name:'Kabelsko ring M6 6mm² (50 stk)',brand:'',cat:'Klemmer',price:65,img:'',tags:'kabelsko ring m6 crimp'},
+  {name:'Rækkeklemme 4mm² grå DIN',brand:'',cat:'Klemmer',price:12,img:'',tags:'rækkeklemme 4mm din skinne'},
+  {name:'LED-downlight 7W 3000K hvid indbygning',brand:'',cat:'Belysning',price:145,img:'',tags:'led downlight 7w spot indbygning loft'},
+  {name:'LED-downlight 10W 4000K hvid indbygning',brand:'',cat:'Belysning',price:175,img:'',tags:'led downlight 10w spot indbygning loft'},
+  {name:'LED-panel 60×60cm 36W 4000K',brand:'',cat:'Belysning',price:385,img:'',tags:'led panel 60x60 kontor loft'},
+  {name:'LED-armatur 120cm 36W IP65',brand:'',cat:'Belysning',price:295,img:'',tags:'led armatur 120cm værksted garage ip65'},
+  {name:'LED-spot GU10 5W 2700K (5 stk)',brand:'',cat:'Belysning',price:185,img:'',tags:'led spot gu10 pære'},
+  {name:'LED-pære E27 9W 2700K',brand:'',cat:'Belysning',price:35,img:'',tags:'led pære e27 standard'},
+  {name:'Udendørs væglampe LED IP54 m/sensor',brand:'',cat:'Belysning',price:485,img:'',tags:'udendørs væglampe led sensor pir have'},
+  {name:'LED-strip 5m 24V 4000K m/driver',brand:'',cat:'Belysning',price:425,img:'',tags:'led strip bånd 24v driver'},
+  {name:'Nødbelysning LED m/batteri 3t',brand:'',cat:'Belysning',price:545,img:'',tags:'nødbelysning panik flugtvej batteri'},
+  {name:'Røgalarm optisk 230V m/batteri-backup',brand:'',cat:'Sikkerhed',price:185,img:'',tags:'røgalarm røg detektor 230v brand'},
+  {name:'Røgalarm optisk 10-års batteri',brand:'',cat:'Sikkerhed',price:225,img:'',tags:'røgalarm røg detektor 10 års batteri brand'},
+  {name:'Varmedetektor 230V',brand:'',cat:'Sikkerhed',price:265,img:'',tags:'varme detektor brand køkken'},
+  {name:'CO-detektor (kulilte) 10-års',brand:'',cat:'Sikkerhed',price:345,img:'',tags:'co kulilte detektor alarm'},
+  {name:'Sirene indendørs 230V',brand:'',cat:'Sikkerhed',price:285,img:'',tags:'sirene alarm lyd'},
+  {name:'Jordelektrode 2m galvaniseret',brand:'',cat:'Jordforbindelse',price:185,img:'',tags:'jord elektrode spyd 2m galvaniseret'},
+  {name:'Jordelektrode 1,5m kobber',brand:'',cat:'Jordforbindelse',price:245,img:'',tags:'jord elektrode spyd 1,5m kobber'},
+  {name:'Jordklemme bånd 50mm²',brand:'',cat:'Jordforbindelse',price:65,img:'',tags:'jord klemme bånd 50mm'},
+  {name:'Potentialudligningsskinne 7 udtag',brand:'',cat:'Jordforbindelse',price:125,img:'',tags:'potentialudligning skinne pus jord'},
+  {name:'Jordleder grøn/gul 16mm² pr. meter',brand:'',cat:'Jordforbindelse',price:24,img:'',tags:'jord leder grøn gul 16mm pe'},
+  {name:'Isoleringstape sort (10 ruller)',brand:'',cat:'Værktøj & Diverse',price:65,img:'',tags:'tape isolering el sort'},
+  {name:'Kontaktspray / sikringsfedt',brand:'',cat:'Værktøj & Diverse',price:95,img:'',tags:'kontakt spray fedt rens'},
+  {name:'Mærketape til grupper (sortiment)',brand:'',cat:'Værktøj & Diverse',price:45,img:'',tags:'mærke tape gruppe label'},
+  {name:'Sikringsskrue-sortiment box',brand:'',cat:'Værktøj & Diverse',price:125,img:'',tags:'skrue sortiment box montage'},
+  {name:'Spændingstester / fasemåler',brand:'',cat:'Værktøj & Diverse',price:165,img:'',tags:'spændingstester fasemåler test'},
+  {name:'Schneider Exxact stikkontakt m/jord 1 modul, hvid',brand:'Schneider Electric',cat:'Stikkontakter',price:92,img:'',tags:'exxact schneider stik 1 modul hvid jord'},
+  {name:'Schneider Exxact dobbelt stikkontakt m/jord, hvid',brand:'Schneider Electric',cat:'Stikkontakter',price:165,img:'',tags:'exxact schneider dobbelt stik hvid jord'},
+  {name:'Schneider Exxact stikkontakt m/USB A+C, hvid',brand:'Schneider Electric',cat:'Stikkontakter',price:279,img:'',tags:'exxact schneider usb stik opladning hvid'},
+  {name:'Schneider Exxact afbryder veksel, hvid',brand:'Schneider Electric',cat:'Afbrydere',price:52,img:'',tags:'exxact schneider afbryder veksel hvid'},
+  {name:'Schneider Exxact LED-lysdæmper 300W, hvid',brand:'Schneider Electric',cat:'Lysdæmpere',price:465,img:'',tags:'exxact schneider led dæmper 300w'},
+  {name:'Schneider Exxact ramme 1 modul, hvid',brand:'Schneider Electric',cat:'Dåser & Rammer',price:32,img:'',tags:'exxact schneider ramme 1 modul hvid'},
+  {name:'LK SG stikkontakt m/jord 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:78,img:'',tags:'sg lk stik 1 modul hvid jord billig'},
+  {name:'LK SG dobbelt stikkontakt m/jord, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:132,img:'',tags:'sg lk dobbelt stik hvid jord'},
+  {name:'LK SG afbryder 1-polet, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:38,img:'',tags:'sg lk afbryder 1 polet hvid'},
+  {name:'LK SG afbryder veksel, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:45,img:'',tags:'sg lk afbryder veksel hvid'},
+  {name:'LK SG ramme 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:28,img:'',tags:'sg lk ramme 1 modul hvid'},
+  {name:'Shelly Plus 1 Mini Gen3 WiFi-relæ 8A',brand:'Shelly',cat:'Smart home / Trådløst',price:165,img:CDN+'1715174787/product/x1946355/shelly-plus-mini-rel-med-wi-f.jpg',tags:'shelly plus 1 mini gen3 wifi relæ trådløs smart 8a'},
+  {name:'Shelly Plus 1 Gen3 WiFi-relæ 16A',brand:'Shelly',cat:'Smart home / Trådløst',price:195,img:'',tags:'shelly plus 1 gen3 wifi relæ trådløs smart 16a'},
+  {name:'Shelly Plus Mini relæ WiFi m/effektmåling 8A',brand:'Shelly',cat:'Smart home / Trådløst',price:109,img:CDN+'1715174742/product/x1946351/shelly-plus-mini-rel-med-wi-f.jpg',tags:'shelly mini 1pm wifi relæ effektmåling power trådløs smart'},
+  {name:'Shelly Plus 2PM WiFi dobbelt-relæ 2×16A',brand:'Shelly',cat:'Smart home / Trådløst',price:285,img:'',tags:'shelly 2pm wifi dobbelt relæ rulleskodde trådløs smart'},
+  {name:'Shelly Plus i4 trådløs scenestyring',brand:'Shelly',cat:'Smart home / Trådløst',price:155,img:'',tags:'shelly i4 input scene trådløs smart knap'},
+  {name:'Shelly Plus Dimmer 0-10V WiFi',brand:'Shelly',cat:'Smart home / Trådløst',price:345,img:'',tags:'shelly dimmer 0-10v wifi lysdæmper trådløs smart'},
+  {name:'Shelly Pro 4PM DIN WiFi 4-kanal',brand:'Shelly',cat:'Smart home / Trådløst',price:895,img:'',tags:'shelly pro 4pm din skinne tavle 4 kanal wifi trådløs smart'},
+  {name:'Shelly H&T WiFi temperatur/fugtsensor',brand:'Shelly',cat:'Smart home / Trådløst',price:285,img:'',tags:'shelly ht temperatur fugt sensor trådløs smart wifi'},
+  {name:'Shelly Motion 2 bevægelsessensor',brand:'Shelly',cat:'Smart home / Trådløst',price:345,img:'',tags:'shelly motion bevægelse sensor pir trådløs smart'},
+  {name:'Shelly Plus Plug S smart WiFi-stikprop',brand:'Shelly',cat:'Smart home / Trådløst',price:185,img:'',tags:'shelly plug smart stikprop wifi trådløs adapter'},
+  {name:'Aeotec Z-Wave Smart Switch 7',brand:'Aeotec',cat:'Smart home / Trådløst',price:345,img:'',tags:'aeotec zwave smart switch relæ trådløs'},
+  {name:'Philips Hue dæmper-modul trådløs',brand:'Philips',cat:'Smart home / Trådløst',price:285,img:'',tags:'philips hue dæmper modul zigbee trådløs smart lys'},
+  {name:'IKEA Tradfri styreenhed gateway',brand:'IKEA',cat:'Smart home / Trådløst',price:345,img:'',tags:'tradfri ikea gateway zigbee trådløs smart hub'},
+  {name:'Trådløs trykknap batteriløs Friends of Hue',brand:'Lauritz Knudsen',cat:'Smart home / Trådløst',price:425,img:'',tags:'trådløs batteriløs tryk friends of hue knap zigbee'},
+  {name:'LK Fuga Wiser trådløs stikkontakt smart',brand:'Lauritz Knudsen',cat:'Smart home / Trådløst',price:445,img:'',tags:'fuga wiser trådløs stik smart zigbee schneider'},
+  {name:'Schneider Wiser smart gateway',brand:'Schneider Electric',cat:'Smart home / Trådløst',price:595,img:'',tags:'wiser schneider gateway hub trådløs smart zigbee'},
+  {name:'Wiser trådløs termostat gulvvarme',brand:'Schneider Electric',cat:'Smart home / Trådløst',price:685,img:'',tags:'wiser termostat gulvvarme trådløs smart zigbee'},
+  {name:'LK SG stikkontakt u/jord 1 modul, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:58,img:'',tags:'sg lk stik uden jord modul hvid billig udskiftning'},
+  {name:'LK SG stikkontakt m/afbryder & jord, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:98,img:'',tags:'sg lk stik afbryder jord hvid'},
+  {name:'LK SG dobbelt stikkontakt u/jord, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:95,img:'',tags:'sg lk dobbelt stik uden jord hvid'},
+  {name:'LK SG stikkontakt m/jord, lysegrå',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:78,img:'',tags:'sg lk stik jord lysegrå modul'},
+  {name:'LK SG kontrolstikkontakt m/lampe, hvid',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:88,img:'',tags:'sg lk kontrol stik lampe hvid'},
+  {name:'LK SG afbryder kryds, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:62,img:'',tags:'sg lk afbryder kryds hvid'},
+  {name:'LK SG dobbelt afbryder, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:72,img:'',tags:'sg lk dobbelt afbryder hvid'},
+  {name:'LK SG tryk 1-polet, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:48,img:'',tags:'sg lk tryk 1 polet hvid retur'},
+  {name:'LK SG lampeudtag, hvid',brand:'Lauritz Knudsen',cat:'Lampeudtag',price:58,img:'',tags:'sg lk lampeudtag hvid loft'},
+  {name:'LK SG ramme 2 modul, hvid',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:38,img:'',tags:'sg lk ramme 2 modul hvid'},
+  {name:'LK SG ramme 3 modul, hvid',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:52,img:'',tags:'sg lk ramme 3 modul hvid'},
+  {name:'LK SG indmuringsdåse 1 modul',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:18,img:'',tags:'sg lk indmuring dåse 1 modul'},
+  {name:'LK SG forfradåse 1 modul',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:24,img:'',tags:'sg lk forfra dåse 1 modul'},
+  {name:'LK SG dataudtag RJ45, hvid',brand:'Lauritz Knudsen',cat:'Data/Netværk',price:95,img:'',tags:'sg lk data rj45 udtag hvid netværk'},
+  {name:'LK SG antenneudtag TV, hvid',brand:'Lauritz Knudsen',cat:'Data/Netværk',price:98,img:'',tags:'sg lk antenne tv udtag hvid'},
+  {name:'LK SG dæmper drejeknap 250W, hvid',brand:'Lauritz Knudsen',cat:'Lysdæmpere',price:345,img:'',tags:'sg lk dæmper drejeknap 250w hvid'},
+  {name:'LK SG udendørs stikkontakt IP44, grå',brand:'Lauritz Knudsen',cat:'Stikkontakter',price:125,img:'',tags:'sg lk udendørs stik ip44 grå'},
+  {name:'LK SG termostat rumføler, hvid',brand:'Lauritz Knudsen',cat:'Afbrydere',price:445,img:'',tags:'sg lk termostat rum føler hvid varme'},
+  {name:'NYM-J 3×4mm² kabel pr. meter',brand:'',cat:'Kabler',price:28,img:'',tags:'nymj nym 3x4 4 kabel 3 leder'},
+  {name:'NYM-J 3×6mm² kabel pr. meter',brand:'',cat:'Kabler',price:42,img:'',tags:'nymj nym 3x6 6 kabel 3 leder'},
+  {name:'NYM-J 3×10mm² kabel pr. meter',brand:'',cat:'Kabler',price:62,img:'',tags:'nymj nym 3x10 10 kabel 3 leder'},
+  {name:'H07V-K fleksibel ledning 0,75mm² pr. meter',brand:'',cat:'Kabler',price:5,img:'',tags:'h07vk fleks fleksibel ledning 0,75 montage'},
+  {name:'H07V-K fleksibel ledning 1,0mm² pr. meter',brand:'',cat:'Kabler',price:6,img:'',tags:'h07vk fleks fleksibel ledning 1,0 1 montage'},
+  {name:'H07V-K fleksibel ledning 25mm² pr. meter',brand:'',cat:'Kabler',price:62,img:'',tags:'h07vk fleks fleksibel ledning 25 montage tavle'},
+  {name:'H07V-K fleksibel ledning 35mm² pr. meter',brand:'',cat:'Kabler',price:88,img:'',tags:'h07vk fleks fleksibel ledning 35 montage tavle'},
+  {name:'Jordkabel PFXP 4×2,5mm² pr. meter',brand:'',cat:'Kabler',price:38,img:'',tags:'pfxp jord kabel 2,5 udendørs nedgravning'},
+  {name:'Jordkabel PFXP 5×6mm² pr. meter',brand:'',cat:'Kabler',price:82,img:'',tags:'pfxp jord kabel 5x6 6 udendørs nedgravning'},
+  {name:'Installationskabel 5×1,5mm² pr. meter',brand:'',cat:'Kabler',price:21,img:'',tags:'installation kabel 5x1,5 1,5 5 leder'},
+  {name:'Installationskabel 5×3,5mm² pr. meter',brand:'',cat:'Kabler',price:36,img:'',tags:'installation kabel 5x3,5 3,5 5 leder'},
+  {name:'Kabelkanal 16×16mm pr. meter, hvid',brand:'',cat:'Kabelføring',price:14,img:'',tags:'kanal kabelkanal 16x16 16 lille hvid bordkanal'},
+  {name:'Kabelkanal 25×25mm pr. meter, hvid',brand:'',cat:'Kabelføring',price:18,img:'',tags:'kanal kabelkanal 25x25 25 hvid'},
+  {name:'Kabelkanal 40×40mm pr. meter, hvid',brand:'',cat:'Kabelføring',price:28,img:'',tags:'kanal kabelkanal 40x40 40 hvid'},
+  {name:'Kabelkanal 60×60mm pr. meter, hvid',brand:'',cat:'Kabelføring',price:45,img:'',tags:'kanal kabelkanal 60x60 60 hvid'},
+  {name:'Kabelkanal 80×60mm pr. meter, hvid',brand:'',cat:'Kabelføring',price:58,img:'',tags:'kanal kabelkanal 80x60 80 hvid stor'},
+  {name:'Gulvkanal 50×12mm pr. meter, grå',brand:'',cat:'Kabelføring',price:42,img:'',tags:'gulv kanal kabelkanal 50 flad grå overgang'},
+  {name:'Minikanal selvklæbende 10×10mm pr. meter',brand:'',cat:'Kabelføring',price:9,img:'',tags:'mini kanal selvklæbende 10x10 lille hvid'},
+  {name:'Kanal-samling/hjørne (10 stk)',brand:'',cat:'Kabelføring',price:45,img:'',tags:'kanal samling hjørne tilbehør'},
+  {name:'Kabelclips 1,5mm² hvid (100 stk)',brand:'',cat:'Kabelføring',price:38,img:'',tags:'clips kabelclips 1,5 hvid søm'},
+  {name:'Kabelclips 2,5mm² hvid (100 stk)',brand:'',cat:'Kabelføring',price:42,img:'',tags:'clips kabelclips 2,5 hvid søm'},
+  {name:'Kabelclips rund 8mm (100 stk)',brand:'',cat:'Kabelføring',price:45,img:'',tags:'clips kabelclips rund 8mm rør'},
+  {name:'Kabelclips rund 12mm (100 stk)',brand:'',cat:'Kabelføring',price:52,img:'',tags:'clips kabelclips rund 12mm rør'},
+  {name:'Dobbeltclips til fladkabel (50 stk)',brand:'',cat:'Kabelføring',price:48,img:'',tags:'clips dobbelt fladkabel'},
+  {name:'Sadelclips 16mm rør (50 stk)',brand:'',cat:'Kabelføring',price:55,img:'',tags:'clips sadel sadelclips 16 rør'},
+  {name:'Sadelclips 20mm rør (50 stk)',brand:'',cat:'Kabelføring',price:58,img:'',tags:'clips sadel sadelclips 20 rør'},
+  {name:'Nagelclips stål til kabel (100 stk)',brand:'',cat:'Kabelføring',price:62,img:'',tags:'clips nagle nagelclips stål kabel'},
+  {name:'Monteringsunderlag LK Fuga 1 modul',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:15,img:'',tags:'underlag montering fuga 1 modul plade'},
+  {name:'Monteringsunderlag LK Fuga 2 modul',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:22,img:'',tags:'underlag montering fuga 2 modul plade'},
+  {name:'Monteringsunderlag LK Fuga 3 modul',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:30,img:'',tags:'underlag montering fuga 3 modul plade'},
+  {name:'Underlag/bagplade udendørs IP44',brand:'',cat:'Dåser & Rammer',price:35,img:'',tags:'underlag bagplade udendørs ip44 vejrbestandig'},
+  {name:'Gummiunderlag til udvendig stikkontakt',brand:'',cat:'Dåser & Rammer',price:18,img:'',tags:'underlag gummi pakning udvendig stik tæt'},
+  {name:'Træunderlag/montagebræt 100×100mm',brand:'',cat:'Dåser & Rammer',price:25,img:'',tags:'underlag træ montage bræt plade'},
+  {name:'LK Fuga 5-modul ramme, hvid',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:98,img:'',tags:'fuga ramme 5 modul hvid afdækning'},
+  {name:'LK Fuga 6-modul ramme, hvid',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:118,img:'',tags:'fuga ramme 6 modul hvid afdækning'},
+  {name:'LK Fuga 1-modul ramme, antracitgrå',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:45,img:'',tags:'fuga ramme 1 modul antracit grå'},
+  {name:'LK Fuga 2-modul ramme, antracitgrå',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:62,img:'',tags:'fuga ramme 2 modul antracit grå'},
+  {name:'LK Fuga 1-modul ramme, stål/børstet',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:125,img:'',tags:'fuga ramme 1 modul stål børstet metal'},
+  {name:'LK Fuga vandret 2-modul ramme, hvid',brand:'Lauritz Knudsen',cat:'Dåser & Rammer',price:55,img:'',tags:'fuga ramme vandret 2 modul hvid horisontal'},
+  {name:'Schneider Exxact ramme 2 modul, hvid',brand:'Schneider Electric',cat:'Dåser & Rammer',price:45,img:'',tags:'exxact schneider ramme 2 modul hvid'},
+  {name:'Schneider Exxact ramme 3 modul, hvid',brand:'Schneider Electric',cat:'Dåser & Rammer',price:62,img:'',tags:'exxact schneider ramme 3 modul hvid'},
+  {name:'Schneider Exxact ramme 1 modul, antracit',brand:'Schneider Electric',cat:'Dåser & Rammer',price:42,img:'',tags:'exxact schneider ramme 1 modul antracit grå'},
+];
+const CL_PRE=['Mål jordforbindelsesmodstand','Test HPFI-relæ','Kontroller isolationsmodstand','Fotografér tavle','Mål spænding alle grupper','Udfyld installationsattest','Aflevér nøgle til kunde','Ryd op på arbejdsstedet','Test alle stikkontakter','Tjek grupper er mærket korrekt'];
+
+// STATE
+let S={projects:[],nextId:1,company:{name:'',cvr:'',addr:'',phone:'',email:'',reg:'',account:'',auth:'',terms:'14 dage netto'},activity:[]};
+let curId=null,selImgUrl='',curPrio='normal',showExVat=false,aiH=[],syncT=null;
+const fmt=n=>Math.round(n).toLocaleString('da-DK');
+const fmtD=n=>parseFloat(n).toLocaleString('da-DK',{minimumFractionDigits:2,maximumFractionDigits:2});
+const gP=id=>S.projects.find(p=>p.id===id);
+// kategori → ikon + farve (til pæne ensartede produktikoner)
+const CAT_ICON={
+  'Stikkontakter':['ti-plug','acc'],
+  'Afbrydere':['ti-toggle-right','inf'],
+  'Lysdæmpere':['ti-adjustments','pur'],
+  'Lampeudtag':['ti-bulb','acc'],
+  'Automatsikringer':['ti-circuit-switch-closed','err'],
+  'HPFI/AFDD':['ti-shield-bolt','err'],
+  'Tavler':['ti-layout-grid','inf'],
+  'Kabler':['ti-cable','ok'],
+  'Data/Netværk':['ti-network','inf'],
+  'Dåser & Rammer':['ti-square','pur'],
+  'Kabelføring':['ti-rotate-rectangle','ok'],
+  'Klemmer':['ti-grip-horizontal','acc'],
+  'Belysning':['ti-bulb-filled','acc'],
+  'Sikkerhed':['ti-flame','err'],
+  'Jordforbindelse':['ti-world-bolt','ok'],
+  'Værktøj & Diverse':['ti-tool','inf'],
+  'Smart home / Trådløst':['ti-wifi','pur'],
+  'Egen vare':['ti-package','acc']
+};
+function catIcon(cat){return CAT_ICON[cat]||['ti-tool','inf'];}
+// returnér HTML for et produkt-ikon: enten foto eller pænt kategori-ikon
+function matIconHTML(item,size){
+  const s=size||40;const fs=Math.round(s*0.42);
+  if(item.img){
+    return `<div class="ri" style="background:#fff;padding:0;overflow:hidden;border:1px solid var(--bor);width:${s}px;height:${s}px"><img src="${item.img}" style="width:${s}px;height:${s}px;object-fit:contain" onerror="this.parentElement.outerHTML=window.catIconBox(${JSON.stringify(JSON.stringify(item.cat||''))},${s})"></div>`;
+  }
+  const[ic,clr]=catIcon(item.cat);
+  return `<div class="ri ${clr}" style="width:${s}px;height:${s}px"><i class="ti ${ic}" style="font-size:${fs}px"></i></div>`;
+}
+// til onerror-fallback når et foto fejler
+window.catIconBox=function(catJson,s){try{var cat=JSON.parse(catJson);}catch(e){var cat='';}var ic=(CAT_ICON[cat]||['ti-tool','inf']);var fs=Math.round(s*0.42);return `<div class="ri ${ic[1]}" style="width:${s}px;height:${s}px"><i class="ti ${ic[0]}" style="font-size:${fs}px"></i></div>`;};
+function addAct(t){if(!S.activity)S.activity=[];S.activity.unshift({t,ts:new Date().toLocaleTimeString('da-DK',{hour:'2-digit',minute:'2-digit'})});if(S.activity.length>20)S.activity.pop();}
+
+// STORAGE (localStorage fallback since no storage API in standalone file)
+// ====== DATA-PERSISTENS (lokal + sky) ======
+let fbApp=null,fbAuth=null,fbDb=null,fbUser=null,fbReady=false,cloudUnsub=null,applyingCloud=false;
+// Firebase-konfiguration – udskiftes af brugeren efter guiden. Tom = kun lokal lagring.
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyCDrfVFrXRxg564w0zPbdjnJxPI4yXt14w",
+  authDomain: "voltpro-9c381.firebaseapp.com",
+  projectId: "voltpro-9c381",
+  appId: "1:720713343253:web:e34d3775bd2a853ccfc91c"
+};
+function fbConfigured(){return FIREBASE_CONFIG.apiKey && FIREBASE_CONFIG.projectId;}
+
+function persist(){
+  clearTimeout(syncT);setSyncing(true);
+  syncT=setTimeout(()=>{
+    try{localStorage.setItem('voltpro-v5',JSON.stringify(S));}catch(e){}
+    // gem også i skyen hvis logget ind (og vi ikke lige har modtaget fra skyen)
+    if(fbUser&&fbDb&&!applyingCloud){
+      const {doc,setDoc}=window.fb;
+      setDoc(doc(fbDb,'brugere',fbUser.uid),{data:JSON.stringify(S),opdateret:Date.now()})
+        .then(()=>{setSyncing(false);markSynced();})
+        .catch(()=>{setSyncing(false);});
+    }else{setSyncing(false);}
+  },500);
+}
+function boot(){
+  try{const d=localStorage.getItem('voltpro-v5');if(d){S=JSON.parse(d);if(!S.company)S.company={name:'',cvr:'',addr:'',phone:'',email:'',reg:'',account:'',auth:'',terms:'14 dage netto'};if(!S.activity)S.activity=[];}}catch(e){}
+  renderHome();loadWeather();initFirebase();
+}
+function setSyncing(on){const d=document.getElementById('sync-dot'),l=document.getElementById('sync-lbl');if(!d)return;if(on){d.style.background='var(--acc)';l.textContent=fbUser?'Synker...':'Gemmer...';}else{d.style.background='var(--ok)';l.textContent=fbUser?'Synket':'Lokal';}}
+function markSynced(){try{localStorage.setItem('voltpro-lastsync',Date.now());}catch(e){}}
+
+// ====== FIREBASE ======
+function initFirebase(){
+  if(!fbConfigured()){const dot=document.getElementById('sync-dot');if(dot)dot.style.background='var(--t3)';const l=document.getElementById('sync-lbl');if(l)l.textContent='Lokal';return;}
+  const start=()=>{
+    try{
+      const {initializeApp,getAuth,getFirestore,onAuthStateChanged}=window.fb;
+      fbApp=initializeApp(FIREBASE_CONFIG);
+      fbAuth=getAuth(fbApp);
+      fbDb=getFirestore(fbApp);
+      fbReady=true;
+      onAuthStateChanged(fbAuth,user=>{
+        fbUser=user;
+        updateSyncUI();
+        if(user)startCloudListen();
+        else if(cloudUnsub){cloudUnsub();cloudUnsub=null;}
+      });
+    }catch(e){console.warn('Firebase init fejl',e);}
+  };
+  if(window.fb)start();else window.addEventListener('fb-ready',start);
+}
+function startCloudListen(){
+  if(!fbUser||!fbDb)return;
+  const {doc,onSnapshot,getDoc,setDoc}=window.fb;
+  const ref=doc(fbDb,'brugere',fbUser.uid);
+  // første gang: flet eller hent
+  getDoc(ref).then(snap=>{
+    if(snap.exists()&&snap.data().data){
+      // skyen har data – brug den (den er master ved login)
+      applyingCloud=true;
+      try{const cloud=JSON.parse(snap.data().data);S=cloud;if(!S.company)S.company={name:'',cvr:'',addr:'',phone:'',email:'',reg:'',account:'',auth:'',terms:'14 dage netto'};if(!S.activity)S.activity=[];localStorage.setItem('voltpro-v5',JSON.stringify(S));}catch(e){}
+      applyingCloud=false;
+      renderHome();markSynced();
+    }else{
+      // skyen er tom – upload vores lokale data
+      setDoc(ref,{data:JSON.stringify(S),opdateret:Date.now()}).then(markSynced);
+    }
+    // lyt efter ændringer fra andre enheder
+    cloudUnsub=onSnapshot(ref,s=>{
+      if(!s.exists()||applyingCloud)return;
+      const d=s.data();if(!d.data)return;
+      try{
+        const cloud=JSON.parse(d.data);
+        if(JSON.stringify(cloud)!==JSON.stringify(S)){
+          applyingCloud=true;S=cloud;localStorage.setItem('voltpro-v5',JSON.stringify(S));
+          const active=document.querySelector('.screen.active')?.id;renderScreen(active||'s-home');renderHome();
+          applyingCloud=false;markSynced();toast('Opdateret fra sky ✓');
+        }
+      }catch(e){}
+    });
+  }).catch(e=>console.warn(e));
+}
+function updateSyncUI(){
+  const setup=document.getElementById('sync-setup'),active=document.getElementById('sync-active');
+  const noconf=document.getElementById('sync-noconfig');
+  if(!setup)return;
+  if(!fbConfigured()){if(noconf)noconf.style.display='block';}
+  if(fbUser){
+    setup.style.display='none';active.style.display='block';
+    document.getElementById('sync-user').textContent=fbUser.email;
+    const ls=localStorage.getItem('voltpro-lastsync');
+    document.getElementById('sync-last').textContent='Sidst synkroniseret: '+(ls?new Date(+ls).toLocaleString('da-DK'):'nu');
+    setSyncing(false);
+  }else{
+    setup.style.display='block';active.style.display='none';
+  }
+}
+function syncLogin(){
+  if(!fbReady){alert('Sky-synk er ikke sat op endnu. Følg guiden og indsæt din Firebase-nøgle i filen.');return;}
+  const email=document.getElementById('sync-email').value.trim();
+  const pass=document.getElementById('sync-pass').value;
+  if(!email||!pass){alert('Udfyld email og adgangskode');return;}
+  const {signInWithEmailAndPassword}=window.fb;
+  signInWithEmailAndPassword(fbAuth,email,pass)
+    .then(()=>{toast('Logget ind ✓');updateSyncUI();})
+    .catch(e=>alert('Login fejlede: '+fbErr(e)));
+}
+function syncSignup(){
+  if(!fbReady){alert('Sky-synk er ikke sat op endnu. Følg guiden og indsæt din Firebase-nøgle i filen.');return;}
+  const email=document.getElementById('sync-email').value.trim();
+  const pass=document.getElementById('sync-pass').value;
+  if(!email||!pass){alert('Udfyld email og adgangskode (mindst 6 tegn)');return;}
+  const {createUserWithEmailAndPassword}=window.fb;
+  createUserWithEmailAndPassword(fbAuth,email,pass)
+    .then(()=>{toast('Konto oprettet ✓');updateSyncUI();})
+    .catch(e=>alert('Kunne ikke oprette konto: '+fbErr(e)));
+}
+function syncLogout(){
+  if(!fbAuth)return;
+  const {signOut}=window.fb;
+  signOut(fbAuth).then(()=>{toast('Logget ud');updateSyncUI();});
+}
+function fbErr(e){const m=(e&&e.code)||'';if(m.includes('wrong-password')||m.includes('invalid-credential'))return'forkert email eller kode';if(m.includes('email-already'))return'email er allerede i brug – prøv at logge ind';if(m.includes('weak-password'))return'koden er for kort (mindst 6 tegn)';if(m.includes('invalid-email'))return'ugyldig email';if(m.includes('network'))return'ingen internetforbindelse';return (e&&e.message)||'ukendt fejl';}
+
+// NAV
+const FAB_SCREENS={
+  's-home':()=>go('s-newproj'),
+  's-proj':()=>go('s-hours'),
+  's-hours':()=>go('s-addtime'),
+  's-km':()=>go('s-addkm'),
+  's-rems':()=>go('s-addrem'),
+};
+const fab=document.getElementById('fab');
+fab.onclick=()=>{const cur=document.querySelector('.screen.active')?.id;if(FAB_SCREENS[cur])FAB_SCREENS[cur]();};
+
+let navStack=['s-home'];
+let suppressPush=false;
+function go(id,isBack){
+  const cur=document.querySelector('.screen.active');
+  if(cur?.id===id)return;
+  if(cur){cur.classList.add('slide-out');setTimeout(()=>cur.classList.remove('active','slide-out'),200);}
+  setTimeout(()=>{
+    const next=document.getElementById(id);
+    if(next)next.classList.add('active');
+    fab.classList.toggle('hidden',!FAB_SCREENS[id]);
+    renderScreen(id);
+  },cur?30:0);
+  // historik-håndtering så Androids tilbage-knap virker
+  if(!isBack){
+    navStack.push(id);
+    if(!suppressPush){history.pushState({screen:id,depth:navStack.length},'');}
+  }
+}
+const tabMap=['s-home','s-dash','s-invoice','s-ai','s-settings'];
+const bnMap=['bn-home','bn-dash','bn-invoice','bn-ai','bn-settings'];
+function goTab(sid,bid){
+  document.querySelectorAll('.bni').forEach(b=>b.classList.remove('active'));
+  document.getElementById(bid).classList.add('active');
+  // ved tab-skift nulstilles stакken til den valgte tab
+  navStack=[sid];
+  go(sid,true);
+  history.pushState({screen:sid,depth:1},'');
+}
+// håndtér Androids/browserens tilbage-knap
+window.addEventListener('popstate',function(e){
+  // gå et skridt tilbage i vores egen stak
+  if(navStack.length>1){
+    navStack.pop();
+    const prev=navStack[navStack.length-1];
+    // opdatér bundmenu hvis vi lander på en tab
+    const ti=tabMap.indexOf(prev);
+    if(ti>=0){document.querySelectorAll('.bni').forEach(b=>b.classList.remove('active'));document.getElementById(bnMap[ti]).classList.add('active');}
+    go(prev,true);
+    // skub en ny state så vi stadig kan fanges næste gang
+    history.pushState({screen:prev,depth:navStack.length},'');
+  }else{
+    // vi er på forsiden – lad brugeren forlade app'en (skub state tilbage så det ikke lukker uventet ved første tryk)
+    history.pushState({screen:'s-home',depth:1},'');
+    // ved næste tilbage-tryk lukkes app'en naturligt
+  }
+});
+// init history
+history.replaceState({screen:'s-home',depth:1},'');
+
+function renderScreen(id){
+  const p=gP(curId);
+  const today=new Date().toISOString().split('T')[0];
+  if(id==='s-home')renderHome();
+  else if(id==='s-dash')renderDash();
+  else if(id==='s-proj')renderProj();
+  else if(id==='s-hours')renderHours();
+  else if(id==='s-addtime'){document.getElementById('at-sub').textContent=p?.name||'';document.getElementById('t-date').value=today;document.getElementById('t-desc').value='';if(timeMode!=='watch'){resetWatch();}setTimeMode(timeMode||'clock');updT();}
+  else if(id==='s-mats')renderMats();
+  else if(id==='s-orders')renderOrders();
+  else if(id==='s-addorder'){document.getElementById('ao-sub').textContent=p?.name||'';document.getElementById('o-search').value='';curOcatFilter='Alle';renderOcatChips();filterOrderCat();}
+  else if(id==='s-orderqty'){}
+  else if(id==='s-addmat'){document.getElementById('am-sub').textContent=p?.name||'';document.getElementById('m-search').value='';curCatFilter='Alle';renderCatChips();filterCat();}
+  else if(id==='s-matqty'){document.getElementById('m-amt').textContent=fmt((parseFloat(document.getElementById('m-price').value)||0)*(parseInt(document.getElementById('m-qty').value)||0))+' kr';}
+  else if(id==='s-photoai'){document.getElementById('pai-sub').textContent=p?.name||'';}
+  else if(id==='s-km')renderKm();
+  else if(id==='s-addkm'){document.getElementById('ak-sub').textContent=p?.name||'';document.getElementById('km-date').value=today;document.getElementById('km-km').value='';document.getElementById('km-route').value='';document.getElementById('km-amt').textContent='0 kr';}
+  else if(id==='s-rems')renderRems();
+  else if(id==='s-addrem'){document.getElementById('r-date').value=today;document.getElementById('r-text').value='';curPrio='normal';document.querySelectorAll('#prio-chips .sch').forEach((c,i)=>c.classList.toggle('sel',i===0));}
+  else if(id==='s-cl')renderCL();
+  else if(id==='s-docs'){renderDocs();document.getElementById('doc-date').value=today;}
+  else if(id==='s-notes'){document.getElementById('notes-sub').textContent=p?.name||'';document.getElementById('notes-ta').value=p?.notes||'';}
+  else if(id==='s-editproj')openEditProject();
+  else if(id==='s-sync')updateSyncUI();
+  else if(id==='s-delconfirm'){const p=gP(curId);if(p)document.getElementById('del-proj-name').textContent=p.name;}
+  else if(id==='s-invoice')renderInvList();
+  else if(id==='s-invdet')renderInvDet();
+  else if(id==='s-ai')initAI();
+  else if(id==='s-settings')loadSettings();
+  else if(id==='s-newproj')renderCustPicker();
+}
+
+// RENDERS
+function renderHome(){
+  document.getElementById('home-date').textContent=new Date().toLocaleDateString('da-DK',{weekday:'long',day:'numeric',month:'long'});
+  const el=document.getElementById('proj-cards'),empty=document.getElementById('home-empty');
+  if(!S.projects.length){el.innerHTML='';empty.style.display='flex';document.getElementById('home-search').style.display='none';return;}
+  empty.style.display='none';
+  const sb=document.getElementById('home-search');
+  sb.style.display=S.projects.length>4?'block':'none';
+  const q=(sb.value||'').toLowerCase().trim();
+  let projs=S.projects;
+  if(q)projs=S.projects.filter(p=>(p.name+' '+(p.customer||'')+' '+(p.addr||'')).toLowerCase().includes(q));
+  if(!projs.length){el.innerHTML='<div class="empty" style="padding:24px"><i class="ti ti-search-off"></i><p>Ingen projekter matcher</p></div>';return;}
+  el.innerHTML=projs.map(p=>{
+    const tv=(p.times||[]).reduce((a,t)=>a+t.amount,0);
+    const mv=(p.materials||[]).reduce((a,m)=>a+m.total,0);
+    const kv=(p.kms||[]).reduce((a,k)=>a+k.amount,0);
+    const tot=tv+mv+kv;const th=(p.times||[]).reduce((a,t)=>a+t.hours,0);
+    const cl=p.checklist||[];const cd=cl.filter(c=>c.done).length;
+    const sc={active:'g',paused:'a',done:'p'}[p.status||'active'];
+    const st={active:'Aktiv',paused:'Pause',done:'Afsluttet'}[p.status||'active'];
+    const bpct=p.budget?Math.min(Math.round(tot/p.budget*100),100):0;
+    const bc=bpct>90?'err':bpct>70?'a':'ok';
+    return`<div class="card" onclick="openProj(${p.id})">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:9px">
+        <div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${p.name}</div><div style="font-size:11px;color:var(--t2);margin-top:2px">${p.customer||''}${p.addr?' · '+p.addr:''}</div></div>
+        <span class="tag ${sc}" style="margin-left:9px;flex-shrink:0">${st}</span>
+      </div>
+      ${p.budget?`<div style="margin-bottom:9px"><div class="pb"><div class="pbf ${bc}" style="width:${bpct}%"></div></div><div style="font-size:9px;color:var(--t3)">${fmt(tot)} / ${fmt(p.budget)} kr — ${bpct}%</div></div>`:''}
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <div style="font-size:10px;color:var(--t3)"><span style="font-family:var(--M);font-size:13px;font-weight:500;color:var(--txt)">${th.toFixed(1)}t</span> timer</div>
+        <div style="font-size:10px;color:var(--t3)"><span style="font-family:var(--M);font-size:13px;font-weight:500;color:var(--txt)">${(p.materials||[]).length}</span> mat.</div>
+        ${cl.length?`<div style="font-size:10px;color:var(--t3)"><span style="font-family:var(--M);font-size:13px;font-weight:500;color:var(--acc)">${cd}/${cl.length}</span> tjekl.</div>`:''}
+        <div style="margin-left:auto;text-align:right"><div style="font-family:var(--M);font-size:15px;font-weight:700;color:var(--acc)">${fmt(tot*1.25)} kr</div><div style="font-size:9px;color:var(--t3)">inkl. moms</div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function openProj(id){curId=id;go('s-proj');}
+
+function renderProj(){
+  const p=gP(curId);if(!p)return;
+  document.getElementById('ph-name').textContent=p.name;
+  document.getElementById('ph-sub').textContent=p.customer||(p.addr||'');
+  const tv=(p.times||[]).reduce((a,t)=>a+t.amount,0);
+  const mv=(p.materials||[]).reduce((a,m)=>a+m.total,0);
+  const kv=(p.kms||[]).reduce((a,k)=>a+k.amount,0);
+  const tot=tv+mv+kv;
+  document.getElementById('proj-sum').innerHTML=`
+    <div class="sumbox" style="margin-bottom:15px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px">
+        <div><div class="sum-lbl">Total inkl. moms</div><div class="sum-val">${fmt(tot*1.25)} kr</div></div>
+        <div style="text-align:right;font-size:11px;color:var(--t3);line-height:1.9">
+          <div>${fmt(tv)} kr arbejde</div><div>${fmt(mv)} kr materialer</div><div>${fmt(kv)} kr kørsel</div>
+        </div>
+      </div>
+      ${p.budget?`<div class="pb" style="margin-top:10px"><div class="pbf ${tot/p.budget>0.9?'err':''}" style="width:${Math.min(Math.round(tot/p.budget*100),100)}%"></div></div><div style="font-size:9px;color:var(--t3);margin-top:2px">${Math.min(Math.round(tot/p.budget*100),100)}% af budget brugt</div>`:''}
+    </div>`;
+  document.getElementById('status-chips').innerHTML=['active','paused','done'].map(s=>`<button class="sch${(p.status||'active')===s?' sel':''}" onclick="setStatus('${s}',this)">${{active:'Aktiv',paused:'Pause',done:'Afsluttet'}[s]}</button>`).join('');
+  const acts=[
+    {i:'ti-clock',l:'Timeregistrering',s:(p.times||[]).length+' poster',c:'acc',sc:'s-hours'},
+    {i:'ti-tool',l:'Materialer',s:(p.materials||[]).length+' varer',c:'inf',sc:'s-mats'},
+    {i:'ti-shopping-cart',l:'Skal bestilles',s:(()=>{const o=p.orders||[];const open=o.filter(x=>!x.done).length;return open?open+' mangler':o.length?'Alt bestilt ✓':'Tom';})(),c:'err',sc:'s-orders'},
+    {i:'ti-car',l:'Kørsel',s:fmt((p.kms||[]).reduce((a,k)=>a+k.km,0))+' km',c:'ok',sc:'s-km'},
+    {i:'ti-bell',l:'Påmindelser',s:(p.reminders||[]).length+' aktive',c:'pur',sc:'s-rems'},
+    {i:'ti-checklist',l:'Tjekliste',s:((p.checklist||[]).filter(c=>c.done).length)+'/'+(p.checklist||[]).length+' færdige',c:'acc',sc:'s-cl'},
+    {i:'ti-files',l:'Dokumentation',s:(p.docs||[]).length+' filer',c:'inf',sc:'s-docs'},
+    {i:'ti-notes',l:'Projektnoter',s:p.notes?'Har noter':'Tom',c:'pur',sc:'s-notes'},
+    {i:'ti-file-invoice',l:'Generér faktura',s:'',c:'acc',sc:'s-invdet'},
+  ];
+  document.getElementById('proj-actions').innerHTML=acts.map(a=>`<div class="card" style="display:flex;align-items:center;gap:12px;padding:12px 14px;margin-bottom:6px" onclick="go('${a.sc}')"><div class="ri ${a.c}"><i class="ti ${a.i}"></i></div><div style="flex:1"><div style="font-size:13px;font-weight:700">${a.l}</div>${a.s?`<div style="font-size:10px;color:var(--t2);margin-top:1px">${a.s}</div>`:''}</div><i class="ti ti-chevron-right" style="color:var(--t3);font-size:15px"></i></div>`).join('');
+  const rec=[];
+  (p.times||[]).slice(-2).forEach(t=>rec.push({i:'ti-clock',c:'acc',n:`${t.hours}t – ${t.desc}`,s:t.date}));
+  (p.materials||[]).slice(-2).forEach(m=>rec.push({i:'ti-tool',c:'inf',n:m.name,s:`${m.qty} stk · ${fmt(m.total)} kr`}));
+  document.getElementById('proj-recent').innerHTML=rec.length?rec.map(r=>`<div class="row"><div class="ri ${r.c}"><i class="ti ${r.i}"></i></div><div><div style="font-size:12px;font-weight:600">${r.n}</div><div style="font-size:10px;color:var(--t3);margin-top:1px">${r.s}</div></div></div>`).join(''):'<div style="color:var(--t3);font-size:12px;padding:8px 0">Ingen aktivitet endnu</div>';
+}
+
+function setStatus(s,el){const p=gP(curId);if(!p)return;p.status=s;document.querySelectorAll('#status-chips .sch').forEach(c=>c.classList.remove('sel'));el.classList.add('sel');persist();renderHome();toast('Status opdateret');}
+
+function renderHours(){const p=gP(curId);if(!p)return;document.getElementById('hours-sub').textContent=p.name+' · '+(p.times||[]).reduce((a,t)=>a+t.hours,0).toFixed(1)+'t';document.getElementById('hours-list').innerHTML=(p.times||[]).length?(p.times||[]).map((t,i)=>`<div class="row"><div class="ri acc"><i class="ti ti-clock"></i></div><div style="flex:1"><div style="font-size:12px;font-weight:700">${t.desc}</div><div style="font-size:10px;color:var(--t3);margin-top:1px;font-family:var(--M)">${t.date}${t.span?' · '+t.span:''} · ${t.hours}t · ${fmt(t.amount)} kr</div><span class="tag a" style="margin-top:3px;display:inline-block">${t.rateName}</span></div><button class="rdel" onclick="dupHour(${i})" title="Kopiér"><i class="ti ti-copy"></i></button><button class="rdel" onclick="delHour(${i})"><i class="ti ti-trash"></i></button></div>`).join(''):'<div class="empty"><i class="ti ti-clock"></i><p>Ingen timer endnu</p><small>Tryk + for at registrere</small></div>';}
+
+function renderMats(){const p=gP(curId);if(!p)return;document.getElementById('mats-sub').textContent=p.name+' · '+fmt((p.materials||[]).reduce((a,m)=>a+m.total,0))+' kr';document.getElementById('mats-list').innerHTML=(p.materials||[]).length?(p.materials||[]).map((m,i)=>`<div class="row">${matIconHTML(m,36)}<div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${m.name}</div><div style="font-size:10px;color:var(--t3);margin-top:1px;font-family:var(--M)">${m.qty} stk · ${fmt(m.price)} kr/stk · <strong>${fmt(m.total)} kr</strong></div></div><button class="rdel" onclick="dupMat(${i})" title="Kopiér"><i class="ti ti-copy"></i></button><button class="rdel" onclick="delMat(${i})"><i class="ti ti-trash"></i></button></div>`).join(''):'<div class="empty"><i class="ti ti-tool"></i><p>Ingen materialer endnu</p><small>Tryk + for at tilføje</small></div>';}
+
+function renderKm(){const p=gP(curId);if(!p)return;document.getElementById('km-sub').textContent=p.name+' · '+fmt((p.kms||[]).reduce((a,k)=>a+k.km,0))+' km';document.getElementById('km-list').innerHTML=(p.kms||[]).length?(p.kms||[]).map((k,i)=>`<div class="row"><div class="ri ok"><i class="ti ti-car"></i></div><div style="flex:1"><div style="font-size:12px;font-weight:700">${k.route||'Kørsel'}</div><div style="font-size:10px;color:var(--t3);margin-top:1px;font-family:var(--M)">${k.date} · ${fmt(k.km)} km · ${fmt(k.amount)} kr</div></div><button class="rdel" onclick="delKm(${i})"><i class="ti ti-trash"></i></button></div>`).join(''):'<div class="empty"><i class="ti ti-car"></i><p>Ingen kørsel endnu</p><small>Tryk + for at registrere</small></div>';}
+
+function renderRems(){const p=gP(curId);if(!p)return;document.getElementById('rems-sub').textContent=p.name;const pc={normal:'b',vigtig:'a',kritisk:'r'};document.getElementById('rems-list').innerHTML=(p.reminders||[]).length?(p.reminders||[]).map((r,i)=>`<div class="row"><div class="ri pur"><i class="ti ti-bell"></i></div><div style="flex:1"><div style="font-size:12px;font-weight:700">${r.text}</div><div style="font-size:10px;color:var(--t3);margin-top:1px">${r.date} kl. ${r.time} <span class="tag ${pc[r.prio]}">${r.prio}</span></div></div><button class="rdel" onclick="delRem(${i})"><i class="ti ti-trash"></i></button></div>`).join(''):'<div class="empty"><i class="ti ti-bell"></i><p>Ingen påmindelser</p><small>Tryk + for at tilføje</small></div>';}
+
+function renderCL(){const p=gP(curId);if(!p)return;document.getElementById('cl-sub').textContent=p.name;document.getElementById('cl-presets').innerHTML=CL_PRE.map(t=>`<button class="sch" style="font-size:9px;padding:4px 9px" onclick="addPreset('${t.replace(/'/g,"\\'")}')"><i class="ti ti-plus" style="font-size:9px"></i> ${t}</button>`).join('');document.getElementById('cl-list').innerHTML=(p.checklist||[]).length?(p.checklist||[]).map((c,i)=>`<div class="cl${c.done?' done':''}"><input type="checkbox" id="ci${i}"${c.done?' checked':''} onchange="toggleCL(${i},this.checked)"><label for="ci${i}">${c.text}</label><button class="rdel" onclick="delCL(${i})"><i class="ti ti-x"></i></button></div>`).join(''):'<div class="empty" style="padding:18px 0"><i class="ti ti-checklist"></i><p>Tom tjekliste</p></div>';}
+
+function renderDocs(){const p=gP(curId);if(!p)return;document.getElementById('docs-sub').textContent=p.name;document.getElementById('docs-list').innerHTML=(p.docs||[]).length?(p.docs||[]).map((d,i)=>`<div class="row"><div class="ri inf"><i class="ti ti-file-description"></i></div><div style="flex:1"><div style="font-size:12px;font-weight:700">${d.name}</div><div style="font-size:10px;color:var(--t3);margin-top:1px">${d.type} · ${d.date}</div></div><button class="rdel" onclick="delDoc(${i})"><i class="ti ti-trash"></i></button></div>`).join('')+`<div style="margin-top:12px;padding-top:1px;border-top:1px solid var(--bor)"></div>`:'';}
+
+function renderDash(){
+  document.getElementById('dash-date').textContent=new Date().toLocaleDateString('da-DK',{weekday:'long',day:'numeric',month:'long'});
+  let th=0,tv=0,km=0,rev=0,active=0;
+  // uge-beregning (mandag-søndag)
+  const now=new Date();const day=(now.getDay()+6)%7;const monday=new Date(now);monday.setHours(0,0,0,0);monday.setDate(now.getDate()-day);
+  let weekH=0,weekRev=0;
+  S.projects.forEach(p=>{if((p.status||'active')==='active')active++;(p.times||[]).forEach(t=>{th+=t.hours;tv+=t.amount;rev+=t.amount;const td=new Date(t.date);if(td>=monday){weekH+=t.hours;weekRev+=t.amount;}});(p.materials||[]).forEach(m=>rev+=m.total);(p.kms||[]).forEach(k=>{km+=k.km;rev+=k.amount;});});
+  document.getElementById('dash-pills').innerHTML=`<div class="pill pur"><strong>${weekH.toFixed(1)}t</strong> denne uge</div><div class="pill acc"><strong>${active}</strong> aktive projekter</div><div class="pill"><strong>${th.toFixed(1)}t</strong> i alt</div><div class="pill ok"><strong>${fmt(km)} km</strong> kørsel</div><div class="pill acc"><strong>${fmt(rev)} kr</strong> ex. moms</div>`;
+  const bp=S.projects.filter(p=>p.budget);
+  document.getElementById('dash-budgets').innerHTML=bp.length?bp.map(p=>{const u=(p.times||[]).reduce((a,t)=>a+t.amount,0)+(p.materials||[]).reduce((a,m)=>a+m.total,0)+(p.kms||[]).reduce((a,k)=>a+k.amount,0);const pc=Math.min(Math.round(u/p.budget*100),100);const bc=pc>90?'err':pc>70?'a':'ok';return`<div class="card" style="padding:11px 13px;margin-bottom:6px" onclick="openProj(${p.id});goTab('s-home','bn-home')"><div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:5px"><span>${p.name}</span><span style="color:var(--acc);font-family:var(--M)">${pc}%</span></div><div class="pb"><div class="pbf ${bc}" style="width:${pc}%"></div></div><div style="font-size:9px;color:var(--t3);margin-top:2px">${fmt(u)} / ${fmt(p.budget)} kr</div></div>`;}).join(''):'<div style="color:var(--t3);font-size:11px;padding:6px 0">Ingen budgetter sat endnu</div>';
+  const ar=[];S.projects.forEach(p=>(p.reminders||[]).forEach(r=>ar.push({...r,pn:p.name})));ar.sort((a,b)=>a.date.localeCompare(b.date));
+  const pc2={normal:'b',vigtig:'a',kritisk:'r'};
+  document.getElementById('dash-rems').innerHTML=ar.slice(0,5).map(r=>`<div class="row"><div class="ri pur"><i class="ti ti-bell"></i></div><div><div style="font-size:12px;font-weight:700">${r.text}</div><div style="font-size:10px;color:var(--t3);margin-top:1px">${r.date} · ${r.pn} <span class="tag ${pc2[r.prio]}">${r.prio}</span></div></div></div>`).join('')||'<div style="color:var(--t3);font-size:11px;padding:6px 0">Ingen påmindelser</div>';
+  document.getElementById('dash-act').innerHTML=(S.activity||[]).slice(0,8).map(a=>`<div style="display:flex;gap:9px;padding:6px 0;border-bottom:1px solid var(--bor);font-size:11px"><span style="color:var(--t3);font-family:var(--M);flex-shrink:0">${a.ts}</span><span style="color:var(--t2)">${a.t}</span></div>`).join('')||'<div style="color:var(--t3);font-size:11px;padding:6px 0">Ingen aktivitet endnu</div>';
+}
+
+function renderInvList(){document.getElementById('inv-proj-list').innerHTML=S.projects.map(p=>{const tot=((p.times||[]).reduce((a,t)=>a+t.amount,0)+(p.materials||[]).reduce((a,m)=>a+m.total,0)+(p.kms||[]).reduce((a,k)=>a+k.amount,0));return`<div class="card" style="display:flex;align-items:center;gap:11px;padding:12px 14px" onclick="openInv(${p.id})"><div style="flex:1"><div style="font-size:13px;font-weight:700">${p.name}</div><div style="font-size:10px;color:var(--t2);margin-top:1px">${p.customer||''}</div></div><div style="text-align:right"><div style="font-family:var(--M);font-size:14px;font-weight:700;color:var(--acc)">${fmt(tot*1.25)} kr</div><div style="font-size:9px;color:var(--t3)">inkl. moms</div></div><i class="ti ti-chevron-right" style="color:var(--t3)"></i></div>`;}).join('')||'<div class="empty"><i class="ti ti-file-invoice"></i><p>Ingen projekter</p></div>';}
+function openInv(id){curId=id;go('s-invdet');}
+function toggleVat(){showExVat=!showExVat;document.getElementById('vat-btn').innerHTML=`<i class="ti ti-receipt-tax"></i> ${showExVat?'Vis inkl. moms':'Vis ex. moms'}`;renderInvDet();}
+function renderInvDet(){
+  const p=gP(curId);if(!p)return;
+  document.getElementById('inv-sub').textContent=p.name+' · '+(p.customer||'');
+  let th=0;(p.times||[]).forEach(t=>th+=t.amount);
+  let tm=0;(p.materials||[]).forEach(m=>tm+=m.total);
+  let tk=0;(p.kms||[]).forEach(k=>tk+=k.amount);
+  const sub=th+tm+tk,vat=sub*.25,total=sub+vat;
+  const co=S.company,now=new Date(),due=new Date(now.getTime()+14*864e5),df=d=>d.toLocaleDateString('da-DK');
+  document.getElementById('inv-box').innerHTML=`<div style="background:var(--bg2);border:1px solid var(--bor);border-radius:var(--r2);padding:16px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+      <div><div style="font-size:16px;font-weight:800;color:var(--acc)">⚡ ${co.name||'Dit El-firma'}</div><div style="font-size:10px;color:var(--t2);margin-top:3px;line-height:1.6">${co.addr||''}<br>${co.phone||''} · ${co.email||''}${co.cvr?'<br>CVR: '+co.cvr:''}${co.auth?'<br>Aut.: '+co.auth:''}</div></div>
+      <div style="text-align:right;font-size:10px;color:var(--t2);line-height:1.7"><div style="font-size:16px;font-weight:800;color:var(--acc)">FAKTURA</div><div>Nr. ${Date.now()%100000}</div><div>Dato: ${df(now)}</div><div>Forfald: ${df(due)}</div><span class="tag g">${co.terms||'14 dage netto'}</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:13px;padding-bottom:13px;border-bottom:1px solid var(--bor)">
+      <div><div style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--t3);margin-bottom:3px">Faktureres til</div><div style="font-size:12px;font-weight:700">${p.customer||''}</div><div style="font-size:10px;color:var(--t2);line-height:1.5;margin-top:1px">${p.addr||''}<br>${p.email||''}<br>${p.phone||''}</div></div>
+      <div><div style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--t3);margin-bottom:3px">Projekt</div><div style="font-size:12px;font-weight:700">${p.name}</div><div style="font-size:10px;color:var(--t2);margin-top:1px">${p.desc||''}</div></div>
+    </div>
+    <table style="width:100%;border-collapse:collapse;font-size:10px;margin-bottom:11px">
+      <thead><tr>${['Beskrivelse','Type','Antal','Beløb'].map(h=>`<th style="text-align:left;padding:0 0 6px;border-bottom:1px solid var(--bor);font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--t3)">${h}</th>`).join('')}</tr></thead>
+      <tbody>
+        ${(p.times||[]).map(t=>`<tr><td style="padding:6px 0;border-bottom:1px solid var(--bor)">${t.desc}<br><span style="font-size:9px;color:var(--t3)">${t.date} · ${t.hours}t</span></td><td style="padding:6px 0;border-bottom:1px solid var(--bor)"><span class="tag a">Arbejde</span></td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M)">${t.hours}t</td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M);font-weight:700">${fmt(t.amount)} kr</td></tr>`).join('')}
+        ${(p.materials||[]).map(m=>`<tr><td style="padding:6px 0;border-bottom:1px solid var(--bor)">${m.name}</td><td style="padding:6px 0;border-bottom:1px solid var(--bor)"><span class="tag b">Vare</span></td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M)">${m.qty} stk</td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M);font-weight:700">${fmt(m.total)} kr</td></tr>`).join('')}
+        ${(p.kms||[]).map(k=>`<tr><td style="padding:6px 0;border-bottom:1px solid var(--bor)">${k.route||'Kørsel'}<br><span style="font-size:9px;color:var(--t3)">${k.date}</span></td><td style="padding:6px 0;border-bottom:1px solid var(--bor)"><span class="tag g">Kørsel</span></td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M)">${fmt(k.km)} km</td><td style="padding:6px 0;border-bottom:1px solid var(--bor);font-family:var(--M);font-weight:700">${fmt(k.amount)} kr</td></tr>`).join('')}
+      </tbody>
+    </table>
+    <div style="max-width:220px;margin-left:auto">
+      <div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid var(--bor);font-size:10px"><span style="color:var(--t2)">Arbejde</span><span style="font-family:var(--M)">${fmt(th)} kr</span></div>
+      <div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid var(--bor);font-size:10px"><span style="color:var(--t2)">Materialer</span><span style="font-family:var(--M)">${fmt(tm)} kr</span></div>
+      <div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid var(--bor);font-size:10px"><span style="color:var(--t2)">Kørsel</span><span style="font-family:var(--M)">${fmt(tk)} kr</span></div>
+      <div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid var(--bor);font-size:10px"><span style="color:var(--t2)">Subtotal ex. moms</span><span style="font-family:var(--M)">${fmt(sub)} kr</span></div>
+      ${showExVat
+        ?`<div style="display:flex;justify-content:space-between;padding:10px 0;border-top:2px solid var(--acc);margin-top:2px;font-size:13px;font-weight:800"><span>Total ex. moms</span><span style="font-family:var(--M);color:var(--acc)">${fmt(sub)} kr</span></div>`
+        :`<div style="display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid var(--bor);font-size:10px"><span style="color:var(--t2)">Moms 25%</span><span style="font-family:var(--M)">${fmt(vat)} kr</span></div><div style="display:flex;justify-content:space-between;padding:10px 0;border-top:2px solid var(--acc);margin-top:2px;font-size:13px;font-weight:800"><span>Total inkl. moms</span><span style="font-family:var(--M);color:var(--acc)">${fmt(total)} kr</span></div>`}
+    </div>
+    ${co.reg?`<div style="margin-top:11px;padding-top:9px;border-top:1px solid var(--bor);font-size:9px;color:var(--t3)">Betal til: Reg. ${co.reg} · Konto ${co.account||''}</div>`:''}
+  </div>`;}
+
+// INPUTS
+document.getElementById('t-rate').addEventListener('change',function(){document.getElementById('t-cw').style.display=this.value==='custom'?'block':'none';updT();});
+// ---- TIDSREGISTRERING: tre tilstande ----
+let timeMode='clock', watchRunning=false, watchStart=0, watchAccum=0, watchTimer=null;
+function setTimeMode(m){
+  timeMode=m;
+  document.getElementById('mode-clock').style.display=m==='clock'?'block':'none';
+  document.getElementById('mode-watch').style.display=m==='watch'?'block':'none';
+  document.getElementById('mode-manual').style.display=m==='manual'?'block':'none';
+  ['tm-clock','tm-watch','tm-manual'].forEach(id=>document.getElementById(id).classList.remove('sel'));
+  document.getElementById('tm-'+m).classList.add('sel');
+  updT();
+}
+function curRate(){const s=document.getElementById('t-rate');return s.value==='custom'?parseFloat(document.getElementById('t-cr').value)||0:parseInt(s.value);}
+function timeToMin(v){if(!v)return 0;const[h,m]=v.split(':').map(Number);return h*60+m;}
+function computeHours(){
+  if(timeMode==='manual')return parseFloat(document.getElementById('t-hours').value)||0;
+  if(timeMode==='watch')return (watchAccum+(watchRunning?Date.now()-watchStart:0))/3600000;
+  // clock
+  let from=timeToMin(document.getElementById('t-from').value);
+  let to=timeToMin(document.getElementById('t-to').value);
+  let diff=to-from; if(diff<0)diff+=24*60; // over midnat
+  diff-=parseInt(document.getElementById('t-break').value)||0;
+  return Math.max(0,diff/60);
+}
+function updT(){
+  const h=computeHours();const r=curRate();
+  document.getElementById('t-amt').textContent=fmt(r*h)+' kr';
+  // pæn tidsvisning: timer + minutter
+  const hh=Math.floor(h);const mm=Math.round((h-hh)*60);
+  document.getElementById('t-hours-lbl').textContent=mm?`${hh} t ${mm} min`:`${hh} t`;
+}
+function fmtWatch(ms){const s=Math.floor(ms/1000);const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;return [h,m,sec].map(x=>String(x).padStart(2,'0')).join(':');}
+function tickWatch(){document.getElementById('watch-display').textContent=fmtWatch(watchAccum+(watchRunning?Date.now()-watchStart:0));updT();}
+function toggleWatch(){
+  const btn=document.getElementById('watch-btn');
+  if(watchRunning){watchAccum+=Date.now()-watchStart;watchRunning=false;clearInterval(watchTimer);btn.innerHTML='<i class="ti ti-player-play"></i> Fortsæt';}
+  else{watchRunning=true;watchStart=Date.now();watchTimer=setInterval(tickWatch,1000);btn.innerHTML='<i class="ti ti-player-pause"></i> Pause';}
+}
+function resetWatch(){watchRunning=false;watchAccum=0;clearInterval(watchTimer);const d=document.getElementById('watch-display');if(d)d.textContent='00:00:00';const b=document.getElementById('watch-btn');if(b)b.innerHTML='<i class="ti ti-player-play"></i> Start';updT();}
+['m-qty','m-price'].forEach(id=>document.getElementById(id).addEventListener('input',updM));
+function updM(){const q=parseInt(document.getElementById('m-qty').value)||0;const p=parseFloat(document.getElementById('m-price').value)||0;document.getElementById('m-amt').textContent=fmt(q*p)+' kr';}
+['km-km','km-rate'].forEach(id=>document.getElementById(id).addEventListener('input',updK));
+function updK(){const k=parseFloat(document.getElementById('km-km').value)||0;const r=parseFloat(document.getElementById('km-rate').value)||3.82;document.getElementById('km-amt').textContent=fmtD(k*r)+' kr';}
+
+// MATERIALE BROWSE & SØGNING
+let curCatFilter='Alle';
+function catList(){const s=new Set();CAT.forEach(c=>s.add(c.cat));return ['Alle',...Array.from(s)];}
+function renderCatChips(){
+  document.getElementById('cat-chips').innerHTML=catList().map(c=>`<button class="sch${c===curCatFilter?' sel':''}" style="flex-shrink:0;white-space:nowrap" onclick="pickCat('${c.replace(/'/g,"\\'")}')">${c}</button>`).join('');
+}
+function pickCat(c){curCatFilter=c;renderCatChips();filterCat();}
+// normaliser: fjern mellemrum, gør komma+punktum ens, lowercase
+function norm(s){return (s||'').toLowerCase().replace(/\./g,',').replace(/\s+/g,' ').trim();}
+// daglig-tale / synonymer → tilføjer ekstra søgeord
+const SYN={
+  'prop':'stikkontakt','stik':'stikkontakt','kontakt':'afbryder stikkontakt','knap':'afbryder tryk',
+  'sikring':'automatsikring','gruppe':'automatsikring','fejlstrøm':'hpfi','fejlstrømsafbryder':'hpfi',
+  'rør':'kabelrør installationsrør fleksrør','flexrør':'fleksrør','bøjerør':'fleksrør',
+  'dims':'lysdæmper','dæmp':'lysdæmper','lys':'belysning lampe led','pære':'belysning led',
+  'tavle':'gruppetavle','måler':'spændingstester','tester':'spændingstester',
+  'spjæld':'kanal','liste':'kanal','skinne':'din samleskinne','klemme':'wago klemme',
+  'tråd':'ledning kabel','net':'netværk data','internet':'netværk data rj45','wifi':'trådløs smart',
+  'smart':'trådløs shelly wiser','røg':'røgalarm','alarm':'røgalarm sirene','jord':'jordforbindelse jordelektrode',
+  'lampe':'lampeudtag belysning','loft':'lampeudtag','spot':'downlight led','panel':'led panel',
+  'dåse':'indmuringsdåse forfradåse','ramme':'ramme afdækning','underlag':'monteringsunderlag',
+  'usb':'usb opladning','opladning':'usb','bevægelse':'sensor pir','sensor':'sensor pir bevægelse',
+  'termostat':'termostat gulvvarme','gulvvarme':'termostat','strips':'kabelbinder','binder':'kabelbinder'
+};
+// Levenshtein-afstand til stavetolerance
+function lev(a,b){const m=a.length,n=b.length;if(!m)return n;if(!n)return m;const d=[];for(let i=0;i<=m;i++)d[i]=[i];for(let j=0;j<=n;j++)d[0][j]=j;for(let i=1;i<=m;i++)for(let j=1;j<=n;j++){const c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);}return d[m][n];}
+function expandTerms(terms){
+  // tilføj synonymer
+  let extra=[];
+  terms.forEach(t=>{if(SYN[t])extra.push(...norm(SYN[t]).split(' '));});
+  return [...terms,...extra];
+}
+function matchScore(c,terms){
+  const hay=norm(c.name+' '+(c.brand||'')+' '+(c.cat||'')+' '+(c.tags||''));
+  const words=hay.split(' ');
+  let score=0;
+  for(const t of terms){
+    if(hay.includes(t)){score+=10;continue;}
+    // fuzzy: find ord der ligner (stavefejl)
+    let best=99;
+    for(const w of words){if(w.length>2&&Math.abs(w.length-t.length)<=2){const d=lev(t,w);if(d<best)best=d;}}
+    if(t.length>=4&&best<=2)score+=5; // tæt stavning tæller
+    else if(t.length>=3&&best<=1)score+=5;
+    else return -1; // ord matcher slet ikke
+  }
+  return score;
+}
+function filterCat(){
+  const raw=document.getElementById('m-search').value;
+  const q=norm(raw);
+  let terms=q.split(' ').filter(Boolean);
+  const list=document.getElementById('cat-list');
+  // ingen søgning: vis bare kategori-filtreret liste
+  if(!terms.length){
+    let res=CAT.filter(c=>curCatFilter==='Alle'||c.cat===curCatFilter);
+    drawMatList(res,list);return;
+  }
+  const expanded=expandTerms(terms);
+  // prøv eksakt/AND-match først
+  let scored=CAT.map(c=>{if(curCatFilter!=='Alle'&&c.cat!==curCatFilter)return null;const s=matchScore(c,terms);return s>=0?{c,s}:null;}).filter(Boolean);
+  // hvis intet eksakt, prøv med synonymer + fuzzy (OR-agtig: mindst ét ord skal matche stærkt)
+  let usedFuzzy=false;
+  if(!scored.length){
+    usedFuzzy=true;
+    scored=CAT.map(c=>{
+      if(curCatFilter!=='Alle'&&c.cat!==curCatFilter)return null;
+      const hay=norm(c.name+' '+(c.brand||'')+' '+(c.cat||'')+' '+(c.tags||''));
+      let s=0;for(const t of expanded){if(hay.includes(t))s+=8;}
+      // fuzzy på hovedord
+      if(s===0){const words=hay.split(' ');for(const t of terms){for(const w of words){if(w.length>3&&lev(t,w)<=2){s+=4;break;}}}}
+      return s>0?{c,s}:null;
+    }).filter(Boolean);
+  }
+  scored.sort((a,b)=>b.s-a.s);
+  const res=scored.map(x=>x.c);
+  if(!res.length){
+    // ingen hits overhovedet → vis "mente du" forslag baseret på tætteste ord
+    const sugg=suggestTerms(terms);
+    list.innerHTML=`<div class="empty"><i class="ti ti-search-off"></i><p>Ingen varer fundet</p>${sugg.length?`<small>Mente du:</small><div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:8px">${sugg.map(s=>`<button class="sch" onclick="document.getElementById('m-search').value='${s}';filterCat()">${s}</button>`).join('')}</div>`:'<small>Prøv et andet ord eller vælg en kategori</small>'}</div>`;
+    return;
+  }
+  drawMatList(res,list,usedFuzzy?'Viser nærmeste forslag':'');
+}
+function suggestTerms(terms){
+  // find de ord i kataloget der ligner brugerens ord mest
+  const vocab=new Set();
+  CAT.forEach(c=>{norm(c.name+' '+(c.tags||'')).split(' ').forEach(w=>{if(w.length>3)vocab.add(w);});});
+  const out=[];
+  terms.forEach(t=>{
+    if(t.length<3)return;
+    let best=null,bd=99;
+    vocab.forEach(w=>{const d=lev(t,w);if(d<bd&&d<=3){bd=d;best=w;}});
+    if(best&&!out.includes(best))out.push(best);
+  });
+  return out.slice(0,4);
+}
+function drawMatList(res,list,note){
+  if(!res.length){list.innerHTML='<div class="empty"><i class="ti ti-search-off"></i><p>Ingen varer</p></div>';return;}
+  list.innerHTML=(note?`<div style="font-size:10px;color:var(--t3);margin-bottom:8px;font-style:italic">${note}</div>`:'')+res.slice(0,80).map(r=>{
+    const idx=CAT.indexOf(r);
+    return `<div class="card" style="display:flex;align-items:center;gap:11px;padding:10px 12px;margin-bottom:6px" onclick="pickMat(${idx})">
+      ${matIconHTML(r,42)}
+      <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${r.name}</div><div style="font-size:10px;color:var(--t3);margin-top:1px">${r.brand?r.brand+' · ':''}${r.cat}</div></div>
+      <span style="font-family:var(--M);font-size:12px;color:var(--acc);flex-shrink:0;font-weight:500">${fmt(r.price)} kr</span>
+      <i class="ti ti-plus" style="color:var(--t3);font-size:15px;flex-shrink:0"></i>
+    </div>`;
+  }).join('')+(res.length>80?`<div style="text-align:center;color:var(--t3);font-size:11px;padding:8px">+ ${res.length-80} flere – søg for at indsnævre</div>`:'');
+}
+function pickMat(idx){
+  const r=CAT[idx];if(!r)return;
+  setMatBox(r.name,r.brand,r.cat,r.price,r.img||'');
+  go('s-matqty');
+}
+
+// ====== SKAL BESTILLES (indkøbsliste) ======
+let curOcatFilter='Alle',oSel=null;
+function renderOcatChips(){
+  document.getElementById('ocat-chips').innerHTML=catList().map(c=>`<button class="sch${c===curOcatFilter?' sel':''}" style="flex-shrink:0;white-space:nowrap" onclick="pickOcat('${c.replace(/'/g,"\\'")}')">${c}</button>`).join('');
+}
+function pickOcat(c){curOcatFilter=c;renderOcatChips();filterOrderCat();}
+function filterOrderCat(){
+  const raw=document.getElementById('o-search').value;
+  const q=norm(raw);let terms=q.split(' ').filter(Boolean);
+  const list=document.getElementById('ocat-list');
+  let res;
+  if(!terms.length){res=CAT.filter(c=>curOcatFilter==='Alle'||c.cat===curOcatFilter);}
+  else{
+    const expanded=expandTerms(terms);
+    let scored=CAT.map(c=>{if(curOcatFilter!=='Alle'&&c.cat!==curOcatFilter)return null;const s=matchScore(c,terms);return s>=0?{c,s}:null;}).filter(Boolean);
+    if(!scored.length){scored=CAT.map(c=>{if(curOcatFilter!=='Alle'&&c.cat!==curOcatFilter)return null;const hay=norm(c.name+' '+(c.brand||'')+' '+(c.cat||'')+' '+(c.tags||''));let s=0;for(const t of expanded){if(hay.includes(t))s+=8;}if(s===0){const words=hay.split(' ');for(const t of terms){for(const w of words){if(w.length>3&&lev(t,w)<=2){s+=4;break;}}}}return s>0?{c,s}:null;}).filter(Boolean);}
+    scored.sort((a,b)=>b.s-a.s);res=scored.map(x=>x.c);
+  }
+  if(!res.length){list.innerHTML='<div class="empty"><i class="ti ti-search-off"></i><p>Ingen varer fundet</p></div>';return;}
+  list.innerHTML=res.slice(0,80).map(r=>{const idx=CAT.indexOf(r);return `<div class="card" style="display:flex;align-items:center;gap:11px;padding:10px 12px;margin-bottom:6px" onclick="pickOrder(${idx})">${matIconHTML(r,42)}<div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${r.name}</div><div style="font-size:10px;color:var(--t3);margin-top:1px">${r.brand?r.brand+' · ':''}${r.cat}</div></div><i class="ti ti-shopping-cart-plus" style="color:var(--err);font-size:16px;flex-shrink:0"></i></div>`;}).join('')+(res.length>80?`<div style="text-align:center;color:var(--t3);font-size:11px;padding:8px">+ ${res.length-80} flere – søg for at indsnævre</div>`:'');
+}
+function pickOrder(idx){
+  const r=CAT[idx];if(!r)return;
+  oSel={name:r.name,brand:r.brand,cat:r.cat,img:r.img||''};
+  setOrderBox();go('s-orderqty');
+}
+function newCustomOrder(){
+  const name=prompt('Navn på varen der skal bestilles:');
+  if(!name||!name.trim())return;
+  oSel={name:name.trim(),brand:'',cat:'Egen vare',img:''};
+  setOrderBox();go('s-orderqty');
+}
+function setOrderBox(){
+  document.getElementById('osel-name').textContent=oSel.name;
+  document.getElementById('osel-brand').textContent=oSel.brand?oSel.brand+(oSel.cat?' · '+oSel.cat:''):(oSel.cat||'');
+  document.getElementById('o-qty').value='1';
+  document.getElementById('o-note').value='';
+  const iw=document.getElementById('osel-img');
+  if(oSel.img){iw.innerHTML=`<img src="${oSel.img}" style="width:48px;height:48px;object-fit:contain;border-radius:7px;background:#fff" onerror="this.outerHTML='<i class=ti ti-tool style=font-size:20px;color:var(--t3)></i>'">`;iw.className='';}
+  else{const[ic,clr]=catIcon(oSel.cat);iw.innerHTML=`<i class="ti ${ic}"></i>`;iw.className='ri '+clr;iw.style.width='48px';iw.style.height='48px';}
+}
+function saveOrder(){
+  const p=gP(curId);if(!p||!oSel)return;
+  if(!p.orders)p.orders=[];
+  const qty=parseInt(document.getElementById('o-qty').value)||1;
+  const note=document.getElementById('o-note').value.trim();
+  p.orders.push({name:oSel.name,brand:oSel.brand,cat:oSel.cat,img:oSel.img,qty,note,done:false});
+  addAct(p.name+': '+qty+'× '+oSel.name+' til bestilling');
+  persist();renderOrders();go('s-orders');toast('Føjet til bestilling ✓');
+}
+function renderOrders(){
+  const p=gP(curId);if(!p)return;
+  const o=p.orders||[];
+  const open=o.filter(x=>!x.done).length;
+  document.getElementById('orders-sub').textContent=p.name+(o.length?' · '+open+' mangler / '+o.length+' i alt':'');
+  const list=document.getElementById('orders-list');
+  if(!o.length){list.innerHTML='<div class="empty"><i class="ti ti-shopping-cart"></i><p>Intet at bestille</p><small>Tryk "Tilføj vare" for at lave en bestillingsliste</small></div>';return;}
+  // ikke-bestilte først, så bestilte
+  const order=[...o.keys()].sort((a,b)=>(o[a].done?1:0)-(o[b].done?1:0));
+  list.innerHTML=order.map(i=>{const m=o[i];return `<div class="row" style="${m.done?'opacity:.5':''}"><div onclick="toggleOrder(${i})" style="cursor:pointer;flex-shrink:0">${m.done?'<div class="ri ok"><i class="ti ti-checks"></i></div>':matIconHTML(m,36)}</div><div style="flex:1;min-width:0" onclick="toggleOrder(${i})"><div style="font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${m.done?'text-decoration:line-through':''}">${m.qty}× ${m.name}</div><div style="font-size:10px;color:var(--t3);margin-top:1px">${m.brand?m.brand+' · ':''}${m.note?'📝 '+m.note:(m.done?'Bestilt':'Mangler')}</div></div><button class="rdel" onclick="delOrder(${i})"><i class="ti ti-trash"></i></button></div>`;}).join('');
+}
+function toggleOrder(i){const p=gP(curId);if(!p||!p.orders)return;p.orders[i].done=!p.orders[i].done;persist();renderOrders();}
+function delOrder(i){const p=gP(curId);if(!p||!p.orders)return;p.orders.splice(i,1);persist();renderOrders();}
+function copyOrderList(){
+  const p=gP(curId);if(!p)return;const o=(p.orders||[]).filter(x=>!x.done);
+  if(!o.length){toast('Intet at kopiere');return;}
+  const txt='Bestillingsliste – '+p.name+'\n\n'+o.map(m=>`${m.qty}× ${m.name}${m.note?' ('+m.note+')':''}`).join('\n');
+  if(navigator.clipboard){navigator.clipboard.writeText(txt).then(()=>toast('Liste kopieret ✓')).catch(()=>fallbackCopy(txt));}
+  else fallbackCopy(txt);
+}
+function fallbackCopy(txt){const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('Liste kopieret ✓');}catch(e){alert(txt);}document.body.removeChild(ta);}
+
+let selMatName='';
+function setMatBox(name,brand,cat,price,img){
+  selImgUrl=img||'';selMatName=name;
+  document.getElementById('m-price').value=price||0;
+  document.getElementById('m-qty').value='1';
+  document.getElementById('sel-name').textContent=name;
+  document.getElementById('sel-brand').textContent=brand?brand+(cat?' · '+cat:''):(cat||'');
+  document.getElementById('sel-price').textContent=price?fmt(price)+' kr/enhed':'Sæt pris nedenfor';
+  const iw=document.getElementById('sel-img');
+  if(img){iw.innerHTML=`<img src="${img}" style="width:48px;height:48px;object-fit:contain;border-radius:7px;background:#fff" onerror="this.outerHTML='<i class=ti ti-tool style=font-size:20px;color:var(--t3)></i>'">`;iw.className='';}
+  else{const[ic,clr]=catIcon(cat);iw.innerHTML=`<i class="ti ${ic}"></i>`;iw.className='ri '+clr;iw.style.width='48px';iw.style.height='48px';}
+  curMatCat=cat||'';
+  document.getElementById('m-amt').textContent=fmt(price||0)+' kr';
+  document.getElementById('mq-photo-lbl').textContent=img?'Skift billede af varen':'Tilføj billede af varen';
+}
+let curMatCat='';
+// erstat pickMat-body med kald til setMatBox (men behold idx-version):
+function newCustomMat(){
+  const name=prompt('Navn på varen (fx "Specialkabel 3×4mm²"):');
+  if(!name||!name.trim())return;
+  setMatBox(name.trim(),'','Egen vare',0,'');
+  go('s-matqty');
+}
+function attachMatPhoto(e){
+  const file=e.target.files[0];if(!file)return;
+  // komprimer billedet så det ikke fylder for meget i storage
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    const img=new Image();
+    img.onload=function(){
+      const max=400;let w=img.width,h=img.height;
+      if(w>h&&w>max){h=h*max/w;w=max;}else if(h>max){w=w*max/h;h=max;}
+      const c=document.createElement('canvas');c.width=w;c.height=h;
+      c.getContext('2d').drawImage(img,0,0,w,h);
+      selImgUrl=c.toDataURL('image/jpeg',0.7);
+      const iw=document.getElementById('sel-img');
+      iw.innerHTML=`<img src="${selImgUrl}" style="width:48px;height:48px;object-fit:contain;border-radius:7px;background:#fff">`;iw.className='';
+      document.getElementById('mq-photo-lbl').textContent='Skift billede af varen';
+      toast('Billede tilføjet ✓');
+    };
+    img.src=ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+function setPrio(p,el){curPrio=p;document.querySelectorAll('#prio-chips .sch').forEach(c=>c.classList.remove('sel'));el.classList.add('sel');}
+
+// SAVES
+function renderCustPicker(){
+  // saml unikke kunder fra eksisterende projekter
+  const seen={};const custs=[];
+  S.projects.forEach(p=>{if(p.customer&&!seen[p.customer]){seen[p.customer]=1;custs.push({name:p.customer,addr:p.addr,email:p.email,phone:p.phone});}});
+  const wrap=document.getElementById('np-cust-picker');
+  if(!custs.length){wrap.style.display='none';return;}
+  wrap.style.display='block';
+  document.getElementById('np-cust-chips').innerHTML=custs.slice(0,8).map((c,i)=>`<button class="sch" onclick='fillCust(${JSON.stringify(c).replace(/'/g,"&#39;")})'><i class="ti ti-user" style="font-size:10px"></i> ${c.name}</button>`).join('');
+}
+function fillCust(c){
+  document.getElementById('np-customer').value=c.name||'';
+  document.getElementById('np-addr').value=c.addr||'';
+  document.getElementById('np-email').value=c.email||'';
+  document.getElementById('np-phone').value=c.phone||'';
+  toast('Kunde indsat ✓');
+}
+function createProject(){const name=document.getElementById('np-name').value.trim();if(!name){alert('Angiv projektnavn');return;}const p={id:S.nextId++,name,customer:document.getElementById('np-customer').value.trim(),addr:document.getElementById('np-addr').value.trim(),email:document.getElementById('np-email').value.trim(),phone:document.getElementById('np-phone').value.trim(),desc:document.getElementById('np-desc').value.trim(),budget:parseFloat(document.getElementById('np-budget').value)||0,status:'active',times:[],materials:[],kms:[],reminders:[],docs:[],checklist:[],notes:''};S.projects.unshift(p);addAct('Nyt projekt: '+p.name);persist();['np-name','np-customer','np-addr','np-email','np-phone','np-desc','np-budget'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});renderHome();curId=p.id;go('s-proj');toast('Projekt oprettet ✓');}
+function saveTime(){const p=gP(curId);if(!p)return;const r=curRate();const s=document.getElementById('t-rate');const rn=s.value==='custom'?`${r} kr/t`:s.options[s.selectedIndex].text;const h=Math.round(computeHours()*100)/100;if(!h){alert('Ingen tid registreret – tjek fra/til eller stopur');return;}if(!p.times)p.times=[];let span='';if(timeMode==='clock'){const br=parseInt(document.getElementById('t-break').value)||0;span=document.getElementById('t-from').value+'–'+document.getElementById('t-to').value+(br?` (−${br} min pause)`:'');}const desc=document.getElementById('t-desc').value.trim()||'Arbejde';p.times.push({date:document.getElementById('t-date').value,hours:h,rate:r,rateName:rn,amount:r*h,desc,span});addAct(p.name+': '+h+'t registreret');resetWatch();persist();renderHours();go('s-hours');toast('Timer gemt ✓');}
+function saveMat(){const p=gP(curId);if(!p)return;const name=selMatName;if(!name){alert('Vælg et materiale');return;}const qty=parseInt(document.getElementById('m-qty').value)||1;const price=parseFloat(document.getElementById('m-price').value)||0;if(!p.materials)p.materials=[];p.materials.push({name,qty,price,total:qty*price,img:selImgUrl,cat:curMatCat});addAct(p.name+': '+qty+'× '+name);persist();renderMats();go('s-mats');toast('Materiale tilføjet ✓');}
+function saveKm(){const p=gP(curId);if(!p)return;const km=parseFloat(document.getElementById('km-km').value)||0;if(!km){alert('Angiv km');return;}const r=parseFloat(document.getElementById('km-rate').value)||3.82;if(!p.kms)p.kms=[];p.kms.push({date:document.getElementById('km-date').value,km,rate:r,amount:parseFloat((km*r).toFixed(2)),route:document.getElementById('km-route').value.trim()});addAct(p.name+': '+fmt(km)+' km');persist();renderKm();go('s-km');toast('Kørsel gemt ✓');}
+function saveRem(){const p=gP(curId);if(!p)return;const text=document.getElementById('r-text').value.trim();if(!text){alert('Skriv hvad der skal huskes');return;}if(!p.reminders)p.reminders=[];p.reminders.push({text,date:document.getElementById('r-date').value,time:document.getElementById('r-time').value,prio:curPrio});persist();renderRems();go('s-rems');toast('Påmindelse gemt ✓');}
+function saveDoc(){const p=gP(curId);if(!p)return;const name=document.getElementById('doc-name').value.trim();if(!name){alert('Angiv dokumentnavn');return;}if(!p.docs)p.docs=[];p.docs.push({name,type:document.getElementById('doc-type').value,date:document.getElementById('doc-date').value});document.getElementById('doc-name').value='';persist();renderDocs();toast('Dokument tilføjet ✓');}
+function saveNotes(){const p=gP(curId);if(!p)return;p.notes=document.getElementById('notes-ta').value;persist();toast('Notat gemt ✓');}
+function addCL(){const p=gP(curId);if(!p)return;const t=document.getElementById('cl-new').value.trim();if(!t)return;if(!p.checklist)p.checklist=[];p.checklist.push({text:t,done:false});document.getElementById('cl-new').value='';persist();renderCL();}
+function addPreset(t){const p=gP(curId);if(!p)return;if(!p.checklist)p.checklist=[];if(!p.checklist.find(c=>c.text===t)){p.checklist.push({text:t,done:false});persist();renderCL();}}
+function toggleCL(i,v){const p=gP(curId);if(!p)return;p.checklist[i].done=v;persist();renderCL();}
+function delCL(i){const p=gP(curId);if(!p)return;p.checklist.splice(i,1);persist();renderCL();}
+function delHour(i){const p=gP(curId);if(!p)return;p.times.splice(i,1);persist();renderHours();}
+function delMat(i){const p=gP(curId);if(!p)return;p.materials.splice(i,1);persist();renderMats();}
+function dupHour(i){const p=gP(curId);if(!p)return;const t={...p.times[i],date:new Date().toISOString().split('T')[0]};p.times.splice(i+1,0,t);addAct(p.name+': time-post kopieret');persist();renderHours();toast('Kopieret ✓');}
+function dupMat(i){const p=gP(curId);if(!p)return;const m={...p.materials[i]};p.materials.splice(i+1,0,m);addAct(p.name+': '+m.name+' kopieret');persist();renderMats();toast('Kopieret ✓');}
+function delKm(i){const p=gP(curId);if(!p)return;p.kms.splice(i,1);persist();renderKm();}
+function delRem(i){const p=gP(curId);if(!p)return;p.reminders.splice(i,1);persist();renderRems();}
+function delDoc(i){const p=gP(curId);if(!p)return;p.docs.splice(i,1);persist();renderDocs();}
+function loadSettings(){const co=S.company;['name','cvr','addr','phone','email','reg','account','auth'].forEach(k=>{const e=document.getElementById('co-'+k);if(e)e.value=co[k]||'';});const ts=document.getElementById('co-terms');if(ts)ts.value=co.terms||'14 dage netto';}
+function saveSettings(){['name','cvr','addr','phone','email','reg','account','auth'].forEach(k=>{const e=document.getElementById('co-'+k);if(e)S.company[k]=e.value.trim();});const ts=document.getElementById('co-terms');if(ts)S.company.terms=ts.value;persist();toast('Firmainfo gemt ✓');}
+
+// WEATHER
+function loadWeather(){if(!navigator.geolocation)return;navigator.geolocation.getCurrentPosition(pos=>{fetch(`https://api.open-meteo.com/v1/forecast?latitude=${pos.coords.latitude}&longitude=${pos.coords.longitude}&current=temperature_2m,weather_code`).then(r=>r.json()).then(d=>{const t=d.current.temperature_2m;const wc=d.current.weather_code;const icons={0:'ti-sun',1:'ti-sun',2:'ti-cloud',3:'ti-cloud',45:'ti-mist',51:'ti-drizzle',61:'ti-cloud-rain',80:'ti-cloud-rain',95:'ti-cloud-storm'};const descs={0:'Solskin',1:'Næsten klart',2:'Delvis skyet',3:'Overskyet',45:'Tåge',51:'Let regn',61:'Regn',80:'Byger',95:'Tordenvejr'};document.getElementById('wx-t').textContent=t+'°C';document.getElementById('wx-d').textContent=descs[wc]||'Variabelt';document.getElementById('wx-i').className='ti '+(icons[wc]||'ti-cloud');document.getElementById('wx-l').textContent=`📍 ${pos.coords.latitude.toFixed(1)}°N, ${pos.coords.longitude.toFixed(1)}°E`;}).catch(()=>{});},()=>{document.getElementById('wx-l').textContent='📍 Tillad placering for vejr';});}
+
+// AI
+function initAI(){if(!aiH.length)aiH.push({role:'assistant',content:'Hej! Jeg er din el-assistent. Jeg kender stærkstrømsbekendtgørelsen, LK Fuga, Schneider og dansk installationspraksis. Hvad kan jeg hjælpe med?'});renderAI();const p=gP(curId);const tips=p?[`Mangler der noget på ${p.name}?`,'HPFI-krav i badeværelse?','Jordforbindelseskrav?']:['Hvad koster en ny eltavle?','HPFI-krav badeværelse?','Jordforbindelseskrav?','AFDD – hvornår påbudt?'];document.getElementById('ai-chips').innerHTML=tips.map(t=>`<button class="sch" style="font-size:9px;padding:4px 9px" onclick="qAI('${t.replace(/'/g,"\\'")}')"><i class="ti ti-bolt" style="font-size:9px"></i> ${t}</button>`).join('');}
+function renderAI(){const c=document.getElementById('ai-msgs');c.innerHTML=aiH.map(m=>`<div class="ai-msg ${m.role==='user'?'user':'ai'}">${m.content}</div>`).join('');c.scrollTop=c.scrollHeight;}
+function qAI(t){document.getElementById('ai-inp').value=t;sendAI();}
+async function sendAI(){const inp=document.getElementById('ai-inp');const q=inp.value.trim();if(!q)return;inp.value='';aiH.push({role:'user',content:q});renderAI();const dot=document.createElement('div');dot.className='ai-msg ai';dot.innerHTML='<div class="ai-dot"><span></span><span></span><span></span></div>';document.getElementById('ai-msgs').appendChild(dot);document.getElementById('ai-msgs').scrollTop=9999;const p=gP(curId);const ctx=p?`Projekt: ${p.name}, kunde: ${p.customer||'?'}.`:'';try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:350,system:`Du er autoriseret el-installatør og ekspert i dansk el-installation. Svar kort og præcist på dansk. ${ctx}`,messages:aiH})});const d=await r.json();const ans=d.content?.find(x=>x.type==='text')?.text||'Fejl – prøv igen.';dot.remove();aiH.push({role:'assistant',content:ans});renderAI();}catch(e){dot.remove();aiH.push({role:'assistant',content:'Netværksfejl.'});renderAI();}}
+
+function toast(msg){const el=document.getElementById('toast');document.getElementById('toast-msg').textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2000);}
+
+// EDIT & DELETE PROJECT
+function openEditProject(){
+  const p=gP(curId);if(!p)return;
+  document.getElementById('ep-name').value=p.name||'';
+  document.getElementById('ep-customer').value=p.customer||'';
+  document.getElementById('ep-addr').value=p.addr||'';
+  document.getElementById('ep-email').value=p.email||'';
+  document.getElementById('ep-phone').value=p.phone||'';
+  document.getElementById('ep-desc').value=p.desc||'';
+  document.getElementById('ep-budget').value=p.budget||'';
+}
+function saveEditProject(){
+  const p=gP(curId);if(!p)return;
+  const name=document.getElementById('ep-name').value.trim();
+  if(!name){alert('Projektnavn må ikke være tomt');return;}
+  p.name=name;
+  p.customer=document.getElementById('ep-customer').value.trim();
+  p.addr=document.getElementById('ep-addr').value.trim();
+  p.email=document.getElementById('ep-email').value.trim();
+  p.phone=document.getElementById('ep-phone').value.trim();
+  p.desc=document.getElementById('ep-desc').value.trim();
+  p.budget=parseFloat(document.getElementById('ep-budget').value)||0;
+  addAct('Projekt redigeret: '+p.name);
+  persist();renderHome();renderProj();go('s-proj');toast('Projekt gemt ✓');
+}
+function confirmDeleteProject(){
+  const p=gP(curId);if(!p)return;
+  document.getElementById('del-proj-name').textContent=p.name;
+  go('s-delconfirm');
+}
+function deleteProject(){
+  const p=gP(curId);if(!p)return;
+  const name=p.name;
+  S.projects=S.projects.filter(x=>x.id!==curId);
+  curId=null;
+  addAct('Projekt slettet: '+name);
+  persist();renderHome();go('s-home');toast('Projekt slettet');
+}
+
+// PHOTO AI - genkend materialer fra billede
+let paiBase64=null,paiMime=null;
+function handlePhoto(e){
+  const file=e.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    const dataUrl=ev.target.result;
+    paiBase64=dataUrl.split(',')[1];
+    paiMime=file.type;
+    document.getElementById('pai-preview').innerHTML=`<img src="${dataUrl}" style="width:100%;border-radius:var(--r2);margin-bottom:12px;max-height:280px;object-fit:cover">`;
+    document.getElementById('pai-results').innerHTML='';
+    analyzePhoto();
+  };
+  reader.readAsDataURL(file);
+}
+
+async function analyzePhoto(){
+  if(!paiBase64)return;
+  const st=document.getElementById('pai-status');
+  st.innerHTML='<div style="display:flex;align-items:center;gap:10px;padding:14px;background:var(--bg2);border:1px solid var(--bor);border-radius:var(--r2);margin-bottom:12px"><div class="ai-dot"><span></span><span></span><span></span></div><span style="font-size:13px;color:var(--t2)">AI analyserer billedet...</span></div>';
+  const catNames=CAT.map(c=>c.name).join('\n');
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',max_tokens:700,
+        system:`Du er en dansk el-installatør der genkender el-materiel på billeder. Du får et billede af udført el-arbejde (fx en tavle, væg med stikkontakter, eller installation). Identificér hvilke el-komponenter der er synlige, og hvor mange. Match dem mod dette produktkatalog:\n\n${catNames}\n\nSvar KUN med gyldig JSON i dette format, intet andet:\n{"items":[{"name":"<præcist navn fra kataloget>","qty":<antal>},...]}\n\nBrug kun navne der findes i kataloget. Hvis du ser noget der ikke er i kataloget, så vælg det nærmeste match. Vær realistisk med antal.`,
+        messages:[{role:'user',content:[
+          {type:'image',source:{type:'base64',media_type:paiMime,data:paiBase64}},
+          {type:'text',text:'Hvilke el-materialer kan du se på billedet? Returnér som JSON.'}
+        ]}]
+      })
+    });
+    const d=await r.json();
+    let txt=d.content?.find(x=>x.type==='text')?.text||'';
+    txt=txt.replace(/```json|```/g,'').trim();
+    const parsed=JSON.parse(txt);
+    st.innerHTML='';
+    renderPhotoResults(parsed.items||[]);
+  }catch(e){
+    st.innerHTML='<div style="padding:14px;background:rgba(224,82,82,.08);border:1px solid rgba(224,82,82,.2);border-radius:var(--r2);margin-bottom:12px;font-size:13px;color:var(--err)">Kunne ikke analysere billedet. Prøv et tydeligere billede, eller tilføj materialer manuelt.</div>';
+  }
+}
+
+let paiFound=[];
+function renderPhotoResults(items){
+  paiFound=items.map(it=>{
+    const match=CAT.find(c=>c.name===it.name)||CAT.find(c=>c.name.toLowerCase().includes((it.name||'').toLowerCase().slice(0,15)));
+    return match?{name:match.name,brand:match.brand,cat:match.cat,price:match.price,img:match.img,qty:it.qty||1,sel:true}:null;
+  }).filter(Boolean);
+  if(!paiFound.length){
+    document.getElementById('pai-results').innerHTML='<div class="empty"><i class="ti ti-mood-empty"></i><p>Ingen materialer genkendt</p><small>Prøv et tydeligere billede</small></div>';
+    return;
+  }
+  drawPhotoResults();
+}
+function drawPhotoResults(){
+  const tot=paiFound.filter(x=>x.sel).reduce((a,x)=>a+x.price*x.qty,0);
+  document.getElementById('pai-results').innerHTML=`
+    <div class="sh"><span class="sh-t">AI fandt ${paiFound.length} materialer</span></div>
+    ${paiFound.map((m,i)=>`<div class="card" style="display:flex;align-items:center;gap:11px;padding:11px;cursor:default;${m.sel?'':'opacity:.45'}">
+      <input type="checkbox" ${m.sel?'checked':''} onchange="togglePai(${i})" style="width:18px;height:18px;accent-color:var(--pur);flex-shrink:0">
+      ${matIconHTML(m,36)}
+      <div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${m.name}</div><div style="font-size:10px;color:var(--t3);margin-top:1px;font-family:var(--M)">${fmt(m.price)} kr/stk</div></div>
+      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+        <button onclick="paiQty(${i},-1)" style="width:26px;height:26px;border-radius:6px;border:1px solid var(--bor2);background:var(--bg3);color:var(--txt);cursor:pointer;font-size:14px">−</button>
+        <span style="font-family:var(--M);font-size:13px;min-width:20px;text-align:center">${m.qty}</span>
+        <button onclick="paiQty(${i},1)" style="width:26px;height:26px;border-radius:6px;border:1px solid var(--bor2);background:var(--bg3);color:var(--txt);cursor:pointer;font-size:14px">+</button>
+      </div>
+    </div>`).join('')}
+    <div class="sumbox" style="margin-top:6px"><div class="sum-lbl">Valgte materialer i alt</div><div class="sum-val">${fmt(tot)} kr</div></div>
+    <button class="bb pri" onclick="addPaiMaterials()" style="background:var(--pur);color:#fff"><i class="ti ti-plus"></i> Tilføj valgte til projekt</button>`;
+}
+function togglePai(i){paiFound[i].sel=!paiFound[i].sel;drawPhotoResults();}
+function paiQty(i,d){paiFound[i].qty=Math.max(1,paiFound[i].qty+d);drawPhotoResults();}
+function addPaiMaterials(){
+  const p=gP(curId);if(!p)return;
+  if(!p.materials)p.materials=[];
+  let n=0;
+  paiFound.filter(x=>x.sel).forEach(m=>{p.materials.push({name:m.name,qty:m.qty,price:m.price,total:m.qty*m.price,img:m.img,cat:m.cat});n++;});
+  if(!n){alert('Vælg mindst ét materiale');return;}
+  addAct(p.name+': '+n+' materialer tilføjet via foto-AI');
+  paiBase64=null;paiFound=[];
+  document.getElementById('pai-preview').innerHTML='';document.getElementById('pai-results').innerHTML='';document.getElementById('pai-status').innerHTML='';
+  persist();renderMats();go('s-mats');toast(n+' materialer tilføjet ✓');
+}
+
+// BACKUP / GENDAN
+function exportData(){
+  const data=JSON.stringify(S,null,2);
+  const blob=new Blob([data],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  const d=new Date().toISOString().split('T')[0];
+  a.href=url;a.download=`voltpro-backup-${d}.json`;
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  toast('Sikkerhedskopi gemt ✓');
+}
+function importData(e){
+  const file=e.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    try{
+      const d=JSON.parse(ev.target.result);
+      if(!d.projects){alert('Filen ser ikke ud til at være en VoltPro-sikkerhedskopi');return;}
+      if(!confirm('Dette erstatter ALLE nuværende data med indholdet fra filen. Fortsæt?'))return;
+      S=d;if(!S.company)S.company={name:'',cvr:'',addr:'',phone:'',email:'',reg:'',account:'',auth:'',terms:'14 dage netto'};if(!S.activity)S.activity=[];
+      persist();renderHome();loadSettings();toast('Data gendannet ✓');go('s-home');goTab('s-home','bn-home');
+    }catch(err){alert('Kunne ikke læse filen – er det den rigtige .json-fil?');}
+  };
+  reader.readAsText(file);
+}
+
+// PRINT / PDF af faktura
+function printInvoice(){
+  const box=document.getElementById('inv-box');
+  if(!box||!box.innerHTML.trim()){toast('Vælg et projekt først');return;}
+  const w=window.open('','_blank');
+  if(!w){toast('Tillad pop-ups for at printe');return;}
+  w.document.write(`<!DOCTYPE html><html lang="da"><head><meta charset="UTF-8"><title>Faktura</title>
+    <style>
+      body{font-family:Arial,Helvetica,sans-serif;color:#222;padding:30px;max-width:800px;margin:0 auto}
+      table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0}
+      th{text-align:left;border-bottom:2px solid #333;padding:6px 4px;font-size:11px;text-transform:uppercase;color:#666}
+      td{border-bottom:1px solid #ddd;padding:7px 4px}
+      .tag{font-size:10px;padding:2px 6px;border-radius:4px;background:#f0f0f0;color:#555}
+      h1{color:#e8961a}
+      @media print{body{padding:0}}
+    </style></head><body>${box.innerHTML.replace(/var\(--[^)]+\)/g,'#333')}</body></html>`);
+  w.document.close();
+  setTimeout(()=>{w.print();},400);
+}
+
+// SERVICE WORKER – gør app'en tilgængelig offline
+if('serviceWorker' in navigator){
+  const swCode=`
+    const CACHE='voltpro-v1';
+    self.addEventListener('install',e=>{self.skipWaiting();});
+    self.addEventListener('activate',e=>{e.waitUntil(self.clients.claim());});
+    self.addEventListener('fetch',e=>{
+      e.respondWith(
+        caches.open(CACHE).then(cache=>
+          cache.match(e.request).then(hit=>{
+            const net=fetch(e.request).then(resp=>{
+              if(e.request.method==='GET'&&resp.status===200){cache.put(e.request,resp.clone());}
+              return resp;
+            }).catch(()=>hit);
+            return hit||net;
+          })
+        )
+      );
+    });`;
+  try{
+    const blob=new Blob([swCode],{type:'application/javascript'});
+    navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{});
+  }catch(e){}
+}
+
+boot();
+</script>
+</body>
+</html>
